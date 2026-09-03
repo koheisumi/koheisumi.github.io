@@ -721,3 +721,27 @@ h1 {
     font-size: 12.5px;
   }
 }
+
+/* ===== Biography / Statement refinements ===== */
+.biography-page {
+  max-width: 760px;
+}
+
+.statement-page {
+  max-width: 720px;
+}
+
+.statement-page p {
+  margin-bottom: 1.7em;
+}
+
+@media (max-width: 760px) {
+  .biography-page,
+  .statement-page {
+    max-width: none;
+  }
+
+  .statement-page p {
+    margin-bottom: 1.55em;
+  }
+}
