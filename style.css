@@ -92,21 +92,35 @@ h1{font-size:clamp(38px,6vw,74px);font-weight:500;line-height:1.02;letter-spacin
   display:block;
 }
 .hero-figure figcaption{
-  margin-top:10px;
-  font-size:12px;
+  margin-top:7px;
+  font-size:10px;
+  line-height:1.45;
   color:var(--muted);
 }
 .top-intro{
-  padding:62px 0 54px;
+  padding:44px 0 40px;
   border-bottom:1px solid var(--line);
 }
+.top-intro .kicker{
+  font-size:10px;
+  margin-bottom:10px;
+}
 .top-intro .lead{
-  max-width:980px;
-  margin-top:18px;
-  font-size:clamp(18px,1.75vw,23px);
+  max-width:800px;
+  margin-top:0;
+  font-size:16px;
+  line-height:1.8;
 }
 @media(max-width:760px){
   .top-hero{padding-top:20px}
-  .top-intro{padding:42px 0 38px}
-  .top-intro .lead{font-size:18px}
+  .hero-figure figcaption{font-size:10px}
+  .top-intro{padding:34px 0 32px}
+  .top-intro .lead{font-size:15px;line-height:1.8}
+}
+/* v4: stripped-back home and footer */
+.top-hero{padding-bottom:72px}
+.site-footer{margin-top:0}
+.footer-inner{padding-top:24px}
+@media(max-width:760px){
+  .top-hero{padding-bottom:48px}
 }
