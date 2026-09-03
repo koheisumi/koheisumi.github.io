@@ -193,7 +193,7 @@ h1{font-size:clamp(38px,6vw,74px);font-weight:500;line-height:1.02;letter-spacin
   }
 }
 
-/* v10: one shared 860px visual grid */
+/* v11: shared 860px visual grid */
 .home-main{
   max-width:none;
   padding-left:0;
@@ -215,26 +215,23 @@ h1{font-size:clamp(38px,6vw,74px);font-weight:500;line-height:1.02;letter-spacin
     margin-right:auto;
     padding-left:0;
     padding-right:0;
-    position:relative;
   }
 
   .brand{
     margin-left:0;
   }
 
-  /* TOP / WORKS / PROJECTS / ABOUT remain just inside the image's right edge.
-     CONTACT begins exactly on the image's right edge. */
+  /* Entire nav group is right-aligned to the hero:
+     CONTACT's right edge = hero's right edge. */
   .nav{
-    position:absolute;
-    right:30px;
-    top:50%;
-    transform:translateY(-50%);
+    position:static;
+    transform:none;
+    margin-left:auto;
     white-space:nowrap;
   }
   .nav a:last-child{
-    position:absolute;
-    left:calc(100% + 30px);
-    top:0;
+    position:static;
+    transform:none;
     margin:0;
   }
 
@@ -248,7 +245,6 @@ h1{font-size:clamp(38px,6vw,74px);font-weight:500;line-height:1.02;letter-spacin
   }
 }
 
-/* Below 1100px, keep navigation safely inside the viewport. */
 @media (min-width:761px) and (max-width:1099px){
   .header-inner{
     max-width:var(--max);
@@ -258,9 +254,11 @@ h1{font-size:clamp(38px,6vw,74px);font-weight:500;line-height:1.02;letter-spacin
   .nav{
     position:static;
     transform:none;
+    margin-left:auto;
   }
   .nav a:last-child{
     position:static;
+    transform:none;
     margin:0;
   }
   .footer-inner{
@@ -269,4 +267,3 @@ h1{font-size:clamp(38px,6vw,74px);font-weight:500;line-height:1.02;letter-spacin
     padding-right:var(--gutter);
   }
 }
-
