@@ -128,10 +128,82 @@ h1{font-size:clamp(38px,6vw,74px);font-weight:500;line-height:1.02;letter-spacin
 
 /* v6: compact hero on large screens */
 .top-hero{
-  max-width:920px;
+  max-width:860px;
   margin-left:auto;
   margin-right:auto;
 }
 @media(max-width:760px){
   .top-hero{max-width:none}
+}
+
+/* v7: refined contact */
+.contact-refined{
+  padding:72px 0 150px;
+  max-width:760px;
+}
+.contact-label{
+  margin:0 0 10px;
+  font-size:11px;
+  line-height:1.4;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.contact-refined .contact-mail{
+  display:inline-block;
+  font-size:18px;
+  line-height:1.5;
+  font-weight:400;
+  letter-spacing:.01em;
+  color:var(--fg);
+  border-bottom:1px solid #bdbdbd;
+  padding-bottom:2px;
+}
+.contact-refined .contact-mail:hover{
+  opacity:1;
+  border-bottom-color:var(--fg);
+}
+@media(max-width:760px){
+  .contact-refined{padding:52px 0 110px}
+  .contact-refined .contact-mail{font-size:17px}
+}
+
+
+/* v9: align header and footer to the 860px hero */
+@media (min-width:761px){
+  .header-inner{
+    max-width:860px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:0;
+    padding-right:0;
+    position:relative;
+  }
+
+  .brand{
+    margin-left:0;
+  }
+
+  /* TOP–ABOUT stay inside the 860px line.
+     CONTACT begins exactly at the hero's right edge. */
+  .nav{
+    position:static;
+    transform:none;
+    white-space:nowrap;
+  }
+  .nav a:last-child{
+    position:absolute;
+    left:860px;
+    top:50%;
+    transform:translateY(-50%);
+    margin-left:30px;
+  }
+
+  .footer-inner{
+    max-width:860px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:0;
+    padding-right:0;
+  }
 }
