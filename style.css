@@ -263,25 +263,25 @@ h1 {
 .top-hero {
   width: min(var(--content-width), calc(100vw - 48px));
   margin: 0 auto;
-  padding: var(--space-4xl) var(--gutter-desktop) 0;
+  padding: 0 var(--gutter-desktop) 0;
 }
 
 @media (min-width: 1100px) {
   .top-hero {
-    padding: var(--space-4xl) 0 0;
+    padding: 0;
   }
 }
 
 @media (min-width: 761px) and (max-width: 1099px) {
   .top-hero {
-    padding: var(--space-4xl) var(--gutter-tablet) 0;
+    padding: 0 var(--gutter-tablet) 0;
   }
 }
 
 @media (max-width: 760px) {
   .top-hero {
     width: 100%;
-    padding: var(--space-3xl) var(--gutter-mobile) 0;
+    padding: 0 var(--gutter-mobile) 0;
   }
 }
 
