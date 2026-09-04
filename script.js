@@ -35,7 +35,7 @@
       slides[i].classList.remove('is-active');
       i = (i + 1) % slides.length;
       slides[i].classList.add('is-active');
-    }, 7200);
+    }, 10800);
   }
 
   const header = document.querySelector('.site-header');

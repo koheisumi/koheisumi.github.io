@@ -1,9 +1,6 @@
-KOHEI SUMI website V18 layout draft
+KOHEI SUMI website V19
 
-Main update from V17:
-- HERO image rail moved to the left
-- white field moved to the right
-- KOHEI SUMI uses Times New Roman
-- EN / JP are independently clickable controls
+Upload the contents of this folder to the repository root.
+Do not delete the existing CNAME file on GitHub.
 
-CNAME is intentionally excluded. Preserve the existing CNAME in GitHub.
+Main changes: bilingual disclaimer, slower HERO slideshow, web-optimized HERO images, and a more restrained ABOUT layout.
