@@ -1,7 +1,7 @@
-# Kohei Sumi website V20
+# Kohei Sumi website V21
 
-V20 fixes the menu overlay stacking bug and preserves the authored 3:5 HERO crops without any second CSS crop.
+Upload the contents of this folder to the repository root.
 
-- Keep the existing GitHub `CNAME` file. It is intentionally not included in this ZIP.
-- Desktop HOME HERO uses a fixed 3:5 viewport ratio (`width = 60svh`, `height = 100svh`).
-- HERO images use `object-fit: contain`, never `cover`.
+Important: do **not** delete the existing GitHub `CNAME` file. This package does not include one.
+
+Primary changes: right-side three-image HERO, compact dropdown menu, 貂明朝/Ten Mincho brand stack, simplified ABOUT, and fully updated bilingual Curriculum Vitae.

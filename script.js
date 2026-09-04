@@ -28,6 +28,17 @@
     }));
   }
 
+  document.addEventListener('click', (e) => {
+    if(panel && menuBtn && panel.classList.contains('open') && !panel.contains(e.target) && !menuBtn.contains(e.target)){
+      panel.classList.remove('open'); body.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Open menu');
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && panel && panel.classList.contains('open')){
+      panel.classList.remove('open'); body.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Open menu'); menuBtn.focus();
+    }
+  });
+
   const slides = [...document.querySelectorAll('.hero-slide')];
   if(slides.length > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches){
     let i = 0;
@@ -35,7 +46,7 @@
       slides[i].classList.remove('is-active');
       i = (i + 1) % slides.length;
       slides[i].classList.add('is-active');
-    }, 10800);
+    }, 12000);
   }
 
   const header = document.querySelector('.site-header');

@@ -1,11 +1,13 @@
-# V20 design notes
+# V21 design notes — 2026-09-04
 
-- HOME: vertical artwork strip on the left; white field on the right.
-- The 3:5 crop made by the artist is treated as the final composition. CSS must not crop it again.
-- Desktop hero width is derived from viewport height: 60svh for a 3:5 frame.
-- KOHEI SUMI: Times New Roman, large on HOME, compact on internal pages.
-- Menu overlay: true full white overlay above page content; header brand/actions remain visible.
-- EN / JP remain separately clickable.
-- Slideshow interval: 10.8 sec; crossfade: 2.4 sec.
-- Disclaimer: English + Japanese always shown together.
-- ABOUT remains text-led and restrained, with PROFILE → STATEMENT → CV in one vertical page and a narrow visual band.
+- TOP returns to **white field on the left / vertical slideshow on the right**.
+- HERO slideshow has exactly three images: temple installation, volcanic rock, and mountain forest. Domestic Jealousy text and Red Spike are excluded from the HERO.
+- HERO images are treated as completed crops; CSS does not crop them again. The mountain image is a literal center crop from the original photograph, with no generative fill or stretching.
+- Slideshow interval: 12 seconds, quiet crossfade.
+- Brand `KOHEI SUMI`: CSS font stack begins with **貂明朝 / Ten Mincho**. No font file is bundled.
+- On TOP, EN / JP and hamburger sit in white over the upper-right of the image.
+- Hamburger opens a small white dropdown directly beneath the control; there is no full-screen overlay.
+- ABOUT is one scrolling page: PROFILE → STATEMENT → CURRICULUM VITAE. The duplicate large KOHEI SUMI identity block inside ABOUT has been removed.
+- Curriculum Vitae is fully synchronized from the revised bilingual CV working document dated 2026-09-04.
+- `cv.html`, `biography.html`, and `statement.html` remain compatibility redirects.
+- Existing GitHub `CNAME` must be preserved; it is not included in this ZIP.
