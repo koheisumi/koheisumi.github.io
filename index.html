@@ -1,52 +1,59 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Top | Kohei Sumi</title>
 <meta name="description" content="Kohei Sumi — artist working across painting, installation, research, and long-term art projects.">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
+<body class="page-home" data-lang="en">
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html">KOHEI SUMI</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html">TOP</a>
-      <a href="works.html">WORKS</a>
-      <a href="projects.html">PROJECTS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
-    <button class="menu-btn" type="button" aria-expanded="false">MENU</button>
-    <nav class="mobile-nav" aria-label="Mobile">
-      <a href="index.html">TOP</a>
-      <a href="works.html">WORKS</a>
-      <a href="projects.html">PROJECTS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
+  <a class="brand" href="index.html" aria-label="Kohei Sumi home">KOHEI SUMI</a>
+  <div class="header-actions">
+    <button class="lang-toggle" type="button" aria-label="Switch language"><span class="lang-state">EN</span><span class="lang-sep"> / </span><span class="lang-other">JP</span></button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
   </div>
+  <nav class="menu-panel" aria-label="Primary navigation">
+    <div class="menu-links">
+      <a href="index.html">TOP</a>
+      <a href="works.html">WORKS</a>
+      <a href="projects.html">PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="mailto:kousmith@gmail.com">CONTACT</a>
+    </div>
+  </nav>
 </header>
 
-<main class="home-main">
-<section class="top-hero">
-  <figure class="hero-figure">
-    <img src="assets/hero.webp" alt="《半島の傷跡》展示風景、2015年" width="1800" height="1200" fetchpriority="high">
-    <figcaption>《半島の傷跡》 / Scars of the Peninsula, 2015</figcaption>
-  </figure>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-<p>本サイトの内容は個人の見解であり、所属組織の見解を示すものではありません。作品・画像・文章の無断転載・無断使用を禁止します。</p>
+<main class="home-shell">
+  <section class="home-field" aria-label="Kohei Sumi">
+    <div class="home-spacer"></div>
+    <div class="home-footer-wrap"><footer class="site-footer">
+  <div class="footer-copy lang-en">
     <p>Views expressed on this site are personal and do not represent those of my employer. Unauthorized reproduction or use of artworks, images, and texts is prohibited.</p>
-    <p>© KOHEI SUMI</p>
   </div>
-</footer>
+  <div class="footer-copy lang-ja">
+    <p>本サイトの内容は個人の見解であり、所属組織の見解を示すものではありません。作品・画像・文章の無断転載・無断使用を禁止します。</p>
+  </div>
+  <p class="copyright">© KOHEI SUMI</p>
+</footer></div>
+  </section>
+  <section class="hero-rail" aria-label="Selected works">
+    <div class="hero-slide is-active"><img src="assets/hero_01_hantou.webp" alt="《半島の傷跡》 installation view" fetchpriority="high"></div>
+    <div class="hero-slide"><img src="assets/hero_02_domestic.webp" alt="Printed text from an artwork"></div>
+    <div class="hero-slide"><img src="assets/hero_03_red_spike.webp" alt="Installation detail with a tall red form"></div>
+    <div class="hero-slide"><img src="assets/hero_04_volcanic_rock.webp" alt="Volcanic rock installation detail"></div>
+  </section>
+  <div class="mobile-home-footer"><footer class="site-footer">
+  <div class="footer-copy lang-en">
+    <p>Views expressed on this site are personal and do not represent those of my employer. Unauthorized reproduction or use of artworks, images, and texts is prohibited.</p>
+  </div>
+  <div class="footer-copy lang-ja">
+    <p>本サイトの内容は個人の見解であり、所属組織の見解を示すものではありません。作品・画像・文章の無断転載・無断使用を禁止します。</p>
+  </div>
+  <p class="copyright">© KOHEI SUMI</p>
+</footer></div>
+</main>
 <script src="script.js"></script>
-
 </body>
 </html>

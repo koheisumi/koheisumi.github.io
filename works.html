@@ -1,56 +1,51 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Works | Kohei Sumi</title>
 <meta name="description" content="Kohei Sumi — artist working across painting, installation, research, and long-term art projects.">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
+<body class="page-inner" data-lang="en">
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html">KOHEI SUMI</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html">TOP</a>
-      <a href="works.html" aria-current="page">WORKS</a>
-      <a href="projects.html">PROJECTS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
-    <button class="menu-btn" type="button" aria-expanded="false">MENU</button>
-    <nav class="mobile-nav" aria-label="Mobile">
-      <a href="index.html">TOP</a>
-      <a href="works.html" aria-current="page">WORKS</a>
-      <a href="projects.html">PROJECTS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
+  <a class="brand" href="index.html" aria-label="Kohei Sumi home">KOHEI SUMI</a>
+  <div class="header-actions">
+    <button class="lang-toggle" type="button" aria-label="Switch language"><span class="lang-state">EN</span><span class="lang-sep"> / </span><span class="lang-other">JP</span></button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
   </div>
+  <nav class="menu-panel" aria-label="Primary navigation">
+    <div class="menu-links">
+      <a href="index.html">TOP</a>
+      <a href="works.html">WORKS</a>
+      <a href="projects.html">PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="mailto:kousmith@gmail.com">CONTACT</a>
+    </div>
+  </nav>
 </header>
 
-<main>
-<section class="page-head"><h1>Works</h1></section>
-<section class="section">
-  <div class="grid">
-    <article class="card"><h2>Loss, the Absence of Prayer</h2><div class="meta">2021</div></article>
-    <article class="card"><h2>Mirrors in the Room of the Image</h2><div class="meta">2016</div></article>
-    <article class="card"><h2>Scars of the Peninsula</h2><div class="meta">2015</div></article>
-    <article class="card"><h2>Earlier Works</h2><div class="meta">2000–2007</div></article>
-  </div>
-  <p class="note">作品画像と個別ページは次段階で追加してください。</p>
-</section>
+<main class="wide-page works-page">
+  <section class="simple-head"><h1>WORKS</h1></section>
+  <section class="works-grid" aria-label="Selected works">
+    <a class="work-tile" href="#"><figure><img src="assets/hero_01_hantou.webp" alt="《半島の傷跡》"><figcaption><span>《半島の傷跡》</span><span>2015</span></figcaption></figure></a>
+    <a class="work-tile" href="#"><figure><img src="assets/hero_02_domestic.webp" alt="《ドメスティック・ジェラシー》"><figcaption><span>《ドメスティック・ジェラシー》</span><span></span></figcaption></figure></a>
+    <a class="work-tile image-only" href="#" aria-label="Work detail"><figure><img src="assets/hero_03_red_spike.webp" alt="Installation detail"></figure></a>
+    <a class="work-tile image-only" href="#" aria-label="Work detail"><figure><img src="assets/hero_04_volcanic_rock.webp" alt="Installation detail"></figure></a>
+    <a class="work-tile image-only" href="#" aria-label="Work detail"><figure><img src="assets/work_keren.webp" alt="Installation detail"></figure></a>
+  </section>
+  <p class="layout-note lang-en">Selected images are placed here as a layout draft. Individual work pages can be expanded later.</p>
+  <p class="layout-note lang-ja">現在はレイアウト確認用の選択画像です。個別作品ページは後から拡張できます。</p>
 </main>
-
 <footer class="site-footer">
-  <div class="footer-inner">
-<p>本サイトの内容は個人の見解であり、所属組織の見解を示すものではありません。作品・画像・文章の無断転載・無断使用を禁止します。</p>
+  <div class="footer-copy lang-en">
     <p>Views expressed on this site are personal and do not represent those of my employer. Unauthorized reproduction or use of artworks, images, and texts is prohibited.</p>
-    <p>© KOHEI SUMI</p>
   </div>
+  <div class="footer-copy lang-ja">
+    <p>本サイトの内容は個人の見解であり、所属組織の見解を示すものではありません。作品・画像・文章の無断転載・無断使用を禁止します。</p>
+  </div>
+  <p class="copyright">© KOHEI SUMI</p>
 </footer>
 <script src="script.js"></script>
-
 </body>
 </html>

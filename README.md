@@ -1,22 +1,6 @@
-# koheisumi.com static site v1
+KOHEI SUMI website V17 layout draft
 
-GitHub Pages向けの静的サイトです。
+Upload the contents of this folder to the root of the GitHub Pages repository.
+Important: keep the existing CNAME in the repository; this package does not replace it.
 
-## ファイル構成
-- index.html
-- works.html
-- projects.html
-- about.html
-- biography.html
-- statement.html
-- cv.html
-- contact.html
-- style.css
-- script.js
-- assets/
-
-## 公開前
-1. `index.html` の HERO IMAGE プレースホルダーを実画像へ差し替え
-2. `info@koheisumi.com` の受信確認
-3. GitHub Pages の公開ブランチを `main / (root)` に設定
-4. HTTPSをEnforce
+Main changes: split-screen TOP + 4-image portrait slideshow, hamburger menu, EN/JP toggle, unified ABOUT page, right-side sticky photo band, WORKS image grid, PROJECTS text list.
