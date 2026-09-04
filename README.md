@@ -1,6 +1,9 @@
-KOHEI SUMI website V17 layout draft
+KOHEI SUMI website V18 layout draft
 
-Upload the contents of this folder to the root of the GitHub Pages repository.
-Important: keep the existing CNAME in the repository; this package does not replace it.
+Main update from V17:
+- HERO image rail moved to the left
+- white field moved to the right
+- KOHEI SUMI uses Times New Roman
+- EN / JP are independently clickable controls
 
-Main changes: split-screen TOP + 4-image portrait slideshow, hamburger menu, EN/JP toggle, unified ABOUT page, right-side sticky photo band, WORKS image grid, PROJECTS text list.
+CNAME is intentionally excluded. Preserve the existing CNAME in GitHub.

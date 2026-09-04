@@ -1,23 +1,22 @@
-# KOHEI SUMI website — V17 layout draft (2026-09-04)
+# KOHEI SUMI website — V18 layout draft (2026-09-04)
 
-## Today’s layout decisions
+## Updated layout decisions
 
-- TOP: desktop split-screen. Large white field on the left, vertical HERO image rail on the right.
-- HERO: four portrait crops cross-fade quietly (7.2 sec / 1.6 sec fade). No arrows or dots.
-- HERO images are real crops only. No stretch, outpainting, or generative fill.
-- Brand: KOHEI SUMI in a thin high-contrast serif stack; navigation remains sans-serif.
+- TOP desktop split-screen is reversed from V17: portrait HERO image rail on the **left (38%)**, white information field on the **right (62%)**.
+- KOHEI SUMI sits at the top of the white field and uses **Times New Roman** (brand only).
+- EN and JP are now two independent controls rather than a single swapping toggle. EN remains the default.
+- Hamburger and language controls sit on the upper-right white field for maximum legibility.
+- HERO: four real portrait crops cross-fade quietly (7.2 sec / 1.6 sec fade). No arrows or dots.
+- HERO images remain crop-only assets: no stretch, outpainting, or generative fill.
 - Navigation: compact hamburger menu. CONTACT opens `mailto:kousmith@gmail.com` directly.
-- Header: quietly hides while scrolling down and returns when scrolling up.
-- Language: EN is default. EN / JP toggle persists the visitor’s choice in localStorage.
-- ABOUT: one continuous vertical page — PROFILE → STATEMENT → CV.
-- ABOUT: a narrow, full-viewport photo band stays on the right on desktop (`position: sticky`). Current image is a pure crop from `P.03.jpeg`.
-- ABOUT identity: KOHEI SUMI / 住 康平 / Artist appears once at the beginning; the CV no longer repeats the name block.
-- Public CV: detailed reading-group / small-event entries are not individually listed. They are summarized at the end as “Other Activities”. Keep the detailed MASTER CV separately.
-- WORKS: image-led four-column grid on desktop; current images are a layout draft.
-- PROJECTS: text-led list, visually distinct from WORKS.
-- Mobile: no split-screen; HERO becomes a full-width vertical visual block. ABOUT photo band becomes a separate image block above the text.
+- Header hides while scrolling down and returns when scrolling up.
+- ABOUT remains one continuous vertical page — PROFILE → STATEMENT → CV.
+- ABOUT photo band remains on the right in this draft; this was not changed in V18.
+- Public CV keeps small reading groups / art events summarized under “Other Activities”; detailed MASTER CV stays separate.
+- WORKS remains image-led; PROJECTS remains text-led.
+- Mobile keeps a single-column layout; the split-screen is desktop-only.
 
 ## GitHub Pages
 
 This ZIP intentionally does **not** include `CNAME`. Keep the existing `CNAME` file already in the repository.
-Old `biography.html`, `statement.html`, and `cv.html` are retained as redirects to anchors inside the unified `about.html`.
+Old `biography.html`, `statement.html`, and `cv.html` remain redirects to anchors inside the unified `about.html`.

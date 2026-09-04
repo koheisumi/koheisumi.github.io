@@ -11,7 +11,7 @@
 <header class="site-header">
   <a class="brand" href="index.html" aria-label="Kohei Sumi home">KOHEI SUMI</a>
   <div class="header-actions">
-    <button class="lang-toggle" type="button" aria-label="Switch language"><span class="lang-state">EN</span><span class="lang-sep"> / </span><span class="lang-other">JP</span></button>
+    <div class="lang-switch" role="group" aria-label="Language"><button class="lang-choice is-active" type="button" data-set-lang="en">EN</button><span class="lang-sep">/</span><button class="lang-choice" type="button" data-set-lang="ja">JP</button></div>
     <button class="menu-btn" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
   </div>
   <nav class="menu-panel" aria-label="Primary navigation">
@@ -26,6 +26,12 @@
 </header>
 
 <main class="home-shell">
+  <section class="hero-rail" aria-label="Selected works">
+    <div class="hero-slide is-active"><img src="assets/hero_01_hantou.webp" alt="《半島の傷跡》 installation view" fetchpriority="high"></div>
+    <div class="hero-slide"><img src="assets/hero_02_domestic.webp" alt="Printed text from an artwork"></div>
+    <div class="hero-slide"><img src="assets/hero_03_red_spike.webp" alt="Installation detail with a tall red form"></div>
+    <div class="hero-slide"><img src="assets/hero_04_volcanic_rock.webp" alt="Volcanic rock installation detail"></div>
+  </section>
   <section class="home-field" aria-label="Kohei Sumi">
     <div class="home-spacer"></div>
     <div class="home-footer-wrap"><footer class="site-footer">
@@ -37,12 +43,6 @@
   </div>
   <p class="copyright">© KOHEI SUMI</p>
 </footer></div>
-  </section>
-  <section class="hero-rail" aria-label="Selected works">
-    <div class="hero-slide is-active"><img src="assets/hero_01_hantou.webp" alt="《半島の傷跡》 installation view" fetchpriority="high"></div>
-    <div class="hero-slide"><img src="assets/hero_02_domestic.webp" alt="Printed text from an artwork"></div>
-    <div class="hero-slide"><img src="assets/hero_03_red_spike.webp" alt="Installation detail with a tall red form"></div>
-    <div class="hero-slide"><img src="assets/hero_04_volcanic_rock.webp" alt="Volcanic rock installation detail"></div>
   </section>
   <div class="mobile-home-footer"><footer class="site-footer">
   <div class="footer-copy lang-en">

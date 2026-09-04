@@ -3,21 +3,18 @@
   const body = document.body;
   const menuBtn = document.querySelector('.menu-btn');
   const panel = document.querySelector('.menu-panel');
-  const toggle = document.querySelector('.lang-toggle');
-  const state = document.querySelector('.lang-state');
-  const other = document.querySelector('.lang-other');
+  const langChoices = [...document.querySelectorAll('.lang-choice')];
 
   function setLang(lang, persist=true){
     lang = lang === 'ja' ? 'ja' : 'en';
     body.dataset.lang = lang;
     document.documentElement.lang = lang;
-    if(state) state.textContent = lang === 'en' ? 'EN' : 'JP';
-    if(other) other.textContent = lang === 'en' ? 'JP' : 'EN';
+    langChoices.forEach(btn => btn.classList.toggle('is-active', btn.dataset.setLang === lang));
     if(persist) localStorage.setItem('kohei-lang', lang);
   }
   // English is the default; remember an explicit choice after the first switch.
   setLang(localStorage.getItem('kohei-lang') || 'en', false);
-  if(toggle) toggle.addEventListener('click', () => setLang(body.dataset.lang === 'en' ? 'ja' : 'en'));
+  langChoices.forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.setLang)));
 
   if(menuBtn && panel){
     menuBtn.addEventListener('click', () => {
