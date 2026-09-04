@@ -40,7 +40,7 @@
   });
 
   const slides = [...document.querySelectorAll('.hero-slide')];
-  if(slides.length > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+  if(slides.length > 1){
     let i = 0;
     setInterval(() => {
       slides[i].classList.remove('is-active');
