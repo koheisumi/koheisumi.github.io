@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&display=swap");
+
 
 :root{
   --bg:#fff;--fg:#111;--muted:#858585;--line:#e7e7e7;
   --gutter:clamp(18px,3vw,42px);
   --home-hero-w:75svh;
   --serif:"Bodoni 72",Didot,"Bodoni MT","Times New Roman",serif;
-  --brand-serif:"貂明朝","Ten Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --brand-serif:"貂明朝","Ten Mincho","Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
   --sans:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);-webkit-font-smoothing:antialiased}body.menu-open{}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-width:100%}
@@ -2439,5 +2441,131 @@ body.lightbox-open{overflow:hidden}
   }
   .project-overview-shell .overview-copy .project-prose{
     max-width:none;
+  }
+}
+
+
+/* === v80 / shared phone grammar for WORKS + cross-device Mincho fallback ===
+   Desktop structure remains unchanged. On phones each work reads:
+   lead visual -> identity / information / concept -> remaining visuals. */
+@media(max-width:767px){
+  /* Flatten only the visual column so its lead and supporting images can be
+     sequenced around the unchanged text column. */
+  .page-work-detail .work-left{
+    display:contents;
+  }
+  .page-work-detail .work-side{
+    order:2;
+    width:100%;
+    max-width:none!important;
+    min-width:0;
+  }
+  .page-work-detail .work-left > *{
+    order:3;
+    min-width:0;
+  }
+  .page-work-detail .work-left > .work-main-visual{
+    order:1;
+  }
+
+  /* Conventional pages: supporting thumbnails follow the text block. */
+  .page-work-detail .work-thumb-section{
+    order:3;
+    margin-top:0;
+  }
+
+  /* R.D.S.: one representative sheet first, then text, then the series. */
+  .page-rds .rds-gallery,
+  .page-rds .rds-grid{
+    display:contents;
+  }
+  .page-rds .rds-item{
+    order:3;
+    width:100%;
+    margin:0;
+  }
+  .page-rds .rds-item:first-of-type{
+    order:1;
+  }
+
+  /* Mirror Work Series: same mobile sequence as R.D.S. */
+  .page-mirror-work-series .mirror-series-gallery,
+  .page-mirror-work-series .mirror-series-grid{
+    display:contents;
+  }
+  .page-mirror-work-series .mirror-series-item,
+  .page-mirror-work-series .mirror-series-empty{
+    order:3;
+    width:100%;
+    margin:0;
+  }
+  .page-mirror-work-series .mirror-series-item:first-of-type{
+    order:1;
+  }
+  .page-mirror-work-series .mirror-series-empty{
+    display:none;
+  }
+
+  /* KAMI and Redline are gallery-led pages: promote only the first image. */
+  .page-kami .kami-grid-section,
+  .page-kami .kami-grid{
+    display:contents;
+  }
+  .page-kami .kami-thumb-figure{
+    order:3;
+    width:100%;
+    margin:0;
+  }
+  .page-kami .kami-thumb-figure:first-of-type{
+    order:1;
+  }
+
+  .page-redline .redline-grid-section,
+  .page-redline .redline-grid{
+    display:contents;
+  }
+  .page-redline .redline-thumb{
+    order:3;
+    width:100%;
+    margin:0;
+  }
+  .page-redline .redline-thumb:first-of-type{
+    order:1;
+  }
+
+  /* Sequence-led early works: keep the overview first and details after text. */
+  .page-midori-daichi .midori-sequence,
+  .page-timbre-time .timbre-sequence{
+    display:contents;
+  }
+  .page-midori-daichi .midori-main,
+  .page-timbre-time .timbre-main{
+    order:1;
+  }
+  .page-midori-daichi .midori-detail-row,
+  .page-timbre-time .timbre-drip-column,
+  .page-timbre-time .timbre-corrosion{
+    order:3;
+  }
+
+  /* Keep the special two-view Garden lead together; supplementary images follow text. */
+  .page-garden-consciousness .garden-diptych{
+    order:1;
+  }
+  .page-garden-consciousness .garden-support-section{
+    order:3;
+    margin-top:0;
+  }
+
+  /* Give the lead image and the text block a deliberate pause, while keeping
+     the supporting image sequence compact below the concept. */
+  .page-work-detail .work-hero-grid{
+    row-gap:30px!important;
+  }
+  .page-rds .rds-item:not(:first-of-type),
+  .page-mirror-work-series .mirror-series-item:not(:first-of-type),
+  .page-kami .kami-thumb-figure:not(:first-of-type),
+  .page-redline .redline-thumb:not(:first-of-type){
+    margin-top:-10px;
   }
 }
