@@ -69,8 +69,8 @@
         <path d="M586 326 L724 326 L770 326"/>
       </g>
       <g class="map-geometry map-geometry-en" aria-hidden="true">
-        <path d="M506 157 L176 157"/>
-        <path d="M565 252 L310 252"/>
+        <path id="map-line-en-2018" d="M506 157 L196 157"/>
+        <path id="map-line-en-2021" d="M565 252 L330 252"/>
       </g>
       <g class="map-geometry map-geometry-ja" aria-hidden="true">
         <path d="M506 157 L137 157"/>
@@ -83,10 +83,10 @@
         <a href="project-scars-peninsula.html"><text x="782" y="107" class="map-title-svg">Scars of the Peninsula</text></a>
 
         <text x="20" y="142" class="map-year-svg">2018</text>
-        <a href="project-chroniclers-water.html"><text x="20" y="160" class="map-title-svg">Chroniclers of Water</text></a>
+        <a href="project-chroniclers-water.html"><text id="map-title-en-2018" x="20" y="160" class="map-title-svg">Chroniclers of Water</text></a>
 
         <text x="20" y="237" class="map-year-svg">2021</text>
-        <a href="project-vibrant-mountains.html"><text x="20" y="255" class="map-title-svg">The Vibrant Mountains and Rivers</text></a>
+        <a href="project-vibrant-mountains.html"><text id="map-title-en-2021" x="20" y="255" class="map-title-svg">The Vibrant Mountains and Rivers</text></a>
 
         <text x="782" y="311" class="map-year-svg">2022–2023</text>
         <a href="project-ubusuna-hydrology.html"><text x="782" y="329" class="map-title-svg">Ubusuna Hydrology</text></a>
@@ -132,6 +132,35 @@
   </article>
 </main>
 <footer class="site-footer"><div class="footer-copy footer-bilingual"><p>Views expressed on this site are personal and do not represent those of my employer. Unauthorized reproduction or use of artworks, images, and texts is prohibited.</p><p lang="ja">本サイトの内容は個人の見解であり、所属組織の見解を示すものではありません。作品・画像・文章の無断転載・無断使用を禁止します。</p></div><p class="copyright">© KOHEI SUMI</p></footer>
+<script>
+(function(){
+  const gap = 12; // matches the 12-unit gap between the right-side leaders and the 2022–2023 text block
+  function alignEnglishMapLeaders(){
+    if (document.body.dataset.lang !== 'en') return;
+    requestAnimationFrame(function(){
+      const pairs = [
+        { title:'map-title-en-2018', line:'map-line-en-2018', pointX:506, y:157 },
+        { title:'map-title-en-2021', line:'map-line-en-2021', pointX:565, y:252 }
+      ];
+      pairs.forEach(function(p){
+        const title = document.getElementById(p.title);
+        const line = document.getElementById(p.line);
+        if (!title || !line) return;
+        const box = title.getBBox();
+        const lineEnd = box.x + box.width + gap;
+        line.setAttribute('d', 'M' + p.pointX + ' ' + p.y + ' L' + lineEnd.toFixed(1) + ' ' + p.y);
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', alignEnglishMapLeaders, {once:true});
+  } else {
+    alignEnglishMapLeaders();
+  }
+  new MutationObserver(alignEnglishMapLeaders).observe(document.body, {attributes:true, attributeFilter:['data-lang']});
+  window.addEventListener('resize', alignEnglishMapLeaders);
+})();
+</script>
 <script src="script.js"></script>
 </body>
 </html>
