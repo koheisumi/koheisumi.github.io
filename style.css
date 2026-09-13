@@ -3384,18 +3384,20 @@ body.lightbox-open{overflow:hidden}
   .cliff-map-mobile-visual{display:none!important}
 }
 
-/* === v86 / mobile Cliff Edge map language isolation === */
+/* === v87 / Cliff Edge mobile map: single list, language-safe labels === */
 @media(max-width:767px){
-  body[data-lang="en"] .project-overview-shell .map-mobile-list.lang-ja{
-    display:none!important;
-  }
-  body[data-lang="en"] .project-overview-shell .map-mobile-list.lang-en{
+  .project-overview-shell .map-mobile-list{
     display:block!important;
   }
-  body[data-lang="ja"] .project-overview-shell .map-mobile-list.lang-en{
+  .project-overview-shell .map-mobile-list .map-mobile-year{
+    display:block!important;
+  }
+  body[data-lang="en"] .project-overview-shell .map-mobile-list .map-mobile-name.lang-ja,
+  body[data-lang="ja"] .project-overview-shell .map-mobile-list .map-mobile-name.lang-en{
     display:none!important;
   }
-  body[data-lang="ja"] .project-overview-shell .map-mobile-list.lang-ja{
+  body[data-lang="en"] .project-overview-shell .map-mobile-list .map-mobile-name.lang-en,
+  body[data-lang="ja"] .project-overview-shell .map-mobile-list .map-mobile-name.lang-ja{
     display:block!important;
   }
 }
