@@ -3051,3 +3051,218 @@ body.lightbox-open{overflow:hidden}
     margin-bottom:0!important;
   }
 }
+
+/* === v83 / PROJECTS phone reading order ===
+   Phone-only project detail flow:
+   project banner -> lead photograph (+ caption) -> PROJECT INFORMATION -> concept / role -> remaining project material.
+   Desktop/tablet, WORKS, and the Cliff Edge overview/map page remain unchanged. */
+@media(max-width:767px){
+  .page-ubusuna .project-hero-grid,
+  .page-vibrant .project-hero-grid,
+  .page-chroniclers .project-hero-grid,
+  .page-tanna .project-hero-grid,
+  .page-scars .project-hero-grid{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    row-gap:0!important;
+    column-gap:0!important;
+    width:100%;
+  }
+
+  /* Flatten the right-hand desktop column only on phones so banner, image,
+     information and prose can follow a single editorial sequence. */
+  .page-ubusuna .project-side,
+  .page-vibrant .project-side,
+  .page-chroniclers .project-side,
+  .page-tanna .project-side,
+  .page-scars .project-side{
+    display:contents!important;
+  }
+
+  /* 1. Keep each project's identity banner as the opening element. */
+  .page-project-detail .project-identities{
+    order:1!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+    margin:0 0 16px!important;
+  }
+
+  /* 2. Lead photograph directly below the banner. Caption stays attached. */
+  .page-project-detail .project-main-visual{
+    order:2!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0 0 26px!important;
+  }
+  .page-project-detail .project-main-visual > img{
+    display:block;
+    width:100%!important;
+    height:auto!important;
+  }
+  .page-project-detail .project-main-visual figcaption{
+    margin-top:7px!important;
+  }
+
+  /* 3. Project facts before the longer concept / role text. */
+  .page-project-detail .project-info{
+    order:3!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+    margin:0!important;
+  }
+
+  /* 4+. Continue with concept / role and the existing research/program material. */
+  .page-project-detail .project-role,
+  .page-project-detail .project-concept{
+    order:4!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+  }
+  .page-project-detail .project-program-section,
+  .page-project-detail .project-research-program,
+  .page-project-detail .project-credits,
+  .page-project-detail .project-side > *:not(.project-identities):not(.project-info):not(.project-role):not(.project-concept){
+    order:5!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+  }
+}
+
+/* === v84 / phone refinements: Concentration, EUREKA, Cliff Edge map ===
+   Phone-only. Keeps v79 desktop map leaders and all desktop layouts intact. */
+@media(max-width:767px){
+  /* Concentration toward Infinity (Fragment): a single supporting image at
+     one-quarter width reads too small. Give the lone thumbnail half-width. */
+  .page-concentration .work-thumb-grid > .work-thumb:only-child{
+    grid-column:1 / span 2!important;
+    width:100%!important;
+  }
+
+  /* EUREKA is a sequential walk rather than a conventional image set.
+     Preserve the opening image, then show the remaining installation views
+     as a legible two-column contact sequence before the text. */
+  .page-eureka .work-detail-page{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:8px!important;
+    row-gap:0!important;
+  }
+  .page-eureka .work-detail-head{
+    order:0!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+  }
+  .page-eureka .eureka-hero-grid{
+    display:contents!important;
+  }
+  .page-eureka .work-identity-card{
+    order:1!important;
+    grid-column:1 / -1!important;
+  }
+  .page-eureka .eureka-main-visual{
+    order:2!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+    margin:0 0 12px!important;
+  }
+  .page-eureka .eureka-walkthrough{
+    order:3!important;
+    grid-column:1 / -1!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+    width:100%!important;
+    margin:0 0 6px!important;
+    padding:0!important;
+    border:0!important;
+  }
+  .page-eureka .eureka-step,
+  .page-eureka .eureka-step + .eureka-step,
+  .page-eureka .eureka-step.is-tight,
+  .page-eureka .eureka-step.is-breath,
+  .page-eureka .eureka-step.is-end,
+  .page-eureka .eureka-step-corridor,
+  .page-eureka .eureka-step-chamber,
+  .page-eureka .eureka-step-human,
+  .page-eureka .eureka-step-threshold,
+  .page-eureka .eureka-step-epilogue{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+  }
+  .page-eureka .eureka-step button{
+    display:block!important;
+    width:100%!important;
+    aspect-ratio:3 / 4!important;
+    height:auto!important;
+    padding:0!important;
+    border:0!important;
+    background:#f3f3f1!important;
+    overflow:hidden!important;
+    cursor:zoom-in!important;
+  }
+  .page-eureka .eureka-step img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    aspect-ratio:auto!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+  .page-eureka .eureka-step figcaption{
+    margin-top:4px!important;
+    padding:0!important;
+    font-size:8.5px!important;
+    line-height:1.3!important;
+    color:#777!important;
+  }
+  /* Nine secondary views: center the last frame instead of leaving it
+     visually stranded at the left edge of the final row. */
+  .page-eureka .eureka-step:last-of-type{
+    grid-column:1 / -1!important;
+    width:calc((100% - 8px) / 2)!important;
+    justify-self:center!important;
+  }
+  .page-eureka .work-info{
+    order:4!important;
+    grid-column:1 / -1!important;
+    margin-top:30px!important;
+  }
+  .page-eureka .work-concept{
+    order:5!important;
+    grid-column:1 / -1!important;
+  }
+
+  /* Cliff Edge overview map: on phones, use the peninsula itself as the
+     visual map and the list below as the labels. Enlarge the outline and
+     retain the four location dots; hide desktop leader lines/text. */
+  .project-overview-shell .cliff-map-panel{
+    overflow:hidden!important;
+  }
+  .project-overview-shell .cliff-map-stage{
+    width:145%!important;
+    max-width:none!important;
+    height:auto!important;
+    margin-left:-22.5%!important;
+    margin-right:-22.5%!important;
+    overflow:visible!important;
+  }
+  .project-overview-shell .cliff-map-stage .map-text,
+  .project-overview-shell .cliff-map-stage .map-geometry-en,
+  .project-overview-shell .cliff-map-stage .map-geometry-ja{
+    display:none!important;
+  }
+  .project-overview-shell .cliff-map-stage > .map-geometry:not(.map-geometry-en):not(.map-geometry-ja){
+    display:inline!important;
+  }
+  .project-overview-shell .cliff-map-stage > .map-geometry:not(.map-geometry-en):not(.map-geometry-ja) path{
+    display:none!important;
+  }
+  .project-overview-shell .cliff-map-stage > .map-geometry:not(.map-geometry-en):not(.map-geometry-ja) circle{
+    display:inline!important;
+  }
+  .project-overview-shell .map-mobile-list{
+    margin-top:8px!important;
+  }
+}
