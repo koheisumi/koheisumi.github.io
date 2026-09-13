@@ -2749,3 +2749,305 @@ body.lightbox-open{overflow:hidden}
   /* Keep the transition from initial image sequence to text readable. */
   .page-work-detail .work-info + .work-info{margin-top:28px!important;}
 }
+
+/* === v82 / unified phone gallery grammar ===
+   Phone-only WORKS flow:
+   title -> lead image -> square thumbnail field -> WORK INFORMATION -> CONCEPT.
+   Desktop/tablet, PROJECTS, and the Cliff Edge map remain untouched. */
+@media(max-width:767px){
+  /* Four-column mobile image field. Text/lead modules span the full width. */
+  .page-work-detail .work-hero-grid{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    column-gap:6px!important;
+    row-gap:0!important;
+  }
+  .page-work-detail .work-left,
+  .page-work-detail .work-side{
+    display:contents!important;
+  }
+
+  /* 1. Work title first. Keep it compact: this is a label, not a panel. */
+  .page-work-detail .work-identity-card{
+    order:1!important;
+    grid-column:1 / -1!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0 0 16px!important;
+    padding:0 0 14px!important;
+    background:transparent!important;
+    border:0!important;
+    border-bottom:1px solid var(--line)!important;
+    align-items:flex-start!important;
+    overflow:visible!important;
+  }
+  .page-work-detail .work-identity-card > div{width:100%;}
+  .page-work-detail .work-identity-kicker{display:none!important;}
+  .page-work-detail .work-identity-title,
+  .page-work-detail .work-identity-card .lang-ja .work-identity-title{
+    display:block!important;
+    margin:0 0 5px!important;
+    font-size:clamp(20px,5.7vw,25px)!important;
+    line-height:1.16!important;
+    letter-spacing:.045em!important;
+    white-space:normal!important;
+    -webkit-line-clamp:unset!important;
+    overflow:visible!important;
+  }
+  .page-work-detail .work-identity-year{
+    margin:0!important;
+    font-size:11px!important;
+    line-height:1.25!important;
+    letter-spacing:.10em!important;
+    color:#777!important;
+  }
+  .page-rds .rds-subtitle{
+    margin-top:3px!important;
+    margin-bottom:6px!important;
+    font-size:11.5px!important;
+    line-height:1.45!important;
+    color:#777!important;
+  }
+
+  /* 2. Lead image. */
+  .page-work-detail .work-left > .work-main-visual,
+  .page-midori-daichi .midori-main,
+  .page-timbre-time .timbre-main,
+  .page-garden-consciousness .garden-diptych{
+    order:2!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+    margin:0 0 12px!important;
+  }
+
+  /* 3. Generic supporting-image field: four equal thumbnail columns. */
+  .page-work-detail .work-thumb-section,
+  .page-garden-consciousness .garden-support-section,
+  .page-midori-daichi .midori-detail-row{
+    order:3!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+    margin:0 0 4px!important;
+  }
+  .page-work-detail .work-thumb-section > div,
+  .page-domestic .work-thumb-grid,
+  .page-garden-consciousness .garden-support-grid,
+  .page-midori-daichi .midori-detail-row{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:6px!important;
+    align-items:start!important;
+  }
+  .page-domestic .work-thumb-section{display:block!important;}
+  .page-domestic .work-thumb-grid{display:grid!important;}
+  .page-domestic .work-thumb-grid > .work-thumb{
+    order:initial!important;
+    width:100%!important;
+    margin:0!important;
+  }
+
+  /* All ordinary secondary images use the same square clickable frame. */
+  .page-work-detail .work-thumb-section button[data-lightbox-src],
+  .page-garden-consciousness .garden-support-section button[data-lightbox-src],
+  .page-midori-daichi .midori-detail-row button[data-lightbox-src]{
+    display:block!important;
+    width:100%!important;
+    aspect-ratio:1 / 1!important;
+    height:auto!important;
+    padding:0!important;
+    border:0!important;
+    background:#f3f3f1!important;
+    overflow:hidden!important;
+    cursor:zoom-in!important;
+  }
+  .page-work-detail .work-thumb-section button[data-lightbox-src] img,
+  .page-garden-consciousness .garden-support-section button[data-lightbox-src] img,
+  .page-midori-daichi .midori-detail-row button[data-lightbox-src] img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    aspect-ratio:auto!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+  .page-work-detail .work-thumb-section figure,
+  .page-garden-consciousness .garden-support-item,
+  .page-midori-daichi .midori-detail-row > figure{
+    min-width:0!important;
+    width:auto!important;
+    margin:0!important;
+  }
+  .page-work-detail .work-thumb-section figcaption,
+  .page-garden-consciousness .garden-support-item figcaption,
+  .page-midori-daichi .midori-detail-row figcaption{
+    margin-top:5px!important;
+    padding:0!important;
+    font-size:8.5px!important;
+    line-height:1.3!important;
+    color:#777!important;
+  }
+
+  /* Timbre: the three drip details + corrosion detail form one four-cell row. */
+  .page-timbre-time .timbre-drip-column{
+    order:3!important;
+    grid-column:1 / span 3!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:6px!important;
+    width:100%!important;
+    margin:0!important;
+  }
+  .page-timbre-time .timbre-corrosion{
+    order:3!important;
+    grid-column:4!important;
+    width:100%!important;
+    margin:0!important;
+  }
+  .page-timbre-time .timbre-drip-column button,
+  .page-timbre-time .timbre-corrosion button{
+    display:block!important;
+    width:100%!important;
+    aspect-ratio:1 / 1!important;
+    height:auto!important;
+    padding:0!important;
+    border:0!important;
+    background:#f3f3f1!important;
+    overflow:hidden!important;
+  }
+  .page-timbre-time .timbre-drip-column img,
+  .page-timbre-time .timbre-corrosion img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+  }
+  .page-timbre-time .timbre-corrosion figcaption{
+    margin-top:5px!important;
+    font-size:8.5px!important;
+    line-height:1.3!important;
+  }
+
+  /* Long series: first work acts as lead; every later work joins the same
+     four-column thumbnail field before the information block. */
+  .page-rds .rds-gallery,
+  .page-rds .rds-grid,
+  .page-mirror-work-series .mirror-series-gallery,
+  .page-mirror-work-series .mirror-series-grid,
+  .page-kami .kami-grid-section,
+  .page-kami .kami-grid,
+  .page-redline .redline-grid-section,
+  .page-redline .redline-grid{
+    display:contents!important;
+  }
+  .page-rds .rds-item,
+  .page-mirror-work-series .mirror-series-item,
+  .page-kami .kami-thumb-figure,
+  .page-redline .redline-thumb{
+    order:3!important;
+    grid-column:auto!important;
+    min-width:0!important;
+    width:100%!important;
+    margin:0!important;
+  }
+  .page-rds .rds-item:first-of-type,
+  .page-mirror-work-series .mirror-series-item:first-of-type,
+  .page-kami .kami-thumb-figure:first-of-type,
+  .page-redline .redline-thumb:first-of-type{
+    order:2!important;
+    grid-column:1 / -1!important;
+    margin:0 0 12px!important;
+  }
+
+  /* Lead series image remains large and uncropped. */
+  .page-rds .rds-item:first-of-type button,
+  .page-mirror-work-series .mirror-series-item:first-of-type button,
+  .page-kami .kami-thumb-figure:first-of-type button,
+  .page-redline .redline-thumb:first-of-type{
+    display:block!important;
+    width:100%!important;
+    aspect-ratio:auto!important;
+    height:auto!important;
+    background:transparent!important;
+    overflow:visible!important;
+  }
+  .page-rds .rds-item:first-of-type img,
+  .page-mirror-work-series .mirror-series-item:first-of-type img,
+  .page-kami .kami-thumb-figure:first-of-type img,
+  .page-redline .redline-thumb:first-of-type img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:auto!important;
+    object-fit:contain!important;
+  }
+
+  /* All later series images become uniform square thumbnails. */
+  .page-rds .rds-item:not(:first-of-type) button,
+  .page-mirror-work-series .mirror-series-item:not(:first-of-type) button,
+  .page-kami .kami-thumb-figure:not(:first-of-type) button,
+  .page-redline .redline-thumb:not(:first-of-type){
+    display:block!important;
+    width:100%!important;
+    aspect-ratio:1 / 1!important;
+    height:auto!important;
+    padding:0!important;
+    border:0!important;
+    background:#f3f3f1!important;
+    overflow:hidden!important;
+  }
+  .page-rds .rds-item:not(:first-of-type) img,
+  .page-mirror-work-series .mirror-series-item:not(:first-of-type) img,
+  .page-kami .kami-thumb-figure:not(:first-of-type) img,
+  .page-redline .redline-thumb:not(:first-of-type) img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    aspect-ratio:auto!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+  .page-rds .rds-item figcaption,
+  .page-mirror-work-series .mirror-series-item figcaption{
+    margin-top:5px!important;
+    padding:0!important;
+    font-size:8.5px!important;
+    line-height:1.25!important;
+    color:#666!important;
+  }
+  .page-mirror-work-series .mirror-series-item figcaption{
+    display:block!important;
+  }
+  .page-mirror-work-series .mirror-series-caption-size{
+    display:none!important;
+  }
+  .page-mirror-work-series .mirror-series-empty{display:none!important;}
+
+  /* 4–5. Text follows the complete image field. */
+  .page-work-detail .work-info{
+    order:4!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+    margin-top:30px!important;
+  }
+  .page-work-detail .work-concept{
+    order:5!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+  }
+  .page-work-detail .work-credits{
+    order:6!important;
+    grid-column:1 / -1!important;
+    width:100%!important;
+  }
+  .page-work-detail .work-info + .work-info{margin-top:30px!important;}
+
+  /* Undo v81's split-series continuation rules. */
+  .page-rds .rds-item:nth-of-type(n+2),
+  .page-mirror-work-series .mirror-series-item:nth-of-type(n+2),
+  .page-kami .kami-thumb-figure:nth-of-type(n+2),
+  .page-redline .redline-thumb:nth-of-type(n+2),
+  .page-domestic .work-thumb-grid > .work-thumb:nth-child(n+1){
+    order:3!important;
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+}
