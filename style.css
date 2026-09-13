@@ -3401,3 +3401,65 @@ body.lightbox-open{overflow:hidden}
     display:block!important;
   }
 }
+
+/* === v89 / PROJECTS mobile banner fitting ===
+   Keep each banner's existing artwork, type family and desktop treatment.
+   On phones only, allow long English titles to wrap inside the live area instead of clipping. */
+@media(max-width:767px){
+  .page-ubusuna .project-banner-copy,
+  .page-vibrant .project-banner-copy,
+  .page-chroniclers .project-banner-copy,
+  .page-tanna .project-banner-copy,
+  .page-scars .project-banner-copy{
+    left:8%!important;
+    right:8%!important;
+    max-width:84%!important;
+    box-sizing:border-box!important;
+  }
+
+  .page-ubusuna .project-banner-copy.lang-en .project-banner-title,
+  .page-vibrant .project-banner-copy.lang-en .project-banner-title,
+  .page-chroniclers .project-banner-copy.lang-en .project-banner-title,
+  .page-tanna .project-banner-copy.lang-en .project-banner-title,
+  .page-scars .project-banner-copy.lang-en .project-banner-title{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+    text-wrap:balance;
+    line-height:1.08!important;
+  }
+
+  .page-ubusuna .project-banner-copy.lang-en .project-banner-title{
+    font-size:clamp(18px,5.0vw,22px)!important;
+    letter-spacing:.025em!important;
+  }
+  .page-vibrant .project-banner-copy.lang-en .project-banner-title{
+    font-size:clamp(14px,4.25vw,17px)!important;
+    letter-spacing:.004em!important;
+  }
+  .page-chroniclers .project-banner-copy.lang-en .project-banner-title{
+    font-size:clamp(18px,5.0vw,22px)!important;
+    letter-spacing:.02em!important;
+  }
+  .page-tanna .project-banner-copy.lang-en .project-banner-title{
+    font-size:clamp(18px,5.0vw,22px)!important;
+    letter-spacing:.025em!important;
+  }
+  .page-scars .project-banner-copy.lang-en .project-banner-title{
+    font-size:clamp(17px,4.75vw,21px)!important;
+    letter-spacing:.018em!important;
+  }
+
+  .page-ubusuna .project-banner-title,
+  .page-vibrant .project-banner-title,
+  .page-chroniclers .project-banner-title,
+  .page-tanna .project-banner-title,
+  .page-scars .project-banner-title{
+    margin-top:.28em!important;
+    margin-bottom:.30em!important;
+  }
+}
