@@ -2569,3 +2569,183 @@ body.lightbox-open{overflow:hidden}
     margin-top:-10px;
   }
 }
+
+/* === v81 / mobile artwork rhythm prototype ===
+   Phone-only editorial flow:
+   lead image -> compact work label -> nearby supporting images -> information/concept -> remaining long-series images.
+   Desktop/tablet and project pages are unchanged. */
+@media(max-width:767px){
+  .page-work-detail .work-hero-grid{
+    row-gap:0!important;
+  }
+
+  /* Let the artwork and text modules participate in one mobile reading order. */
+  .page-work-detail .work-left,
+  .page-work-detail .work-side{
+    display:contents!important;
+  }
+
+  /* Lead visual stays first. */
+  .page-work-detail .work-left > .work-main-visual,
+  .page-midori-daichi .midori-main,
+  .page-timbre-time .timbre-main,
+  .page-garden-consciousness .garden-diptych{
+    order:1!important;
+    margin-bottom:0!important;
+  }
+
+  /* Mobile wall-label: title + year, deliberately lighter than the desktop card. */
+  .page-work-detail .work-identity-card{
+    order:2!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:14px 0 16px!important;
+    padding:14px 0 15px!important;
+    background:transparent!important;
+    border:0!important;
+    border-top:1px solid var(--line)!important;
+    border-bottom:1px solid var(--line)!important;
+    align-items:flex-start!important;
+    overflow:visible!important;
+  }
+  .page-work-detail .work-identity-card > div{width:100%;}
+  .page-work-detail .work-identity-kicker{display:none!important;}
+  .page-work-detail .work-identity-title,
+  .page-work-detail .work-identity-card .lang-ja .work-identity-title{
+    display:block!important;
+    margin:0 0 5px!important;
+    font-size:clamp(20px,5.7vw,25px)!important;
+    line-height:1.16!important;
+    letter-spacing:.045em!important;
+    white-space:normal!important;
+    -webkit-line-clamp:unset!important;
+    overflow:visible!important;
+  }
+  .page-work-detail .work-identity-year{
+    margin:0!important;
+    font-size:11px!important;
+    line-height:1.25!important;
+    letter-spacing:.10em!important;
+    color:#777;
+  }
+  .page-rds .rds-subtitle{
+    margin-top:3px!important;
+    margin-bottom:6px!important;
+    font-size:11.5px!important;
+    line-height:1.45!important;
+    color:#777!important;
+  }
+
+  /* Short works: keep supporting photographs close to the lead image. */
+  .page-work-detail .work-thumb-section,
+  .page-garden-consciousness .garden-support-section,
+  .page-midori-daichi .midori-detail-row,
+  .page-timbre-time .timbre-drip-column,
+  .page-timbre-time .timbre-corrosion{
+    order:3!important;
+  }
+  .page-work-detail .work-thumb-section,
+  .page-garden-consciousness .garden-support-section{
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+  .page-midori-daichi .midori-detail-row,
+  .page-timbre-time .timbre-drip-column,
+  .page-timbre-time .timbre-corrosion{
+    margin-top:0!important;
+  }
+
+  /* Information comes after the initial visual sequence. */
+  .page-work-detail .work-info{
+    order:4!important;
+    margin-top:28px!important;
+  }
+  .page-work-detail .work-concept{
+    order:5!important;
+  }
+  .page-work-detail .work-credits{
+    order:6!important;
+  }
+
+  /* LONG SERIES ----------------------------------------------------------
+     First image = lead, items 2–3 = short preview, information/concept,
+     then the rest of the series. */
+  .page-rds .rds-gallery,
+  .page-rds .rds-grid,
+  .page-mirror-work-series .mirror-series-gallery,
+  .page-mirror-work-series .mirror-series-grid,
+  .page-kami .kami-grid-section,
+  .page-kami .kami-grid,
+  .page-redline .redline-grid-section,
+  .page-redline .redline-grid{
+    display:contents!important;
+  }
+
+  .page-rds .rds-item,
+  .page-mirror-work-series .mirror-series-item,
+  .page-kami .kami-thumb-figure,
+  .page-redline .redline-thumb{
+    width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+  }
+
+  .page-rds .rds-item:first-of-type,
+  .page-mirror-work-series .mirror-series-item:first-of-type,
+  .page-kami .kami-thumb-figure:first-of-type,
+  .page-redline .redline-thumb:first-of-type{
+    order:1!important;
+  }
+
+  .page-rds .rds-item:nth-of-type(2),
+  .page-rds .rds-item:nth-of-type(3),
+  .page-mirror-work-series .mirror-series-item:nth-of-type(2),
+  .page-mirror-work-series .mirror-series-item:nth-of-type(3),
+  .page-kami .kami-thumb-figure:nth-of-type(2),
+  .page-kami .kami-thumb-figure:nth-of-type(3),
+  .page-redline .redline-thumb:nth-of-type(2),
+  .page-redline .redline-thumb:nth-of-type(3){
+    order:3!important;
+    margin-bottom:14px!important;
+  }
+
+  .page-rds .rds-item:nth-of-type(n+4),
+  .page-mirror-work-series .mirror-series-item:nth-of-type(n+4),
+  .page-kami .kami-thumb-figure:nth-of-type(n+4),
+  .page-redline .redline-thumb:nth-of-type(n+4){
+    order:7!important;
+    margin-bottom:14px!important;
+  }
+  .page-rds .rds-item:nth-of-type(4),
+  .page-mirror-work-series .mirror-series-item:nth-of-type(4),
+  .page-kami .kami-thumb-figure:nth-of-type(4),
+  .page-redline .redline-thumb:nth-of-type(4){
+    margin-top:30px!important;
+  }
+  .page-mirror-work-series .mirror-series-empty{display:none!important;}
+
+  /* Domestic Jealousy also has a long nine-image supporting sequence.
+     Keep two photographs near the lead; continue the remaining seven after text. */
+  .page-domestic .work-thumb-section,
+  .page-domestic .work-thumb-grid{
+    display:contents!important;
+  }
+  .page-domestic .work-thumb-grid > .work-thumb{
+    width:100%!important;
+    margin:0!important;
+  }
+  .page-domestic .work-thumb-grid > .work-thumb:nth-child(-n+2){
+    order:3!important;
+    margin-bottom:14px!important;
+  }
+  .page-domestic .work-thumb-grid > .work-thumb:nth-child(n+3){
+    order:7!important;
+    margin-bottom:14px!important;
+  }
+  .page-domestic .work-thumb-grid > .work-thumb:nth-child(3){
+    margin-top:30px!important;
+  }
+
+  /* Keep the transition from initial image sequence to text readable. */
+  .page-work-detail .work-info + .work-info{margin-top:28px!important;}
+}
