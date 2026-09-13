@@ -9,6 +9,8 @@
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);-webkit-font-smoothing:antialiased}body.menu-open{}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-width:100%}
 .lang-ja{display:none}body[data-lang="ja"] .lang-en{display:none!important}body[data-lang="ja"] .lang-ja{display:block}body[data-lang="ja"] .lang-toggle .lang-state::after{content:""}
+.page-ubusuna[data-lang="en"] .project-identities .lang-ja{display:none!important}
+.page-ubusuna[data-lang="ja"] .project-identities .lang-en{display:none!important}
 /* Header */
 .site-header{position:fixed;left:0;right:0;top:0;height:66px;z-index:90;display:flex;align-items:flex-start;justify-content:space-between;padding:14px var(--gutter) 0;transition:transform .45s cubic-bezier(.22,.61,.36,1);pointer-events:none}.site-header.is-hidden{transform:translateY(-100%)}.brand,.header-actions{pointer-events:auto;position:relative;z-index:2}.brand{font-family:var(--brand-serif);font-size:clamp(22px,2vw,31px);line-height:1;letter-spacing:.09em;font-weight:400;white-space:nowrap}.header-actions{display:flex;align-items:center;gap:19px} .lang-switch{display:flex;align-items:center;gap:7px;font-size:16px;letter-spacing:.13em;color:inherit}.lang-choice{border:0;background:transparent;padding:8px 0;cursor:pointer;color:#aaa;font:inherit;letter-spacing:inherit}.lang-choice.is-active{color:currentColor}.lang-sep{color:#bbb}.menu-btn{border:0;background:transparent;padding:3px 0;cursor:pointer}.menu-btn{width:44px;height:34px;position:relative}.menu-btn span{position:absolute;left:0;width:44px;height:2px;background:currentColor;transition:.3s}.menu-btn span:first-child{top:10px}.menu-btn span:last-child{top:20px}.menu-btn[aria-expanded="true"] span:first-child{top:16px;transform:rotate(45deg)}.menu-btn[aria-expanded="true"] span:last-child{top:16px;transform:rotate(-45deg)}
 .page-home .site-header{display:flex;padding-left:var(--gutter);padding-right:var(--gutter);background:transparent}
@@ -28,39 +30,39 @@
 .works-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:18px;row-gap:54px}.work-tile figure{margin:0}.work-tile img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:opacity .25s}.work-tile:hover img{opacity:.78}.work-tile figcaption{display:flex;justify-content:space-between;gap:14px;font-size:10.5px;line-height:1.45;margin-top:9px;color:#4d4d4d}.image-only figcaption{display:none}.layout-note{font-size:10px;color:#aaa;margin:60px 0 0}
 /* PROJECTS */
 .project-list{border-top:1px solid var(--line)}.project-row{display:grid;grid-template-columns:1fr auto 28px;gap:26px;align-items:baseline;border-bottom:1px solid var(--line);padding:27px 0;transition:opacity .2s}.project-row:hover{opacity:.5}.project-title{font-family:var(--serif);font-size:clamp(26px,4vw,58px);line-height:1}.project-meta{font-size:10.5px;color:var(--muted);letter-spacing:.03em}.project-arrow{font-size:13px;color:#777}
-/* ABOUT — restrained, text-led, compact profile/CV flow */
-.about-layout{display:grid;grid-template-columns:minmax(0,1fr) 24%;align-items:start}
-.about-copy{min-width:0;padding:104px clamp(34px,5vw,84px) 0}
-.about-band{position:sticky;top:0;height:100svh;overflow:hidden;background:#ddd}
-.about-band img{width:100%;height:100%;object-fit:cover;object-position:center center}
-.about-intro{padding:18px 0 42px;display:flex;align-items:baseline;justify-content:space-between;gap:28px;flex-wrap:wrap}
-.eyebrow,.about-section h2{font-size:10px;letter-spacing:.14em;font-weight:500;margin:0;color:#777}
-.about-intro h1{font-family:var(--brand-serif);font-size:clamp(36px,4.5vw,64px);font-weight:400;letter-spacing:.045em;line-height:1;margin:34px 0 11px}
-.name-ja{font-size:12px;letter-spacing:.12em;margin:0 0 5px}
-.role{font-size:10.5px;color:#888;margin:0}
-.about-anchor-nav{margin-top:0;display:flex;gap:25px;font-size:9.5px;letter-spacing:.12em}
+/* ABOUT — restrained, text-led, no image */
+.about-layout{display:block}
+.about-copy{min-width:0;max-width:1120px;margin:0 auto;padding:106px var(--gutter) 0}
+.about-band{display:none!important}
+.about-intro{padding:18px 0 48px;display:block}
+.eyebrow,.about-section h2,.about-page-label,.index-title{font-size:10px;letter-spacing:.13em;font-weight:500;margin:0;color:#777}
+.about-intro h1{font-family:var(--brand-serif);font-size:clamp(32px,3.5vw,48px);font-weight:400;letter-spacing:.045em;line-height:1;margin:16px 0 0;color:#111}
+.name-ja{font-size:12px;letter-spacing:.12em;margin:0;display:none}
+.role{font-size:10.5px;color:#888;margin:0;display:none}
+.about-anchor-nav{margin-top:28px;display:flex;gap:28px;font-size:9.5px;letter-spacing:.12em;flex-wrap:wrap}
 .about-anchor-nav a{border-bottom:1px solid transparent;padding-bottom:2px}
 .about-anchor-nav a:hover{border-bottom-color:#111}
-.about-section{padding:54px 0 78px;border-top:1px solid var(--line);scroll-margin-top:72px}
-.about-section>h2{margin-bottom:38px}
-.prose{max-width:720px;font-size:13.5px;line-height:1.88}
-.prose p{margin:0 0 1.35em}
-.statement{max-width:740px}
-.cv-wrap{max-width:830px}
-.cv-section{padding:0 0 52px}
-.cv-section h3{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#777;font-weight:500;margin:0 0 16px}
+.about-section{padding:54px 0 72px;border-top:1px solid var(--line);scroll-margin-top:72px}
+.about-section>h2{margin-bottom:36px;margin-top:0}
+.prose{max-width:720px;font-size:13px;line-height:1.8;font-weight:400}
+.prose p{margin:0 0 1.25em;color:#111}
+.prose p:last-child{margin-bottom:0}
+.statement{max-width:720px}
+.cv-wrap{max-width:820px}
+.cv-section{padding:0 0 48px}
+.cv-section h3{font-size:10px;letter-spacing:.13em;color:#777;font-weight:500;margin:0 0 15px}
 .cv-list{list-style:none;margin:0;padding:0}
-.cv-list li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:17px;padding:5px 0;font-size:12px;line-height:1.5}
-.cv-list li>span{color:#999;font-variant-numeric:tabular-nums}
-.cv-list small{display:block;color:#929292;font-size:10.5px;margin-top:2px}
+.cv-list li{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;padding:4px 0;font-size:12px;line-height:1.5;color:#111}
+.cv-list li>span{color:#888;font-variant-numeric:tabular-nums;font-size:11px;letter-spacing:.02em}
+.cv-list small{display:block;color:#888;font-size:10.5px;margin-top:1px}
 .cv-list b{font-weight:600}
-.cv-list a{border-bottom:1px solid #c7c7c7}
+.cv-list a{border-bottom:1px solid #ddd}
 .cv-list a:hover{border-color:#111}
 .cv-list.compact li{padding:3px 0}
 .cv-other p{font-size:12px;margin:0;color:#555}
 .about-copy>.site-footer{border-top:1px solid var(--line);padding:30px 0 40px}
 /* CONTACT */
-.contact-block{padding:0 0 120px}.contact-block a{font-family:var(--serif);font-size:clamp(30px,5vw,68px);border-bottom:1px solid #bbb}
+.contact-block{padding:0 0 120px}.contact-block a{font-family:var(--serif);font-size:clamp(30px,5vw,68px);border-bottom:1px solid #ddd;color:#111;transition:opacity .2s}
 /* Responsive */
 
 @media(min-width:761px){.page-home .hero-rail{transform:translateX(-210px)}}
@@ -226,3 +228,2077 @@
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-slide,.site-header{transition:none}}
+
+/* === 2026-09-10 local prototype: quieter unified layout === */
+.page-index .site-header,.page-project-detail .site-header{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.055)}
+.index-shell{max-width:1100px;margin:0 auto;padding:100px var(--gutter) 95px}
+.index-title{font-size:10px;letter-spacing:.13em;font-weight:500;color:#777;margin:0 0 50px}
+.work-index{max-width:900px}
+.year-group{display:grid;grid-template-columns:76px 1fr;gap:22px;padding:12px 0;border-top:1px solid #e7e7e7;font-size:12px;line-height:1.6;color:#111}
+.year-group .year{color:#888;font-variant-numeric:tabular-nums;font-size:11px;letter-spacing:.02em}
+.year-group .item{display:block;color:#111}
+.year-group.multi .item+.item{margin-top:2px}
+.drawings-link{display:flex;justify-content:space-between;gap:24px;margin-top:50px;padding-top:13px;border-top:1px solid #e7e7e7;font-size:10px;letter-spacing:.13em}
+.drawings-link span{font-size:10px;letter-spacing:.02em;color:#888}
+.project-index-shell{max-width:1100px}
+.project-groups{max-width:800px}
+.project-group+.project-group{margin-top:70px}
+.group-heading{display:flex;justify-content:space-between;gap:20px;padding-bottom:12px;border-bottom:1px solid #e7e7e7;font-size:10px;letter-spacing:.13em;color:#777;font-weight:500}
+.group-heading>span{letter-spacing:.04em;color:#888;font-weight:400}
+.project-index-list a{display:grid;grid-template-columns:1fr auto;gap:30px;padding:10px 0;border-bottom:1px solid #f5f5f5;font-size:12px;line-height:1.6;color:#111;transition:opacity .2s}
+.project-index-list span{display:block}
+.project-index-list time{font-size:11px;color:#888;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.project-index-list a:hover,.group-heading[href]:hover{opacity:.5}
+/* ABOUT: one continuous text page; no image rail */
+.page-about .about-layout{display:block}
+.page-about .about-copy{max-width:1120px;margin:0 auto;padding:100px var(--gutter) 0}
+.page-about .about-band{display:none}
+.about-intro{display:block;padding:16px 0 44px}
+.about-page-label{font-size:10px;letter-spacing:.13em;font-weight:500;color:#777;margin:0 0 26px}
+.about-anchor-nav{gap:28px;margin-top:28px}
+.about-section{padding:50px 0 66px;border-top:1px solid var(--line)}
+.about-section>h2{font-size:10px;letter-spacing:.13em;font-weight:500;color:#777;margin:0 0 32px}
+.prose{max-width:720px;font-size:13px;line-height:1.85}
+.statement{max-width:720px}
+.cv-wrap{max-width:820px}
+.cv-section{padding-bottom:46px;margin-bottom:0}
+.cv-section h3{font-size:10px;letter-spacing:.13em;font-weight:500;color:#777}
+.cv-list li{grid-template-columns:88px minmax(0,1fr);gap:18px;padding:4px 0;font-size:12px;line-height:1.55}
+.cv-list small{font-size:10.5px;color:#888}
+.page-about i,.page-about em{font-style:normal}
+/* shared project detail language */
+.page-project-detail i,.page-project-detail em{font-style:normal}
+.project-prose{font-size:13px;line-height:1.85;font-weight:400}
+.project-prose p{margin:0 0 1.3em;color:#111}
+.project-prose p:last-child{margin-bottom:0}
+.project-info h2,.project-role h2{font-size:10px;letter-spacing:.13em;font-weight:500;color:#777;margin:0 0 16px}
+.official-link{display:inline-block;margin-top:20px;padding-bottom:2px;border-bottom:1px solid #ddd;font-size:10px;color:#888;letter-spacing:.02em;transition:border-color .2s}
+.official-link:hover{border-bottom-color:#111}
+/* Cliff Edge overview */
+.project-overview-shell{max-width:1500px;margin:0 auto;padding:110px var(--gutter) 100px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(340px,.7fr);gap:clamp(52px,6vw,110px);align-items:start}
+.cliff-map-panel{min-width:0}
+.cliff-map-stage{display:block;width:100%;height:auto;max-width:920px;margin:0 auto;overflow:visible}
+.cliff-map-stage .map-geometry circle{fill:#4e8c95}
+.cliff-map-stage .map-geometry path{fill:none;stroke:#aaa;stroke-width:.8;stroke-linecap:round;stroke-linejoin:round}
+.cliff-map-stage text{font-family:var(--sans)}
+.map-year-svg{font-size:10px;fill:#999;letter-spacing:.03em}
+.map-title-svg{font-size:13px;fill:#111;letter-spacing:.01em}
+.cliff-map-stage a:hover .map-title-svg{fill:#777}
+.cliff-map-stage .map-ja{display:none}
+body[data-lang="ja"] .cliff-map-stage .map-en{display:none}
+body[data-lang="ja"] .cliff-map-stage .map-ja{display:inline}
+.map-mobile-list{display:none!important}
+.overview-copy{padding-top:24px;max-width:510px}
+.overview-copy .eyebrow{margin-bottom:26px}
+.overview-copy h1{font-family:var(--brand-serif);font-size:clamp(26px,2.4vw,36px);font-weight:400;letter-spacing:.06em;line-height:1.08;margin:0 0 12px;color:#111}
+.overview-meta{font-size:11px;color:#888;letter-spacing:.02em;margin:0 0 36px;padding-bottom:20px;border-bottom:1px solid #e7e7e7}
+/* Ubusuna: same left-visual / right-text grammar */
+.ubusuna-shell{max-width:1500px;margin:0 auto;padding:110px var(--gutter) 100px;display:grid;grid-template-columns:minmax(0,1.22fr) minmax(360px,.78fr);gap:clamp(48px,5vw,90px);align-items:start}
+.ubusuna-shell .project-title-band{background:#e4edef;border-top-color:#d0dce0;border-bottom-color:#d0dce0}
+.ubusuna-shell .project-title-band span,.ubusuna-shell .project-title-band small{color:#66777b}
+.ubusuna-visual{margin:0;position:sticky;top:100px}.ubusuna-visual img{width:100%;height:auto}.ubusuna-visual figcaption{font-size:9px;line-height:1.5;color:#999;margin-top:8px;max-width:760px}.ubusuna-copy{max-width:540px}.project-title-band{background:#f8f8f8;padding:24px 26px 22px;margin-bottom:36px;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7}
+.project-title-band span,.project-title-band small{display:block;font-size:9px;letter-spacing:.12em;color:#888;font-weight:500;margin:0}
+.project-title-band strong{display:block;font-size:clamp(24px,2.2vw,32px);font-weight:400;letter-spacing:.045em;margin:9px 0 9px;color:#111}
+.project-info{padding:0 0 32px;border-bottom:1px solid #e7e7e7;margin-bottom:32px}
+.project-info dl{margin:0}
+.project-info dl>div{display:grid;grid-template-columns:82px 1fr;gap:16px;padding:4px 0;font-size:12px;line-height:1.5;color:#111}
+.project-info dt{color:#777;font-size:11px;letter-spacing:.02em;font-weight:400}
+.project-info dd{margin:0;color:#111}
+.project-role{padding-bottom:0;margin-bottom:34px;border-bottom:none}
+@media(max-width:1023px){.project-overview-shell,.ubusuna-shell{grid-template-columns:1fr;padding-top:92px;gap:50px}.overview-copy,.ubusuna-copy{max-width:760px}.ubusuna-visual{position:relative;top:auto}.cliff-map-stage{max-width:860px;margin-left:0}.page-about .about-copy{padding-top:86px!important}}
+@media(max-width:767px){.index-shell{padding-top:88px}.year-group{grid-template-columns:58px 1fr;gap:12px;font-size:12px}.drawings-link{display:block}.drawings-link span{display:block;margin-top:5px}.project-overview-shell,.ubusuna-shell{padding:88px 16px 72px}.cliff-map-stage{width:100%;margin:0}.cliff-map-stage .map-text,.cliff-map-stage .map-geometry{display:none}.map-mobile-list{display:block!important;margin-top:18px;border-top:1px solid var(--line)}.map-mobile-list p{margin:0;padding:12px 0;border-bottom:1px solid var(--line);font-size:11.5px;line-height:1.5}.map-mobile-list p>span{display:block;font-size:9px;color:#999;margin-bottom:4px}.map-mobile-list a{display:inline;font-size:12.5px}.map-mobile-list small{display:block;color:#999;font-size:9.5px;margin-top:3px}.overview-copy{padding-top:0}.ubusuna-copy{max-width:none}.project-title-band{padding:20px}.project-info dl>div{grid-template-columns:76px 1fr;gap:12px}.page-about .about-copy{padding:76px 16px 0!important}.about-anchor-nav{gap:16px;flex-wrap:wrap}.about-section{padding:42px 0 54px}.cv-list li{grid-template-columns:64px 1fr;gap:10px}}
+
+/* === UBUSUNA HYDROLOGY — restore approved v3 composition === */
+.page-ubusuna .project-detail-page{
+  max-width:1500px;
+  margin:0 auto;
+  padding:106px var(--gutter) 96px;
+}
+.page-ubusuna .project-detail-head{
+  padding:0 0 34px;
+  margin:0 0 34px;
+  border-bottom:1px solid var(--line);
+}
+.page-ubusuna .project-detail-head h1{
+  margin:0;
+  font-family:var(--sans);
+  font-size:9.5px;
+  line-height:1.4;
+  font-weight:400;
+  letter-spacing:.025em;
+  color:#777;
+}
+.page-ubusuna .project-detail-head h1 span{
+  color:#bbb;
+  padding:0 7px;
+}
+.page-ubusuna .project-hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(360px,1fr);
+  gap:clamp(48px,4.4vw,70px);
+  align-items:start;
+}
+.page-ubusuna .project-main-visual{
+  margin:0;
+}
+.page-ubusuna .project-main-visual>img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.page-ubusuna .project-main-visual figcaption{
+  margin-top:7px;
+  max-width:100%;
+  font-size:8px;
+  line-height:1.45;
+  color:#999;
+}
+.page-ubusuna .project-side{
+  min-width:0;
+}
+.page-ubusuna .project-identities{
+  margin:0 0 28px;
+}
+.page-ubusuna .ubusuna-banner{
+  width:100%;
+  height:auto;
+}
+.page-ubusuna .project-info{
+  padding:17px 0 25px;
+  margin:0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.page-ubusuna .project-info h2,
+.page-ubusuna .project-role h2,
+.page-ubusuna .project-program-section h2,
+.page-ubusuna .project-credits h2{
+  margin:0 0 18px;
+  font-size:8px;
+  line-height:1.3;
+  letter-spacing:.14em;
+  font-weight:500;
+  color:#999;
+}
+.page-ubusuna .project-info dl,
+.page-ubusuna .project-credits dl{
+  margin:0;
+}
+.page-ubusuna .project-info dl>div{
+  display:grid;
+  grid-template-columns:72px minmax(0,1fr);
+  gap:13px;
+  padding:2px 0;
+  font-size:9px;
+  line-height:1.42;
+}
+.page-ubusuna .project-info dt{
+  font-size:8.5px;
+  color:#999;
+  font-weight:400;
+}
+.page-ubusuna .project-info dd{
+  margin:0;
+  color:#222;
+}
+.page-ubusuna .project-external-link{
+  border-bottom:1px solid #ccc;
+  padding-bottom:1px;
+}
+.page-ubusuna .project-role{
+  padding:27px 0 0;
+  margin:0;
+  border:0;
+}
+.page-ubusuna .project-prose{
+  max-width:none;
+  font-size:11.2px;
+  line-height:1.72;
+  font-weight:400;
+}
+.page-ubusuna .project-prose p{
+  margin:0 0 1.55em;
+  color:#111;
+}
+.page-ubusuna .project-prose p:last-child{
+  margin-bottom:0;
+}
+.page-ubusuna .project-prose i,
+.page-ubusuna .project-prose em,
+.page-ubusuna .program-entry i,
+.page-ubusuna .project-main-visual figcaption i{
+  font-style:italic;
+}
+.page-ubusuna .project-program-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(64px,7vw,108px);
+  margin-top:112px;
+  padding-top:30px;
+  border-top:1px solid var(--line);
+}
+.page-ubusuna .project-program-section{
+  min-width:0;
+}
+.page-ubusuna .project-program-section h2{
+  margin-bottom:24px;
+}
+.page-ubusuna .program-intro{
+  margin:0 0 24px;
+  max-width:620px;
+  font-size:9.2px;
+  line-height:1.62;
+  color:#666;
+}
+.page-ubusuna .program-entry{
+  padding:0 0 18px;
+  margin:0 0 18px;
+  border-bottom:1px solid #ededed;
+}
+.page-ubusuna .program-entry:last-child{
+  margin-bottom:0;
+}
+.page-ubusuna .program-entry h3{
+  margin:0 0 7px;
+  font-size:10.2px;
+  line-height:1.35;
+  font-weight:400;
+  color:#222;
+}
+.page-ubusuna .program-title-line{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+}
+.page-ubusuna .program-title-line a{
+  flex:0 0 auto;
+  font-size:8px;
+  color:#888;
+  border-bottom:1px solid #ccc;
+  padding-bottom:1px;
+}
+.page-ubusuna .program-entry p{
+  margin:0 0 4px;
+  font-size:8.8px;
+  line-height:1.52;
+  color:#777;
+}
+.page-ubusuna .project-credits{
+  margin-top:112px;
+  padding-top:30px;
+  border-top:1px solid var(--line);
+}
+.page-ubusuna .project-credits h2{
+  margin-bottom:25px;
+}
+.page-ubusuna .project-credits dl>div{
+  display:grid;
+  grid-template-columns:105px minmax(0,1fr);
+  gap:20px;
+  padding:3px 0;
+  font-size:8.5px;
+  line-height:1.55;
+}
+.page-ubusuna .project-credits dt{
+  color:#aaa;
+  font-weight:400;
+}
+.page-ubusuna .project-credits dd{
+  margin:0;
+  color:#777;
+}
+.page-ubusuna + .site-footer,
+.page-ubusuna~.site-footer{
+  border-top:1px solid var(--line);
+  margin-top:0;
+}
+
+@media(max-width:1023px){
+  .page-ubusuna .project-detail-page{padding-top:92px}
+  .page-ubusuna .project-hero-grid{grid-template-columns:1fr;gap:44px}
+  .page-ubusuna .project-main-visual{max-width:820px}
+  .page-ubusuna .project-side{max-width:760px}
+  .page-ubusuna .project-program-grid{margin-top:72px;gap:52px}
+  .page-ubusuna .project-credits{margin-top:78px}
+}
+@media(max-width:767px){
+  .page-ubusuna .project-detail-page{padding:82px 16px 68px}
+  .page-ubusuna .project-detail-head{padding-bottom:22px;margin-bottom:26px}
+  .page-ubusuna .project-detail-head h1{font-size:8.5px}
+  .page-ubusuna .project-hero-grid{gap:34px}
+  .page-ubusuna .project-identities{margin-bottom:24px}
+  .page-ubusuna .project-info dl>div{grid-template-columns:68px minmax(0,1fr);gap:10px;font-size:9px}
+  .page-ubusuna .project-prose{font-size:11.5px;line-height:1.72}
+  .page-ubusuna .project-program-grid{grid-template-columns:1fr;gap:48px;margin-top:64px;padding-top:24px}
+  .page-ubusuna .project-credits{margin-top:66px;padding-top:24px}
+  .page-ubusuna .project-credits dl>div{grid-template-columns:84px minmax(0,1fr);gap:12px;font-size:8.5px}
+}
+
+
+/* === UBUSUNA TITLE — use supplied hydrology map image as source artwork === */
+.page-ubusuna .ubusuna-title-visual{
+  position:relative;
+  width:100%;
+  aspect-ratio:3.03 / 1;
+  overflow:hidden;
+  margin:0 0 28px;
+  background:#eaf4f5;
+}
+.page-ubusuna .ubusuna-title-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 49%;
+}
+.page-ubusuna .ubusuna-title-copy{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:0 8.2%;
+  color:#263238;
+  text-shadow:0 1px 0 rgba(255,255,255,.35);
+}
+.page-ubusuna .ubusuna-title-copy span,
+.page-ubusuna .ubusuna-title-copy small{
+  display:block;
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(8px,.62vw,11px);
+  line-height:1.2;
+  letter-spacing:.13em;
+  font-weight:400;
+}
+.page-ubusuna .ubusuna-title-copy strong{
+  display:block;
+  margin:.22em 0 .28em;
+  font-family:var(--serif);
+  font-size:clamp(18px,1.55vw,27px);
+  line-height:1.02;
+  letter-spacing:.075em;
+  font-weight:400;
+}
+.page-ubusuna .ubusuna-title-copy.lang-ja{
+  justify-content:center;
+  padding-left:10%;
+}
+.page-ubusuna .ubusuna-title-copy.lang-ja strong{
+  font-family:var(--brand-serif);
+  font-size:clamp(18px,1.45vw,25px);
+  letter-spacing:.16em;
+  margin:.32em 0 0;
+}
+/* Keep language switching authoritative inside the title artwork. */
+body[data-lang="en"] .page-ubusuna .ubusuna-title-copy.lang-ja{display:none!important}
+body[data-lang="ja"] .page-ubusuna .ubusuna-title-copy.lang-en{display:none!important}
+body[data-lang="ja"] .page-ubusuna .ubusuna-title-copy.lang-ja{display:flex!important}
+@media(max-width:767px){
+  .page-ubusuna .ubusuna-title-visual{aspect-ratio:2.75 / 1}
+  .page-ubusuna .ubusuna-title-copy{padding-left:7.5%;padding-right:7.5%}
+  .page-ubusuna .ubusuna-title-copy strong{font-size:clamp(18px,6vw,25px)}
+  .page-ubusuna .ubusuna-title-copy span,
+  .page-ubusuna .ubusuna-title-copy small{font-size:8px}
+  .page-ubusuna .ubusuna-title-copy.lang-ja strong{font-size:clamp(17px,5.6vw,23px)}
+}
+
+/* === 2026-09-10 readability pass: keep the precision, remove micro-type === */
+.menu-links a{font-size:12px}
+.site-footer{font-size:10.5px;line-height:1.6}
+.work-tile figcaption{font-size:11.5px}
+.layout-note{font-size:11px}
+.eyebrow,.about-section h2,.about-page-label,.index-title{font-size:11px}
+.about-anchor-nav{font-size:10.5px}
+.prose{font-size:14px;line-height:1.85}
+.cv-section h3{font-size:11px}
+.cv-list li{font-size:13px;line-height:1.55}
+.cv-list li>span{font-size:12px}
+.cv-list small{font-size:11.5px}
+.index-title{font-size:11px}
+.year-group{font-size:13.5px}
+.year-group .year{font-size:12px}
+.drawings-link{font-size:11.5px}
+.drawings-link span{font-size:11.5px}
+.group-heading{font-size:11px}
+.project-index-list a{font-size:13.5px}
+.project-index-list time{font-size:12px}
+.project-prose{font-size:14px;line-height:1.85}
+.official-link{font-size:12px;color:#777}
+.overview-meta{font-size:12px}
+.map-year-svg{font-size:11.5px}
+.map-title-svg{font-size:14.5px}
+.map-mobile-list p{font-size:12.5px}
+.map-mobile-list p>span{font-size:10.5px}
+.map-mobile-list a{font-size:13.5px}
+
+/* Ubusuna title: English uses the same Mincho stack as KOHEI SUMI. */
+.page-ubusuna .ubusuna-title-copy span,
+.page-ubusuna .ubusuna-title-copy small,
+.page-ubusuna .ubusuna-title-copy strong{
+  font-family:var(--brand-serif);
+}
+.page-ubusuna .ubusuna-title-copy span,
+.page-ubusuna .ubusuna-title-copy small{
+  font-size:clamp(9.5px,.70vw,12px);
+  letter-spacing:.12em;
+}
+.page-ubusuna .ubusuna-title-copy strong{
+  font-size:clamp(20px,1.68vw,29px);
+  letter-spacing:.07em;
+}
+.page-ubusuna .ubusuna-banner-ja{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0;
+}
+body[data-lang="en"] .page-ubusuna .ubusuna-banner-ja{display:none!important}
+body[data-lang="ja"] .page-ubusuna .ubusuna-title-visual{display:none!important}
+body[data-lang="ja"] .page-ubusuna .ubusuna-banner-ja{display:block!important}
+
+/* Ubusuna detail: raise all micro-copy one step without changing hierarchy. */
+.page-ubusuna .project-detail-head h1{font-size:10.5px}
+.page-ubusuna .project-main-visual figcaption{font-size:9.5px}
+.page-ubusuna .project-info h2,
+.page-ubusuna .project-role h2,
+.page-ubusuna .project-program-section h2,
+.page-ubusuna .project-credits h2{font-size:9.5px;color:#888}
+.page-ubusuna .project-info dl>div{font-size:10.5px;line-height:1.5}
+.page-ubusuna .project-info dt{font-size:10px;color:#888}
+.page-ubusuna .project-external-link{font-size:10.5px}
+.page-ubusuna .project-prose{font-size:12.8px;line-height:1.78}
+.page-ubusuna .program-intro{font-size:10.5px;line-height:1.65}
+.page-ubusuna .program-entry h3{font-size:11.5px}
+.page-ubusuna .program-title-line a{font-size:9.5px}
+.page-ubusuna .program-entry p{font-size:10.3px;line-height:1.58}
+.page-ubusuna .project-credits dl>div{font-size:10px;line-height:1.6}
+.page-ubusuna .project-credits dt{font-size:9.5px;color:#999}
+
+@media(max-width:767px){
+  .menu-links a{font-size:14px}
+  .site-footer{font-size:10.5px}
+  .about-anchor-nav{font-size:9.5px}
+  .about-section>h2,.cv-section h3,.index-title,.group-heading{font-size:10.5px}
+  .prose{font-size:13.5px;line-height:1.82}
+  .cv-list li{font-size:12.5px}
+  .cv-list li>span{font-size:11px}
+  .cv-list small{font-size:10.5px}
+  .year-group{font-size:13px}
+  .year-group .year{font-size:11.5px}
+  .project-index-list a{font-size:13px}
+  .project-index-list time{font-size:11.5px}
+  .official-link{font-size:11.5px}
+  .page-ubusuna .project-detail-head h1{font-size:10px}
+  .page-ubusuna .project-info h2,
+  .page-ubusuna .project-role h2,
+  .page-ubusuna .project-program-section h2,
+  .page-ubusuna .project-credits h2{font-size:10px}
+  .page-ubusuna .project-info dl>div{font-size:11px}
+  .page-ubusuna .project-info dt{font-size:10.5px}
+  .page-ubusuna .project-prose{font-size:13px;line-height:1.8}
+  .page-ubusuna .program-intro{font-size:11px}
+  .page-ubusuna .program-entry h3{font-size:12px}
+  .page-ubusuna .program-title-line a{font-size:10px}
+  .page-ubusuna .program-entry p{font-size:10.8px}
+  .page-ubusuna .project-credits dl>div{font-size:10.5px}
+}
+
+/* === 2026-09-10 readability pass v7: eliminate remaining micro-type === */
+.menu-links a{font-size:13px}
+.site-footer{font-size:11.5px;line-height:1.65}
+.work-tile figcaption{font-size:12.5px}
+.layout-note{font-size:12px}
+.eyebrow,.about-section h2,.about-page-label,.index-title{font-size:12px}
+.about-anchor-nav{font-size:11.5px}
+.prose{font-size:16px;line-height:1.82}
+.cv-section h3{font-size:12px}
+.cv-list li{font-size:14px;line-height:1.58}
+.cv-list li>span{font-size:13px}
+.cv-list small{font-size:12.5px}
+.year-group{font-size:15px}
+.year-group .year{font-size:13px}
+.drawings-link,.drawings-link span{font-size:12.5px}
+.group-heading{font-size:12px}
+.project-index-list a{font-size:15px}
+.project-index-list time{font-size:13px}
+.project-prose{font-size:16px;line-height:1.82}
+.official-link{font-size:13px;color:#666}
+.overview-meta{font-size:13px}
+.map-year-svg{font-size:12.5px}
+.map-title-svg{font-size:16px}
+.map-mobile-list p{font-size:13.5px}
+.map-mobile-list p>span{font-size:11.5px}
+.map-mobile-list a{font-size:15px}
+
+/* Ubusuna title artwork: one background, language-specific HTML typography. */
+body[data-lang="ja"] .page-ubusuna .ubusuna-title-visual{display:block!important}
+body[data-lang="en"] .page-ubusuna .ubusuna-title-copy.lang-en{display:flex!important}
+body[data-lang="en"] .page-ubusuna .ubusuna-title-copy.lang-ja{display:none!important}
+body[data-lang="ja"] .page-ubusuna .ubusuna-title-copy.lang-en{display:none!important}
+body[data-lang="ja"] .page-ubusuna .ubusuna-title-copy.lang-ja{display:flex!important}
+.page-ubusuna .ubusuna-title-copy span,
+.page-ubusuna .ubusuna-title-copy strong,
+.page-ubusuna .ubusuna-title-copy small{font-family:var(--brand-serif)}
+.page-ubusuna .ubusuna-title-copy span,
+.page-ubusuna .ubusuna-title-copy small{font-size:clamp(11px,.78vw,13px);letter-spacing:.13em}
+.page-ubusuna .ubusuna-title-copy strong{font-size:clamp(23px,1.8vw,31px);letter-spacing:.065em}
+.page-ubusuna .ubusuna-title-copy.lang-ja{justify-content:center;padding-left:8.2%}
+.page-ubusuna .ubusuna-title-copy.lang-ja span{font-family:var(--brand-serif);letter-spacing:.13em}
+.page-ubusuna .ubusuna-title-copy.lang-ja strong{font-family:var(--brand-serif);font-size:clamp(22px,1.65vw,29px);letter-spacing:.12em;margin:.26em 0 .30em}
+.page-ubusuna .ubusuna-title-copy.lang-ja small{font-family:var(--brand-serif)}
+
+/* Ubusuna detail readability. */
+.page-ubusuna .project-detail-head h1{font-size:12px}
+.page-ubusuna .project-main-visual figcaption{font-size:11px;line-height:1.55}
+.page-ubusuna .project-info h2,
+.page-ubusuna .project-role h2,
+.page-ubusuna .project-program-section h2,
+.page-ubusuna .project-credits h2{font-size:11.5px;color:#777}
+.page-ubusuna .project-info dl>div{font-size:13px;line-height:1.55;grid-template-columns:88px minmax(0,1fr);gap:16px;padding:4px 0}
+.page-ubusuna .project-info dt{font-size:12px;color:#777}
+.page-ubusuna .project-external-link{font-size:12.5px}
+.page-ubusuna .project-prose{font-size:15.5px;line-height:1.82}
+.page-ubusuna .program-intro{font-size:12.5px;line-height:1.7}
+.page-ubusuna .program-entry h3{font-size:13px}
+.page-ubusuna .program-title-line a{font-size:11.5px}
+.page-ubusuna .program-entry p{font-size:12px;line-height:1.62}
+.page-ubusuna .project-credits dl>div{font-size:11.5px;line-height:1.65}
+.page-ubusuna .project-credits dt{font-size:11.5px;color:#888}
+
+@media(max-width:767px){
+  .menu-links a{font-size:14.5px}
+  .site-footer{font-size:11px}
+  .about-anchor-nav{font-size:10.5px}
+  .about-section>h2,.cv-section h3,.index-title,.group-heading{font-size:11.5px}
+  .prose{font-size:15.5px;line-height:1.8}
+  .cv-list li{font-size:13.5px}
+  .cv-list li>span{font-size:12px}
+  .cv-list small{font-size:11.5px}
+  .year-group{font-size:14px}
+  .year-group .year{font-size:12.5px}
+  .project-index-list a{font-size:14px}
+  .project-index-list time{font-size:12.5px}
+  .official-link{font-size:12.5px}
+  .page-ubusuna .project-detail-head h1{font-size:11.5px}
+  .page-ubusuna .ubusuna-title-copy span,
+  .page-ubusuna .ubusuna-title-copy small{font-size:10px}
+  .page-ubusuna .ubusuna-title-copy strong{font-size:clamp(22px,6.6vw,29px)}
+  .page-ubusuna .ubusuna-title-copy.lang-ja strong{font-size:clamp(21px,6.2vw,28px);letter-spacing:.10em}
+  .page-ubusuna .project-info h2,
+  .page-ubusuna .project-role h2,
+  .page-ubusuna .project-program-section h2,
+  .page-ubusuna .project-credits h2{font-size:11.5px}
+  .page-ubusuna .project-info dl>div{font-size:12.5px;grid-template-columns:82px minmax(0,1fr);gap:12px}
+  .page-ubusuna .project-info dt{font-size:11.5px}
+  .page-ubusuna .project-prose{font-size:15px;line-height:1.8}
+  .page-ubusuna .program-intro{font-size:12px}
+  .page-ubusuna .program-entry h3{font-size:13px}
+  .page-ubusuna .program-title-line a{font-size:11px}
+  .page-ubusuna .program-entry p{font-size:11.8px}
+  .page-ubusuna .project-credits dl>div{font-size:11.5px}
+}
+
+/* === 2026-09-10 readability pass v9: increase the floor, not the ornament === */
+.site-footer{font-size:12.5px;line-height:1.65}
+.menu-links a{font-size:14px}
+.eyebrow,.about-section h2,.about-page-label,.index-title{font-size:13px}
+.about-anchor-nav{font-size:12px}
+.prose,.project-prose{font-size:16.5px;line-height:1.82}
+.cv-section h3{font-size:13px}
+.cv-list li{font-size:15px;line-height:1.58}
+.cv-list li>span{font-size:13.5px}
+.cv-list small{font-size:13px}
+.year-group{font-size:16px}
+.year-group .year{font-size:13.5px}
+.drawings-link,.drawings-link span{font-size:13px}
+.group-heading{font-size:13px}
+.project-index-list a{font-size:16px}
+.project-index-list time{font-size:13.5px}
+.official-link{font-size:14px;color:#555}
+.overview-meta{font-size:14px}
+.map-year-svg{font-size:13px}
+.map-title-svg{font-size:17px}
+
+/* Cliff Edge overview title uses the same Mincho stack as the site name. */
+.overview-copy h1{font-family:var(--brand-serif)}
+
+/* Ubusuna: readable editorial scale on desktop. */
+.page-ubusuna .project-detail-head h1{font-size:13.5px;line-height:1.5}
+.page-ubusuna .project-main-visual figcaption{font-size:11.5px;line-height:1.6}
+.page-ubusuna .project-info h2,
+.page-ubusuna .project-role h2,
+.page-ubusuna .project-program-section h2,
+.page-ubusuna .project-credits h2{font-size:13px;letter-spacing:.12em;color:#666}
+.page-ubusuna .project-info dl>div{font-size:15px;line-height:1.58;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:5px 0}
+.page-ubusuna .project-info dt{font-size:13.5px;color:#777}
+.page-ubusuna .project-external-link{font-size:14px}
+.page-ubusuna .project-prose{font-size:16.5px;line-height:1.82}
+.page-ubusuna .program-intro{font-size:14px;line-height:1.72}
+.page-ubusuna .program-entry h3{font-size:14.5px}
+.page-ubusuna .program-title-line a{font-size:12.5px}
+.page-ubusuna .program-entry p{font-size:13.5px;line-height:1.66}
+.page-ubusuna .project-credits dl>div{font-size:13px;line-height:1.7}
+.page-ubusuna .project-credits dt{font-size:12.5px;color:#777}
+
+/* Ubusuna title: match EN/JP hierarchy and keep Ten Mincho throughout. */
+.page-ubusuna .ubusuna-title-copy span,
+.page-ubusuna .ubusuna-title-copy small,
+.page-ubusuna .ubusuna-title-copy strong{font-family:var(--brand-serif)}
+.page-ubusuna .ubusuna-title-copy span{font-size:14px;letter-spacing:.12em;line-height:1.2}
+.page-ubusuna .ubusuna-title-copy small{font-size:13.5px;letter-spacing:.10em;line-height:1.2}
+.page-ubusuna .ubusuna-title-copy strong{font-size:clamp(28px,2.05vw,35px);letter-spacing:.055em;line-height:1.08;margin:.26em 0 .32em}
+.page-ubusuna .ubusuna-title-copy.lang-ja strong{font-size:clamp(27px,1.95vw,34px);letter-spacing:.08em;line-height:1.15;margin:.24em 0 .30em}
+.page-ubusuna .ubusuna-title-copy.lang-ja{padding-left:8.2%;padding-right:7%}
+
+@media(max-width:767px){
+  .site-footer{font-size:11.5px}
+  .about-section>h2,.cv-section h3,.index-title,.group-heading{font-size:12px}
+  .prose,.project-prose{font-size:15.5px}
+  .cv-list li{font-size:14px}
+  .year-group{font-size:14.5px}
+  .project-index-list a{font-size:14.5px}
+  .official-link{font-size:13px}
+  .page-ubusuna .project-detail-head h1{font-size:12.5px}
+  .page-ubusuna .project-info h2,
+  .page-ubusuna .project-role h2,
+  .page-ubusuna .project-program-section h2,
+  .page-ubusuna .project-credits h2{font-size:12px}
+  .page-ubusuna .project-info dl>div{font-size:13.5px;grid-template-columns:88px minmax(0,1fr);gap:12px}
+  .page-ubusuna .project-info dt{font-size:12.5px}
+  .page-ubusuna .project-external-link{font-size:13px}
+  .page-ubusuna .project-prose{font-size:15.5px}
+  .page-ubusuna .program-intro{font-size:13px}
+  .page-ubusuna .program-entry h3{font-size:13.5px}
+  .page-ubusuna .program-title-line a{font-size:12px}
+  .page-ubusuna .program-entry p{font-size:12.8px}
+  .page-ubusuna .project-credits dl>div{font-size:12.5px}
+  .page-ubusuna .ubusuna-title-copy span{font-size:11px}
+  .page-ubusuna .ubusuna-title-copy small{font-size:10.5px}
+  .page-ubusuna .ubusuna-title-copy strong{font-size:clamp(24px,7vw,31px)}
+  .page-ubusuna .ubusuna-title-copy.lang-ja strong{font-size:clamp(23px,6.6vw,30px);letter-spacing:.07em}
+}
+
+/* Research Program 2022 */
+.page-ubusuna .project-research-program{margin-top:96px;padding-top:30px;border-top:1px solid var(--line)}
+.page-ubusuna .project-research-program h2{font-size:13px;letter-spacing:.12em;font-weight:500;color:#666;margin:0 0 24px}
+.page-ubusuna .research-intro{max-width:760px;font-size:15px;line-height:1.75;margin:0 0 34px;color:#111}
+.page-ubusuna .research-intro p{margin:0}
+.page-ubusuna .research-list{max-width:900px}
+.page-ubusuna .research-entry{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding:14px 0;border-bottom:1px solid #eee}
+.page-ubusuna .research-entry:first-child{border-top:1px solid #eee}
+.page-ubusuna .research-meta{display:grid;grid-template-columns:62px minmax(130px,.8fr) 1.5fr;gap:20px;font-size:14px;line-height:1.55;color:#777}
+.page-ubusuna .research-date{font-variant-numeric:tabular-nums}
+.page-ubusuna .research-lecturer{color:#111}
+.page-ubusuna .research-link{font-size:13px;color:#666;border-bottom:1px solid #ddd;padding-bottom:2px;white-space:nowrap}
+
+
+/* === 2026-09-10 v10: shared project-detail grammar + definitive title banners === */
+.page-vibrant .project-detail-page{max-width:1500px;margin:0 auto;padding:106px var(--gutter) 96px}
+.page-vibrant .project-detail-head{padding:0 0 34px;margin:0 0 34px;border-bottom:1px solid var(--line)}
+.page-vibrant .project-detail-head h1{margin:0;font-family:var(--sans);font-size:13.5px;line-height:1.5;font-weight:400;letter-spacing:.025em;color:#777}
+.page-vibrant .project-detail-head h1 span{color:#bbb;padding:0 7px}
+.page-vibrant .project-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(360px,1fr);gap:clamp(48px,4.4vw,70px);align-items:start}
+.page-vibrant .project-main-visual{margin:0}
+.page-vibrant .project-main-visual>img{display:block;width:100%;height:auto}
+.page-vibrant .project-side{min-width:0}
+.page-vibrant .project-identities{margin:0 0 28px}
+.page-vibrant .project-info{padding:17px 0 25px;margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.page-vibrant .project-info h2,.page-vibrant .project-role h2,.page-vibrant .project-program-section h2,.page-vibrant .project-credits h2{margin:0 0 18px;font-size:13px;line-height:1.3;letter-spacing:.12em;font-weight:500;color:#666}
+.page-vibrant .project-info dl,.page-vibrant .project-credits dl{margin:0}
+.page-vibrant .project-info dl>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:5px 0;font-size:15px;line-height:1.58}
+.page-vibrant .project-info dt{font-size:13.5px;color:#777;font-weight:400}
+.page-vibrant .project-info dd{margin:0;color:#222}
+.page-vibrant .project-external-link{font-size:14px;border-bottom:1px solid #ccc;padding-bottom:1px}
+.page-vibrant .project-role{padding:27px 0 0;margin:0;border:0}
+.page-vibrant .project-prose{max-width:none;font-size:16.5px;line-height:1.82;font-weight:400}
+.page-vibrant .project-prose p{margin:0 0 1.55em;color:#111}
+.page-vibrant .project-prose p:last-child{margin-bottom:0}
+.page-vibrant .project-program-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(64px,7vw,108px);margin-top:clamp(150px,15vw,240px);padding-top:30px;border-top:1px solid var(--line)}
+.page-vibrant .program-entry{padding:0 0 18px;margin:0 0 18px;border-bottom:1px solid #ededed}
+.page-vibrant .program-entry h3{margin:0 0 7px;font-size:14.5px;line-height:1.35;font-weight:400;color:#222}
+.page-vibrant .program-entry p{margin:0 0 4px;font-size:13.5px;line-height:1.66;color:#777}
+.page-vibrant .project-credits{margin-top:112px;padding-top:30px;border-top:1px solid var(--line)}
+.page-vibrant .project-credits dl>div{display:grid;grid-template-columns:105px minmax(0,1fr);gap:20px;padding:4px 0;font-size:13px;line-height:1.7}
+.page-vibrant .project-credits dt{color:#777;font-weight:400}
+.page-vibrant .project-credits dd{margin:0;color:#555}
+
+/* One banner system for Ubusuna + Vibrant. Avoid all legacy title rules. */
+.page-ubusuna .project-banner,.page-vibrant .project-banner{position:relative;width:100%;aspect-ratio:3.03 / 1;overflow:hidden;margin:0;background:#eee}
+.page-ubusuna .project-banner-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 49%}
+.page-ubusuna .project-banner--ubusuna{background:#eaf4f5}
+.page-vibrant .project-banner--vibrant{background:#b09f1d}
+.page-ubusuna .project-banner-copy,.page-vibrant .project-banner-copy{position:absolute!important;left:8%!important;right:5%!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;height:auto!important;display:block!important;padding:0!important;margin:0!important;align-items:initial!important;justify-content:initial!important;text-align:left!important;color:#1c2325;z-index:2}
+body[data-lang="en"] .project-banner-copy.lang-ja{display:none!important}
+body[data-lang="ja"] .project-banner-copy.lang-en{display:none!important}
+body[data-lang="en"] .project-banner-copy.lang-en{display:block!important}
+body[data-lang="ja"] .project-banner-copy.lang-ja{display:block!important}
+.page-ubusuna .project-banner-kicker,.page-ubusuna .project-banner-year,.page-ubusuna .project-banner-title{font-family:var(--brand-serif);font-weight:400}
+.page-ubusuna .project-banner-kicker{display:block;font-size:14px;line-height:1.2;letter-spacing:.12em;margin:0}
+.page-ubusuna .project-banner-title{display:block;font-size:clamp(27px,1.85vw,34px);line-height:1.05;letter-spacing:.045em;margin:.28em 0 .30em;white-space:nowrap}
+.page-ubusuna .project-banner-year{display:block;font-size:13.5px;line-height:1.2;letter-spacing:.10em;margin:0}
+.page-ubusuna .project-banner-copy.lang-ja .project-banner-title{font-size:clamp(28px,1.9vw,35px);letter-spacing:.08em;line-height:1.12}
+
+.page-vibrant .project-banner-copy{color:#111;left:5.5%!important;right:4%!important}
+.page-vibrant .project-banner-kicker{display:block;font-family:var(--brand-serif);font-size:13.5px;line-height:1.2;letter-spacing:.12em;font-weight:400;margin:0 0 .65em}
+.page-vibrant .project-banner-mainline{display:flex;align-items:baseline;gap:.8em;white-space:nowrap;min-width:0}
+.page-vibrant .project-banner-year{display:inline-block;flex:0 0 auto;font-family:var(--sans);font-size:clamp(18px,1.28vw,22px);line-height:1;font-weight:600;letter-spacing:.055em;margin:0}
+.page-vibrant .project-banner-title{display:inline-block;min-width:0;font-family:var(--brand-serif);font-size:clamp(15px,1.08vw,18.5px);line-height:1.12;letter-spacing:.045em;font-weight:400;margin:0;white-space:nowrap}
+.page-vibrant .project-banner-copy.lang-ja .project-banner-mainline{gap:.78em}
+.page-vibrant .project-banner-copy.lang-ja .project-banner-title{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,var(--brand-serif);font-size:clamp(23px,1.62vw,29px);letter-spacing:.13em;font-weight:500;line-height:1.05}
+.page-vibrant .project-banner-copy.lang-ja .project-banner-year{font-size:clamp(19px,1.35vw,23px)}
+
+@media(max-width:1023px){
+  .page-vibrant .project-detail-page{padding-top:92px}
+  .page-vibrant .project-hero-grid{grid-template-columns:1fr;gap:44px}
+  .page-vibrant .project-main-visual{max-width:820px}
+  .page-vibrant .project-side{max-width:760px}
+  .page-vibrant .project-program-grid{margin-top:90px;gap:52px}
+}
+@media(max-width:767px){
+  .page-vibrant .project-detail-page{padding:82px 16px 68px}
+  .page-vibrant .project-detail-head{padding-bottom:22px;margin-bottom:26px}
+  .page-vibrant .project-detail-head h1{font-size:12.5px}
+  .page-vibrant .project-hero-grid{gap:34px}
+  .page-vibrant .project-info dl>div{grid-template-columns:88px minmax(0,1fr);gap:12px;font-size:13.5px}
+  .page-vibrant .project-info dt{font-size:12.5px}
+  .page-vibrant .project-prose{font-size:15.5px}
+  .page-vibrant .project-program-grid{grid-template-columns:1fr;gap:48px;margin-top:72px;padding-top:24px}
+  .page-vibrant .project-credits{margin-top:66px;padding-top:24px}
+  .page-vibrant .project-credits dl>div{grid-template-columns:92px minmax(0,1fr);gap:12px;font-size:12.5px}
+  .page-ubusuna .project-banner,.page-vibrant .project-banner{aspect-ratio:2.75 / 1}
+  .page-ubusuna .project-banner-copy,.page-vibrant .project-banner-copy{left:7.5%!important;right:5%!important}
+  .page-ubusuna .project-banner-kicker,.page-vibrant .project-banner-kicker{font-size:11px}
+  .page-ubusuna .project-banner-year,.page-vibrant .project-banner-year{font-size:10.5px}
+  .page-ubusuna .project-banner-title{font-size:clamp(22px,6.1vw,29px)}
+  .page-ubusuna .project-banner-copy.lang-ja .project-banner-title{font-size:clamp(23px,6.4vw,30px)}
+  .page-vibrant .project-banner-copy{left:5.5%!important;right:3.5%!important}
+  .page-vibrant .project-banner-kicker{font-size:10.5px;margin-bottom:.55em}
+  .page-vibrant .project-banner-mainline{gap:.55em}
+  .page-vibrant .project-banner-year{font-size:15px}
+  .page-vibrant .project-banner-title{font-size:clamp(11.5px,3.25vw,15.5px);letter-spacing:.025em}
+  .page-vibrant .project-banner-copy.lang-ja .project-banner-title{font-size:clamp(20px,5.7vw,27px);letter-spacing:.11em}
+  .page-vibrant .project-banner-copy.lang-ja .project-banner-year{font-size:16px}
+  .page-vibrant .project-banner-title{font-size:clamp(18px,5vw,24px);white-space:normal}
+  .page-vibrant .project-banner-copy.lang-ja .project-banner-title{font-size:clamp(24px,6.5vw,31px);white-space:nowrap}
+  .page-ubusuna .project-research-program{margin-top:72px}
+  .page-ubusuna .research-entry{grid-template-columns:1fr;gap:8px}
+  .page-ubusuna .research-meta{grid-template-columns:52px 1fr;gap:10px 14px;font-size:13px}
+  .page-ubusuna .research-role{grid-column:2}
+}
+
+/* === 2026-09-11 v14: project breadcrumb + Vibrant aligned to Ubusuna master === */
+.page-ubusuna .project-detail-head a,
+.page-vibrant .project-detail-head a,
+.overview-breadcrumb a{
+  color:inherit;
+  border-bottom:1px solid transparent;
+  transition:border-color .18s ease,color .18s ease;
+}
+.page-ubusuna .project-detail-head a:hover,
+.page-vibrant .project-detail-head a:hover,
+.overview-breadcrumb a:hover{
+  color:#333;
+  border-bottom-color:#aaa;
+}
+.overview-breadcrumb{
+  grid-column:1 / -1;
+  padding:0 0 28px;
+  margin:0 0 4px;
+  border-bottom:1px solid var(--line);
+  font-family:var(--sans);
+  font-size:13.5px;
+  line-height:1.5;
+  font-weight:400;
+  letter-spacing:.025em;
+  color:#777;
+}
+.overview-breadcrumb span{color:#bbb;padding:0 7px}
+
+/* Make the 2021 page use exactly the same upper-page grammar as Ubusuna. */
+.page-vibrant .project-detail-page{max-width:1500px;margin:0 auto;padding:106px var(--gutter) 96px}
+.page-vibrant .project-detail-head{padding:0 0 34px;margin:0 0 34px;border-bottom:1px solid var(--line)}
+.page-vibrant .project-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(360px,1fr);gap:clamp(48px,4.4vw,70px);align-items:start}
+.page-vibrant .project-main-visual{margin:0}
+.page-vibrant .project-main-visual>img{display:block;width:100%;height:auto}
+.page-vibrant .project-main-visual figcaption{margin-top:7px;max-width:100%;font-size:11.5px;line-height:1.6;color:#999}
+.page-vibrant .project-identities{margin:0 0 28px}
+
+/* Ochre project identity, same stacked hierarchy as Ubusuna. */
+.page-vibrant .project-banner-copy{left:8%!important;right:5%!important;top:50%!important;transform:translateY(-50%)!important;color:#111;text-align:left!important}
+.page-vibrant .project-banner-kicker,
+.page-vibrant .project-banner-year,
+.page-vibrant .project-banner-title{font-family:var(--brand-serif);font-weight:400}
+.page-vibrant .project-banner-kicker{display:block;font-size:14px;line-height:1.2;letter-spacing:.12em;margin:0}
+.page-vibrant .project-banner-title{display:block;font-size:clamp(19px,1.42vw,24px);line-height:1.08;letter-spacing:.025em;margin:.30em 0 .34em;white-space:nowrap}
+.page-vibrant .project-banner-year{display:block;font-size:13.5px;line-height:1.2;letter-spacing:.10em;margin:0}
+.page-vibrant .project-banner-copy.lang-ja .project-banner-title{font-family:var(--brand-serif);font-size:clamp(28px,1.9vw,35px);letter-spacing:.09em;line-height:1.12;font-weight:400}
+
+/* Match Ubusuna's readable information and prose scale. */
+.page-vibrant .project-info{padding:17px 0 25px;margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.page-vibrant .project-role{padding:27px 0 0;margin:0;border:0}
+.page-vibrant .project-prose{max-width:none;font-size:16.5px;line-height:1.82;font-weight:400}
+.page-vibrant .project-prose p{margin:0 0 1.55em;color:#111}
+.page-vibrant .project-prose p:last-child{margin-bottom:0}
+
+/* Preserve the generous white field under the hero before performance / programs. */
+.page-vibrant .project-program-grid{margin-top:clamp(170px,16vw,250px)}
+
+@media(max-width:1023px){
+  .overview-breadcrumb{font-size:13px;padding-bottom:24px}
+}
+@media(max-width:767px){
+  .overview-breadcrumb{font-size:12.5px;padding-bottom:20px;margin-bottom:0}
+  .page-vibrant .project-banner-copy{left:7.5%!important;right:4.5%!important}
+  .page-vibrant .project-banner-kicker{font-size:11px}
+  .page-vibrant .project-banner-year{font-size:10.5px}
+  .page-vibrant .project-banner-title{font-size:clamp(15px,4.1vw,20px);letter-spacing:.015em}
+  .page-vibrant .project-banner-copy.lang-ja .project-banner-title{font-size:clamp(24px,6.8vw,31px);letter-spacing:.07em}
+  .page-vibrant .project-main-visual figcaption{font-size:11px}
+  .page-vibrant .project-program-grid{margin-top:86px}
+}
+
+
+/* === 2026-09-11 v15: quieter research program + shared performance grammar === */
+
+/* Ubusuna breadcrumb now follows the same clickable project path as the other detail pages. */
+.page-ubusuna .project-detail-head h1{font-family:var(--sans);font-size:13.5px;line-height:1.5;font-weight:400;letter-spacing:.025em;color:#777}
+.page-ubusuna .project-detail-head h1 span{color:#bbb;padding:0 7px}
+
+/* Research program: asymmetric editorial composition, restrained rules, no card UI. */
+.page-ubusuna .project-research-program{
+  margin-top:clamp(130px,13vw,205px);
+  padding-top:0;
+  border-top:1px solid var(--line);
+}
+.page-ubusuna .research-content{
+  display:grid;
+  grid-template-columns:minmax(230px,.72fr) minmax(0,1.65fr);
+  column-gap:clamp(56px,6vw,96px);
+  align-items:start;
+  padding-top:28px;
+}
+.page-ubusuna .research-intro-block{max-width:360px;padding-right:10px}
+.page-ubusuna .research-intro-block h2{
+  margin:0 0 24px;
+  font-size:13px;
+  line-height:1.3;
+  letter-spacing:.12em;
+  font-weight:500;
+  color:#666;
+}
+.page-ubusuna .research-intro-block p{
+  margin:0;
+  font-size:14.5px;
+  line-height:1.78;
+  color:#333;
+}
+.page-ubusuna .research-archive-link{
+  display:inline-block;
+  margin-top:24px;
+  font-size:13px;
+  line-height:1.4;
+  color:#777;
+  border-bottom:1px solid #d8d8d8;
+  padding-bottom:2px;
+}
+.page-ubusuna .research-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-width:none;
+  border-top:0;
+}
+.page-ubusuna .research-entry{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr) auto;
+  column-gap:18px;
+  align-items:baseline;
+  padding:10px 0 14px;
+  border-bottom:1px solid #ececec;
+}
+.page-ubusuna .research-entry:first-child{border-top:0;padding-top:0}
+.page-ubusuna .research-index{
+  font-family:var(--serif);
+  font-size:12.5px;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+  color:#aaa;
+}
+.page-ubusuna .research-person{display:grid;grid-template-columns:minmax(125px,.62fr) 1fr;gap:18px;align-items:baseline;min-width:0}
+.page-ubusuna .research-lecturer{font-size:14.5px;line-height:1.45;color:#111}
+.page-ubusuna .research-role{font-size:13px;line-height:1.5;color:#888;grid-column:auto}
+.page-ubusuna .research-link{font-size:12.5px;line-height:1.4;color:#777;border-bottom:1px solid #ddd;padding-bottom:1px;white-space:nowrap}
+
+/* Vibrant performing arts now uses the exact same title/link/date/performer grammar as Ubusuna. */
+.page-vibrant .program-title-line{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+}
+.page-vibrant .program-title-line a{
+  flex:0 0 auto;
+  font-size:12.5px;
+  line-height:1.4;
+  color:#888;
+  border-bottom:1px solid #ccc;
+  padding-bottom:1px;
+}
+.page-vibrant .program-entry h3{margin:0 0 7px;font-size:14.5px;line-height:1.35;font-weight:400;color:#222}
+.page-vibrant .program-entry p{margin:0 0 4px;font-size:13.5px;line-height:1.66;color:#777}
+.page-vibrant .project-work-heading{
+  margin:34px 0 14px;
+  font-family:var(--sans);
+  font-size:12.5px;
+  line-height:1.35;
+  letter-spacing:.10em;
+  font-weight:500;
+  color:#777;
+}
+
+@media(max-width:767px){
+  .page-ubusuna .project-detail-head h1{font-size:12.5px}
+  .page-ubusuna .project-research-program{margin-top:84px}
+  .page-ubusuna .research-content{grid-template-columns:1fr;row-gap:38px;padding-top:24px}
+  .page-ubusuna .research-intro-block{max-width:620px;padding-right:0}
+  .page-ubusuna .research-intro-block p{font-size:14px}
+  .page-ubusuna .research-entry{grid-template-columns:34px minmax(0,1fr);row-gap:7px;column-gap:12px;padding:12px 0 14px}
+  .page-ubusuna .research-person{grid-template-columns:1fr;gap:3px}
+  .page-ubusuna .research-link{grid-column:2;justify-self:start;font-size:12px}
+  .page-ubusuna .research-lecturer{font-size:14px}
+  .page-ubusuna .research-role{font-size:12.5px}
+  .page-vibrant .program-title-line{gap:12px}
+  .page-vibrant .program-title-line a{font-size:11.5px}
+  .page-vibrant .project-work-heading{margin-top:28px;font-size:11.5px}
+}
+
+/* === CHRONICLERS OF WATER / 2018 === */
+.page-chroniclers .project-detail-page{max-width:1500px;margin:0 auto;padding:106px var(--gutter) 96px}
+.page-chroniclers .project-detail-head{padding:0 0 34px;margin:0 0 34px;border-bottom:1px solid var(--line)}
+.page-chroniclers .project-detail-head h1{margin:0;font-family:var(--sans);font-size:13.5px;line-height:1.5;font-weight:400;letter-spacing:.025em;color:#777}
+.page-chroniclers .project-detail-head h1 span{color:#bbb;padding:0 7px}
+.page-chroniclers .project-detail-head a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .18s ease,color .18s ease}
+.page-chroniclers .project-detail-head a:hover{color:#222;border-bottom-color:#aaa}
+.page-chroniclers .project-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(360px,1fr);gap:clamp(48px,4.4vw,70px);align-items:start}
+.page-chroniclers .project-main-visual{margin:0}
+.page-chroniclers .project-main-visual>img{display:block;width:100%;height:auto}
+.page-chroniclers .project-main-visual figcaption{margin-top:7px;max-width:100%;font-size:11.5px;line-height:1.6;color:#999}
+.page-chroniclers .project-side{min-width:0}
+.page-chroniclers .project-identities{margin:0 0 28px}
+.page-chroniclers .project-banner{position:relative;width:100%;aspect-ratio:3.03 / 1;overflow:hidden;margin:0;background:#f6f6f1}
+.page-chroniclers .project-banner--chroniclers{background:#f6f6f1;border:1px solid #eeeeea}
+.page-chroniclers .project-banner-wave{position:absolute;left:0;right:0;bottom:0;height:28%;opacity:.34;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Cpath d='M-10 16 C5 6 20 6 35 16 S65 26 80 16 S110 6 125 16' fill='none' stroke='%23272a49' stroke-width='1.1'/%3E%3Cpath d='M-10 23 C5 13 20 13 35 23 S65 33 80 23 S110 13 125 23' fill='none' stroke='%23272a49' stroke-width='1'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:left bottom}
+.page-chroniclers .project-banner-copy{position:absolute!important;left:8%!important;right:5%!important;top:44%!important;bottom:auto!important;transform:translateY(-50%)!important;height:auto!important;display:block!important;padding:0!important;margin:0!important;text-align:left!important;color:#20213f;z-index:2}
+.page-chroniclers .project-banner-kicker,.page-chroniclers .project-banner-title,.page-chroniclers .project-banner-year{display:block;font-family:var(--brand-serif);font-weight:400}
+.page-chroniclers .project-banner-kicker{font-size:14px;line-height:1.2;letter-spacing:.12em;margin:0}
+.page-chroniclers .project-banner-title{font-size:clamp(21px,1.55vw,27px);line-height:1.08;letter-spacing:.03em;margin:.30em 0 .34em;white-space:nowrap}
+.page-chroniclers .project-banner-year{font-size:13.5px;line-height:1.2;letter-spacing:.10em;margin:0}
+.page-chroniclers .project-banner-copy.lang-ja .project-banner-title{font-family:var(--brand-serif);font-size:clamp(29px,2vw,36px);letter-spacing:.10em;line-height:1.1;font-weight:400}
+.page-chroniclers .project-info{padding:17px 0 25px;margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.page-chroniclers .project-info h2,.page-chroniclers .project-role h2,.page-chroniclers .project-program-section h2,.page-chroniclers .project-credits h2{margin:0 0 18px;font-size:13px;line-height:1.3;letter-spacing:.12em;font-weight:500;color:#666}
+.page-chroniclers .project-info dl,.page-chroniclers .project-credits dl{margin:0}
+.page-chroniclers .project-info dl>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:5px 0;font-size:15px;line-height:1.58}
+.page-chroniclers .project-info dt{font-size:13.5px;color:#777;font-weight:400}
+.page-chroniclers .project-info dd{margin:0;color:#222}
+.page-chroniclers .project-external-link{font-size:14px;border-bottom:1px solid #ccc;padding-bottom:1px}
+.page-chroniclers .project-role{padding:27px 0 0;margin:0;border:0}
+.page-chroniclers .project-prose{max-width:none;font-size:16.5px;line-height:1.82;font-weight:400}
+.page-chroniclers .project-prose p{margin:0 0 1.55em;color:#111}
+.page-chroniclers .project-prose p:last-child{margin-bottom:0}
+.page-chroniclers .project-program-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(64px,7vw,108px);margin-top:clamp(170px,16vw,250px);padding-top:30px;border-top:1px solid var(--line)}
+.page-chroniclers .program-entry{padding:0 0 18px;margin:0 0 18px;border-bottom:1px solid #ededed}
+.page-chroniclers .program-entry h3{margin:0 0 7px;font-size:14.5px;line-height:1.35;font-weight:400;color:#222}
+.page-chroniclers .program-entry p{margin:0 0 4px;font-size:13.5px;line-height:1.66;color:#777}
+.page-chroniclers .critical-entry .project-external-link{font-size:13.5px}
+.page-chroniclers .project-credits{margin-top:112px;padding-top:30px;border-top:1px solid var(--line)}
+.page-chroniclers .project-credits dl>div{display:grid;grid-template-columns:105px minmax(0,1fr);gap:20px;padding:4px 0;font-size:13px;line-height:1.7}
+.page-chroniclers .project-credits dt{color:#777;font-weight:400}
+.page-chroniclers .project-credits dd{margin:0;color:#555}
+@media (max-width:980px){
+  .page-chroniclers .project-detail-page{padding-top:92px}
+  .page-chroniclers .project-hero-grid{grid-template-columns:1fr;gap:44px}
+  .page-chroniclers .project-main-visual{max-width:820px}
+  .page-chroniclers .project-side{max-width:760px}
+  .page-chroniclers .project-program-grid{margin-top:90px;gap:52px}
+}
+@media (max-width:680px){
+  .page-chroniclers .project-detail-page{padding:82px 16px 68px}
+  .page-chroniclers .project-detail-head{padding-bottom:22px;margin-bottom:26px}
+  .page-chroniclers .project-detail-head h1{font-size:12.5px}
+  .page-chroniclers .project-hero-grid{gap:34px}
+  .page-chroniclers .project-info dl>div{grid-template-columns:88px minmax(0,1fr);gap:12px;font-size:13.5px}
+  .page-chroniclers .project-info dt{font-size:12.5px}
+  .page-chroniclers .project-prose{font-size:15.5px}
+  .page-chroniclers .project-program-grid{grid-template-columns:1fr;gap:48px;margin-top:72px;padding-top:24px}
+  .page-chroniclers .project-credits{margin-top:66px;padding-top:24px}
+  .page-chroniclers .project-credits dl>div{grid-template-columns:92px minmax(0,1fr);gap:12px;font-size:12.5px}
+  .page-chroniclers .project-banner{aspect-ratio:2.75 / 1}
+  .page-chroniclers .project-banner-copy{left:7.5%!important;right:5%!important}
+  .page-chroniclers .project-banner-kicker{font-size:11px}
+  .page-chroniclers .project-banner-year{font-size:10.5px}
+  .page-chroniclers .project-banner-title{font-size:clamp(17px,4.6vw,22px);letter-spacing:.015em}
+  .page-chroniclers .project-banner-copy.lang-ja .project-banner-title{font-size:clamp(25px,7vw,32px);letter-spacing:.08em}
+  .page-chroniclers .project-main-visual figcaption{font-size:11px}
+}
+
+/* v17 — Chroniclers of Water archival banner image */
+.page-chroniclers .project-banner--image{aspect-ratio:auto;background:#fff;border:0;overflow:visible}
+.page-chroniclers .project-banner--image img{display:block;width:100%;height:auto}
+
+/* === v19: language-specific map leader lines and research-program visibility === */
+body[data-lang="en"] .cliff-map-stage .map-geometry-ja{display:none!important}
+body[data-lang="ja"] .cliff-map-stage .map-geometry-en{display:none!important}
+body[data-lang="en"] .cliff-map-stage .map-geometry-en{display:inline!important}
+body[data-lang="ja"] .cliff-map-stage .map-geometry-ja{display:inline!important}
+
+/* Later grid declarations must not force the Japanese research list to appear on the English page. */
+.page-ubusuna[data-lang="en"] .project-research-program .research-content.lang-ja{display:none!important}
+.page-ubusuna[data-lang="ja"] .project-research-program .research-content.lang-en{display:none!important}
+.page-ubusuna[data-lang="en"] .project-research-program .research-content.lang-en,
+.page-ubusuna[data-lang="ja"] .project-research-program .research-content.lang-ja{display:grid!important}
+
+/* Approved 2018 banners are language-specific images; preserve their original 3:1 composition. */
+.page-chroniclers .project-identities > .project-banner.lang-ja{display:none}
+.page-chroniclers[data-lang="en"] .project-identities > .project-banner.lang-en{display:block!important}
+.page-chroniclers[data-lang="en"] .project-identities > .project-banner.lang-ja{display:none!important}
+.page-chroniclers[data-lang="ja"] .project-identities > .project-banner.lang-en{display:none!important}
+.page-chroniclers[data-lang="ja"] .project-identities > .project-banner.lang-ja{display:block!important}
+
+@media(max-width:767px){
+  .cliff-map-stage .map-geometry-en,.cliff-map-stage .map-geometry-ja{display:none!important}
+}
+
+
+/* === 2026-09-11 v20: align primary page labels and project breadcrumbs === */
+/* ABOUT and PROJECTS index now share the same 1100px content frame and top baseline. */
+.page-about .about-copy{max-width:1100px;margin:0 auto;padding-top:100px}
+.page-about .about-intro{padding-top:0}
+
+/* All Cliff Edge project pages share one breadcrumb baseline on desktop. */
+.project-overview-shell{padding-top:106px}
+.page-ubusuna .project-detail-page,
+.page-vibrant .project-detail-page,
+.page-chroniclers .project-detail-page{padding-top:106px}
+
+@media(max-width:1023px) and (min-width:768px){
+  .page-about .about-copy{padding-top:100px!important}
+  .project-overview-shell{padding-top:92px}
+  .page-ubusuna .project-detail-page,
+  .page-vibrant .project-detail-page,
+  .page-chroniclers .project-detail-page{padding-top:92px}
+}
+@media(max-width:767px){
+  .page-about .about-copy{padding:88px var(--gutter) 0!important}
+  .project-overview-shell{padding-top:82px}
+  .page-ubusuna .project-detail-page,
+  .page-vibrant .project-detail-page,
+  .page-chroniclers .project-detail-page{padding-top:82px}
+}
+
+/* === v21 / 2014–2015 Cliff Edge Project detail pages === */
+.page-tanna .project-detail-page,
+.page-scars .project-detail-page{max-width:1500px;margin:0 auto;padding:106px var(--gutter) 96px}
+.page-tanna .project-detail-head,
+.page-scars .project-detail-head{padding:0 0 34px;margin:0 0 34px;border-bottom:1px solid var(--line)}
+.page-tanna .project-detail-head h1,
+.page-scars .project-detail-head h1{margin:0;font-family:var(--sans);font-size:13.5px;line-height:1.5;font-weight:400;letter-spacing:.025em;color:#777}
+.page-tanna .project-detail-head h1 span,
+.page-scars .project-detail-head h1 span{color:#bbb;padding:0 7px}
+.page-tanna .project-detail-head a,
+.page-scars .project-detail-head a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .18s ease,color .18s ease}
+.page-tanna .project-detail-head a:hover,
+.page-scars .project-detail-head a:hover{color:#222;border-bottom-color:#aaa}
+.page-tanna .project-hero-grid,
+.page-scars .project-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(360px,1fr);gap:clamp(48px,4.4vw,70px);align-items:start}
+.page-tanna .project-main-visual,
+.page-scars .project-main-visual{margin:0}
+.page-tanna .project-main-visual>img,
+.page-scars .project-main-visual>img{display:block;width:100%;height:auto}
+.page-tanna .project-main-visual figcaption,
+.page-scars .project-main-visual figcaption{margin-top:7px;max-width:100%;font-size:11.5px;line-height:1.6;color:#999}
+.page-tanna .project-side,
+.page-scars .project-side{min-width:0}
+.page-tanna .project-identities,
+.page-scars .project-identities{margin:0 0 28px}
+.page-tanna .project-banner,
+.page-scars .project-banner{position:relative;width:100%;aspect-ratio:3.03/1;overflow:hidden;margin:0}
+.page-tanna .project-banner--tanna{background:#3b5a50 url('assets/tanna_banner_texture.webp') center/cover no-repeat}
+.page-tanna .project-banner--tanna::after{content:"";position:absolute;inset:0;background:rgba(39,72,62,.12);pointer-events:none}
+.page-scars .project-banner--scars{background:linear-gradient(90deg,#8a2d00 0%,#6b2e19 26%,#4c3a43 52%,#25475b 75%,#074c69 100%)}
+.page-tanna .project-banner-copy,
+.page-scars .project-banner-copy{position:absolute!important;left:7.5%!important;right:5%!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;display:block!important;height:auto!important;padding:0!important;margin:0!important;text-align:left!important;color:#fff;z-index:2;text-shadow:0 1px 1px rgba(0,0,0,.10)}
+.page-tanna .project-banner-kicker,
+.page-tanna .project-banner-title,
+.page-tanna .project-banner-year,
+.page-scars .project-banner-kicker,
+.page-scars .project-banner-title,
+.page-scars .project-banner-year{display:block;font-family:var(--brand-serif);font-weight:400}
+.page-tanna .project-banner-kicker,
+.page-scars .project-banner-kicker{font-size:13.5px;line-height:1.2;letter-spacing:.13em;margin:0}
+.page-tanna .project-banner-title,
+.page-scars .project-banner-title{font-size:clamp(22px,1.6vw,29px);line-height:1.08;letter-spacing:.055em;margin:.30em 0 .32em;white-space:nowrap}
+.page-tanna .project-banner-year,
+.page-scars .project-banner-year{font-size:13.5px;line-height:1.2;letter-spacing:.11em;margin:0}
+.page-tanna .project-banner-copy.lang-ja .project-banner-title,
+.page-scars .project-banner-copy.lang-ja .project-banner-title{font-size:clamp(28px,1.95vw,35px);letter-spacing:.12em;line-height:1.08}
+body.page-tanna[data-lang="en"] .project-banner-copy.lang-ja,
+body.page-scars[data-lang="en"] .project-banner-copy.lang-ja{display:none!important}
+body.page-tanna[data-lang="ja"] .project-banner-copy.lang-en,
+body.page-scars[data-lang="ja"] .project-banner-copy.lang-en{display:none!important}
+body.page-tanna[data-lang="en"] .project-banner-copy.lang-en,
+body.page-scars[data-lang="en"] .project-banner-copy.lang-en{display:block!important}
+body.page-tanna[data-lang="ja"] .project-banner-copy.lang-ja,
+body.page-scars[data-lang="ja"] .project-banner-copy.lang-ja{display:block!important}
+.page-tanna .project-info,
+.page-scars .project-info{padding:17px 0 25px;margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.page-tanna .project-info h2,
+.page-tanna .project-role h2,
+.page-tanna .project-program-section h2,
+.page-tanna .project-credits h2,
+.page-scars .project-info h2,
+.page-scars .project-role h2,
+.page-scars .project-program-section h2,
+.page-scars .project-credits h2{margin:0 0 18px;font-size:13px;line-height:1.3;letter-spacing:.12em;font-weight:500;color:#666}
+.page-tanna .project-info dl,
+.page-tanna .project-credits dl,
+.page-scars .project-info dl,
+.page-scars .project-credits dl{margin:0}
+.page-tanna .project-info dl>div,
+.page-scars .project-info dl>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:5px 0;font-size:15px;line-height:1.58}
+.page-tanna .project-info dt,
+.page-scars .project-info dt{font-size:13.5px;color:#777;font-weight:400}
+.page-tanna .project-info dd,
+.page-scars .project-info dd{margin:0;color:#222}
+.page-tanna .project-external-link,
+.page-scars .project-external-link{font-size:14px;border-bottom:1px solid #ccc;padding-bottom:1px}
+.page-tanna .project-role,
+.page-scars .project-role{padding:27px 0 0;margin:0;border:0}
+.page-tanna .project-prose,
+.page-scars .project-prose{max-width:none;font-size:16.5px;line-height:1.82;font-weight:400}
+.page-tanna .project-prose p,
+.page-scars .project-prose p{margin:0 0 1.55em;color:#111}
+.page-tanna .project-prose p:last-child,
+.page-scars .project-prose p:last-child{margin-bottom:0}
+/* Deliberately generous gap under the hero image: keep the same quiet lower-left field established on Ubusuna. */
+.page-tanna .project-program-grid,
+.page-scars .project-program-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(64px,7vw,108px);margin-top:clamp(180px,17vw,270px);padding-top:30px;border-top:1px solid var(--line)}
+.page-tanna .program-entry,
+.page-scars .program-entry{padding:0 0 18px;margin:0 0 18px;border-bottom:1px solid #ededed}
+.page-tanna .program-entry h3,
+.page-scars .program-entry h3{margin:0 0 7px;font-size:14.5px;line-height:1.35;font-weight:400;color:#222}
+.page-tanna .program-entry p,
+.page-scars .program-entry p{margin:0 0 4px;font-size:13.5px;line-height:1.66;color:#777}
+.page-tanna .project-credits,
+.page-scars .project-credits{margin-top:112px;padding-top:30px;border-top:1px solid var(--line)}
+.page-tanna .project-credits dl>div,
+.page-scars .project-credits dl>div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:4px 0;font-size:13px;line-height:1.7}
+.page-tanna .project-credits dt,
+.page-scars .project-credits dt{color:#777;font-weight:400}
+.page-tanna .project-credits dd,
+.page-scars .project-credits dd{margin:0;color:#555}
+
+@media(max-width:1023px){
+  .page-tanna .project-detail-page,.page-scars .project-detail-page{padding-top:92px}
+  .page-tanna .project-hero-grid,.page-scars .project-hero-grid{grid-template-columns:1fr;gap:44px}
+  .page-tanna .project-main-visual,.page-scars .project-main-visual{max-width:820px}
+  .page-tanna .project-side,.page-scars .project-side{max-width:760px}
+  .page-tanna .project-program-grid,.page-scars .project-program-grid{margin-top:92px;gap:52px}
+}
+@media(max-width:767px){
+  .page-tanna .project-detail-page,.page-scars .project-detail-page{padding:82px 16px 68px}
+  .page-tanna .project-detail-head,.page-scars .project-detail-head{padding-bottom:22px;margin-bottom:26px}
+  .page-tanna .project-detail-head h1,.page-scars .project-detail-head h1{font-size:12.5px}
+  .page-tanna .project-hero-grid,.page-scars .project-hero-grid{gap:34px}
+  .page-tanna .project-info dl>div,.page-scars .project-info dl>div{grid-template-columns:88px minmax(0,1fr);gap:12px;font-size:13.5px}
+  .page-tanna .project-info dt,.page-scars .project-info dt{font-size:12.5px}
+  .page-tanna .project-prose,.page-scars .project-prose{font-size:15.5px}
+  .page-tanna .project-program-grid,.page-scars .project-program-grid{grid-template-columns:1fr;gap:48px;margin-top:76px;padding-top:24px}
+  .page-tanna .project-credits,.page-scars .project-credits{margin-top:66px;padding-top:24px}
+  .page-tanna .project-credits dl>div,.page-scars .project-credits dl>div{grid-template-columns:96px minmax(0,1fr);gap:12px;font-size:12.5px}
+  .page-tanna .project-banner,.page-scars .project-banner{aspect-ratio:2.75/1}
+  .page-tanna .project-banner-copy,.page-scars .project-banner-copy{left:7.5%!important;right:5%!important}
+  .page-tanna .project-banner-kicker,.page-scars .project-banner-kicker{font-size:11px}
+  .page-tanna .project-banner-year,.page-scars .project-banner-year{font-size:10.5px}
+  .page-tanna .project-banner-title,.page-scars .project-banner-title{font-size:clamp(19px,5.2vw,25px);white-space:normal}
+  .page-tanna .project-banner-copy.lang-ja .project-banner-title,.page-scars .project-banner-copy.lang-ja .project-banner-title{font-size:clamp(24px,7vw,31px);letter-spacing:.10em}
+}
+
+
+/* === v22 / project-link audit, banner scale normalization, WORKS detail pages === */
+.year-group a.item{transition:opacity .18s ease}
+.year-group a.item:hover{opacity:.5}
+
+.page-vibrant .project-banner-copy,
+.page-chroniclers .project-banner-copy,
+.page-tanna .project-banner-copy,
+.page-scars .project-banner-copy{
+  left:8%!important;right:5%!important;top:50%!important;transform:translateY(-50%)!important;text-align:left!important;
+}
+.page-vibrant .project-banner-kicker,
+.page-chroniclers .project-banner-kicker,
+.page-tanna .project-banner-kicker,
+.page-scars .project-banner-kicker{
+  display:block;font-family:var(--brand-serif);font-size:14px;line-height:1.2;letter-spacing:.12em;font-weight:400;margin:0;
+}
+.page-vibrant .project-banner-year,
+.page-chroniclers .project-banner-year,
+.page-tanna .project-banner-year,
+.page-scars .project-banner-year{
+  display:block;font-family:var(--brand-serif);font-size:13.5px;line-height:1.2;letter-spacing:.10em;font-weight:400;margin:0;
+}
+.page-chroniclers .project-banner-title,
+.page-tanna .project-banner-title,
+.page-scars .project-banner-title{
+  display:block;font-family:var(--brand-serif);font-size:clamp(27px,1.85vw,34px);line-height:1.05;letter-spacing:.045em;font-weight:400;margin:.28em 0 .30em;white-space:nowrap;
+}
+.page-vibrant .project-banner-title{
+  display:block;font-family:var(--brand-serif);font-size:clamp(21px,1.48vw,27px);line-height:1.05;letter-spacing:.025em;font-weight:400;margin:.28em 0 .30em;white-space:nowrap;
+}
+.page-vibrant .project-banner-copy.lang-ja .project-banner-title,
+.page-chroniclers .project-banner-copy.lang-ja .project-banner-title,
+.page-tanna .project-banner-copy.lang-ja .project-banner-title,
+.page-scars .project-banner-copy.lang-ja .project-banner-title{
+  font-family:var(--brand-serif);font-size:clamp(28px,1.9vw,35px);letter-spacing:.08em;line-height:1.12;font-weight:400;
+}
+.page-chroniclers .project-banner--chroniclers{position:relative;width:100%;aspect-ratio:3.03/1;overflow:hidden;margin:0;background:#fbfbf8;border:0}
+.page-chroniclers .project-banner-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
+.page-chroniclers .project-banner-copy{color:#17283b;z-index:2}
+
+.page-work-detail .site-header{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.055)}
+.work-detail-page{max-width:1500px;margin:0 auto;padding:106px var(--gutter) 96px}
+.work-detail-head{padding:0 0 34px;margin:0 0 34px;border-bottom:1px solid var(--line)}
+.work-detail-head h1{margin:0;font-family:var(--sans);font-size:13.5px;line-height:1.5;font-weight:400;letter-spacing:.025em;color:#777}
+.work-detail-head h1 span{color:#bbb;padding:0 7px}
+.work-detail-head a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .18s ease,color .18s ease}
+.work-detail-head a:hover{color:#222;border-bottom-color:#aaa}
+.work-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(360px,1fr);gap:clamp(48px,4.4vw,70px);align-items:start}
+.work-main-visual{margin:0}
+.work-main-visual>img{display:block;width:100%;height:auto}
+.work-main-visual figcaption{margin-top:7px;max-width:100%;font-size:11.5px;line-height:1.6;color:#999}
+.work-side{min-width:0}
+.work-identity-card{min-height:176px;margin:0 0 28px;padding:32px 8%;display:flex;align-items:center;background:#f5f5f2;border:1px solid #eeeeea;color:#171717}
+.work-identity-card>div{width:100%}
+.work-identity-kicker,.work-identity-title,.work-identity-year{display:block;font-family:var(--brand-serif);font-weight:400}
+.work-identity-kicker{font-size:14px;line-height:1.2;letter-spacing:.12em;margin:0}
+.work-identity-title{font-size:clamp(27px,1.85vw,34px);line-height:1.05;letter-spacing:.045em;margin:.28em 0 .30em;white-space:nowrap}
+.work-identity-year{font-size:13.5px;line-height:1.2;letter-spacing:.10em;margin:0}
+.work-identity-card .lang-ja .work-identity-title{font-size:clamp(27px,1.85vw,34px);letter-spacing:.065em}
+.work-info{padding:17px 0 25px;margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.work-info h2,.work-concept h2,.work-credits h2{margin:0 0 18px;font-size:13px;line-height:1.3;letter-spacing:.12em;font-weight:500;color:#666}
+.work-info dl,.work-credits dl{margin:0}
+.work-info dl>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:5px 0;font-size:15px;line-height:1.58}
+.work-info dt{font-size:13.5px;color:#777;font-weight:400}
+.work-info dd{margin:0;color:#222}
+.work-concept{padding:27px 0 0;margin:0;border:0}
+.work-prose{max-width:none;font-size:16.5px;line-height:1.82;font-weight:400}
+.work-prose p{margin:0 0 1.55em;color:#111}
+.work-prose p:last-child{margin-bottom:0}
+.work-detail-gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(44px,5vw,74px);margin-top:clamp(190px,18vw,290px);padding-top:30px;border-top:1px solid var(--line)}
+.work-detail-gallery figure{margin:0}
+.work-detail-gallery img{width:100%;height:auto}
+.work-detail-gallery figcaption{margin-top:8px;font-size:11.5px;line-height:1.6;color:#999}
+.work-detail-gallery figure:nth-child(3){max-width:78%}
+.work-detail-gallery figure:nth-child(4){align-self:end}
+.work-credits{margin-top:112px;padding-top:30px;border-top:1px solid var(--line)}
+.work-credits dl>div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:4px 0;font-size:13px;line-height:1.7}
+.work-credits dt{color:#777;font-weight:400}
+.work-credits dd{margin:0;color:#555}
+
+@media(max-width:1023px){
+  .work-detail-page{padding-top:92px}
+  .work-hero-grid{grid-template-columns:1fr;gap:44px}
+  .work-main-visual{max-width:820px}
+  .work-side{max-width:760px}
+  .work-detail-gallery{margin-top:100px;gap:42px}
+}
+@media(max-width:767px){
+  .page-vibrant .project-banner-kicker,.page-chroniclers .project-banner-kicker,.page-tanna .project-banner-kicker,.page-scars .project-banner-kicker{font-size:11px}
+  .page-vibrant .project-banner-year,.page-chroniclers .project-banner-year,.page-tanna .project-banner-year,.page-scars .project-banner-year{font-size:10.5px}
+  .page-chroniclers .project-banner-title,.page-tanna .project-banner-title,.page-scars .project-banner-title{font-size:clamp(22px,6.1vw,29px)}
+  .page-vibrant .project-banner-title{font-size:clamp(17px,4.7vw,22px)}
+  .page-vibrant .project-banner-copy.lang-ja .project-banner-title,.page-chroniclers .project-banner-copy.lang-ja .project-banner-title,.page-tanna .project-banner-copy.lang-ja .project-banner-title,.page-scars .project-banner-copy.lang-ja .project-banner-title{font-size:clamp(23px,6.4vw,30px)}
+  .work-detail-page{padding:82px 16px 68px}
+  .work-detail-head{padding-bottom:22px;margin-bottom:26px}
+  .work-detail-head h1{font-size:12.5px}
+  .work-hero-grid{gap:34px}
+  .work-identity-card{min-height:150px;padding:26px 7.5%}
+  .work-identity-kicker{font-size:11px}
+  .work-identity-year{font-size:10.5px}
+  .work-identity-title{font-size:clamp(22px,6.1vw,29px);white-space:normal}
+  .work-identity-card .lang-ja .work-identity-title{font-size:clamp(22px,6.1vw,29px)}
+  .work-info dl>div{grid-template-columns:88px minmax(0,1fr);gap:12px;font-size:13.5px}
+  .work-info dt{font-size:12.5px}
+  .work-prose{font-size:15.5px}
+  .work-detail-gallery{grid-template-columns:1fr;gap:48px;margin-top:78px;padding-top:24px}
+  .work-detail-gallery figure:nth-child(3){max-width:100%}
+  .work-credits{margin-top:70px;padding-top:24px}
+  .work-credits dl>div{grid-template-columns:96px minmax(0,1fr);gap:12px;font-size:12.5px}
+}
+
+
+/* === v23 / WORKS sketch layout + interactive thumbnail lightbox === */
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.work-left{min-width:0}
+.work-main-open{display:block;width:100%;padding:0;margin:0;border:0;background:none;cursor:zoom-in;text-align:inherit}
+.work-main-open img{display:block;width:100%;height:auto}
+.work-thumb-section{margin-top:28px;padding-top:0;border:0}
+.work-thumb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.work-thumb{position:relative;display:block;aspect-ratio:1.34/1;padding:0;margin:0;border:0;background:#f1f1ef;overflow:hidden;cursor:zoom-in}
+.work-thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .28s ease,opacity .2s ease}
+.work-thumb:hover img{transform:scale(1.018);opacity:.84}
+.work-thumb:focus-visible{outline:1px solid #555;outline-offset:3px}
+
+/* Title box: one shared rectangle; title may occupy up to two lines without changing card height. */
+.work-identity-card{min-height:190px;height:190px;overflow:hidden}
+.work-identity-title{max-width:100%;white-space:normal;text-wrap:balance;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:clamp(25px,1.7vw,32px);line-height:1.08}
+.work-identity-card .lang-ja .work-identity-title{font-size:clamp(25px,1.75vw,33px);line-height:1.1}
+
+/* Compact gallery belongs to the left column; the right column can run longer without forcing filler under the image. */
+.work-hero-grid{grid-template-columns:minmax(0,1.48fr) minmax(370px,1fr);align-items:start}
+
+.image-lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.97);color:#111}
+.image-lightbox.is-open{display:flex}
+.lightbox-stage{margin:0;display:flex;align-items:center;justify-content:center;width:min(86vw,1500px);height:86vh}
+.lightbox-stage img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:none}
+.lightbox-close,.lightbox-prev,.lightbox-next{position:fixed;border:0;background:transparent;color:#222;font-family:var(--sans);font-weight:300;cursor:pointer;z-index:2}
+.lightbox-close{right:24px;top:17px;font-size:31px;line-height:1;padding:8px}
+.lightbox-prev,.lightbox-next{top:50%;transform:translateY(-50%);font-size:40px;padding:18px}
+.lightbox-prev{left:15px}.lightbox-next{right:15px}
+.lightbox-count{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);font-size:11px;letter-spacing:.08em;color:#888}
+body.lightbox-open{overflow:hidden}
+
+@media(max-width:1023px){
+  .work-thumb-grid{max-width:820px;gap:10px}
+  .work-identity-card{height:auto;min-height:170px}
+}
+@media(max-width:767px){
+  .work-thumb-section{margin-top:18px}
+  .work-thumb-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .work-thumb{aspect-ratio:1/1}
+  .work-identity-card{min-height:150px;height:auto}
+  .lightbox-stage{width:92vw;height:80vh}
+  .lightbox-close{right:9px;top:8px}
+  .lightbox-prev,.lightbox-next{font-size:34px;padding:9px}
+  .lightbox-prev{left:3px}.lightbox-next{right:3px}
+}
+
+
+/* === v24 / final banner optical fitting + selected DJ sRGB set === */
+/* Ubusuna remains the visual master. Kicker and year are identical across project banners;
+   only the English exhibition title scales down when necessary. */
+.page-vibrant .project-banner-copy.lang-en .project-banner-title{
+  font-size:clamp(18px,1.24vw,23px)!important;
+  letter-spacing:.012em!important;
+  white-space:nowrap!important;
+}
+.page-scars .project-banner-copy.lang-en .project-banner-title{
+  font-size:clamp(22px,1.52vw,28px)!important;
+  letter-spacing:.025em!important;
+  white-space:nowrap!important;
+}
+.page-chroniclers .project-banner-copy.lang-en .project-banner-title{
+  font-size:clamp(24px,1.62vw,30px)!important;
+  letter-spacing:.032em!important;
+  white-space:nowrap!important;
+}
+.page-tanna .project-banner-copy.lang-en .project-banner-title{
+  font-size:clamp(25px,1.70vw,31px)!important;
+  letter-spacing:.038em!important;
+  white-space:nowrap!important;
+}
+/* Keep the wave motif lower than the live title block, preserving a clear white reading field. */
+.page-chroniclers .project-banner-bg{
+  width:100%!important;height:100%!important;object-fit:cover!important;
+  object-position:center 86%!important;transform:translateY(8%)!important;
+}
+.page-chroniclers .project-banner-copy{top:43%!important;}
+
+/* WORKS index item links keep the same typography as the former plain-text entries. */
+.year-group a.item{color:inherit;text-decoration:none}
+
+@media(max-width:767px){
+  .page-vibrant .project-banner-copy.lang-en .project-banner-title{font-size:clamp(14px,3.95vw,18px)!important;letter-spacing:.005em!important}
+  .page-scars .project-banner-copy.lang-en .project-banner-title{font-size:clamp(18px,5.0vw,23px)!important}
+  .page-chroniclers .project-banner-copy.lang-en .project-banner-title{font-size:clamp(19px,5.25vw,24px)!important}
+  .page-tanna .project-banner-copy.lang-en .project-banner-title{font-size:clamp(20px,5.45vw,25px)!important}
+  .page-chroniclers .project-banner-copy{top:42%!important}
+}
+
+
+/* === v25 / Domestic Jealousy: user-selected RGB set and editorial thumbnail order === */
+.work-thumb-grid--editorial{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:clamp(12px,1.6vw,22px);
+  row-gap:clamp(24px,2.8vw,42px);
+  align-items:start;
+}
+.work-thumb-grid--editorial .work-thumb{
+  min-height:clamp(120px,10vw,168px);
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:0;
+  border:0;
+  background:transparent;
+}
+.work-thumb-grid--editorial .work-thumb img{
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:clamp(120px,10vw,168px);
+  object-fit:contain;
+  object-position:center top;
+}
+/* Small optical shifts echo the user's comp without forcing false crops or ratios. */
+.work-thumb-grid--editorial .work-thumb:nth-child(1),
+.work-thumb-grid--editorial .work-thumb:nth-child(4),
+.work-thumb-grid--editorial .work-thumb:nth-child(7){justify-content:flex-start}
+.work-thumb-grid--editorial .work-thumb:nth-child(3),
+.work-thumb-grid--editorial .work-thumb:nth-child(6),
+.work-thumb-grid--editorial .work-thumb:nth-child(9){justify-content:flex-end}
+.work-thumb-grid--editorial .work-thumb:nth-child(2) img{max-width:78%}
+.work-thumb-grid--editorial .work-thumb:nth-child(3) img{max-width:78%}
+.work-thumb-grid--editorial .work-thumb:nth-child(4) img{max-width:86%}
+.work-thumb-grid--editorial .work-thumb:nth-child(5) img{max-width:88%}
+.work-thumb-grid--editorial .work-thumb:nth-child(6) img{max-width:92%}
+.work-thumb-grid--editorial .work-thumb:nth-child(7) img{max-width:80%}
+.work-thumb-grid--editorial .work-thumb:nth-child(8) img{max-width:72%}
+.work-thumb-grid--editorial .work-thumb:nth-child(9) img{max-width:78%}
+@media(max-width:767px){
+  .work-thumb-grid--editorial{column-gap:8px;row-gap:18px}
+  .work-thumb-grid--editorial .work-thumb{min-height:96px}
+  .work-thumb-grid--editorial .work-thumb img{max-height:96px}
+}
+
+
+/* === v26 / confirmed thumbnail geometry + title-face corrections === */
+/* Domestic Jealousy: the nine preview cells are deliberately square.
+   Full images retain their native aspect ratio in the lightbox. */
+.work-thumb-grid--editorial{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:10px!important;
+  align-items:stretch!important;
+}
+.work-thumb-grid--editorial .work-thumb{
+  width:100%!important;
+  aspect-ratio:1/1!important;
+  min-height:0!important;
+  display:block!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background:#f2f2f0!important;
+}
+.work-thumb-grid--editorial .work-thumb img,
+.work-thumb-grid--editorial .work-thumb:nth-child(n) img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+.work-thumb-grid--editorial .work-thumb:nth-child(n){justify-content:normal!important}
+
+/* 2014 / 2015 Japanese project titles use Kinryo only for the title itself.
+   CLIFF EDGE PROJECT and the year continue to use the common brand serif. */
+.page-tanna .project-banner-copy.lang-ja .project-banner-title,
+.page-scars .project-banner-copy.lang-ja .project-banner-title{
+  font-family:"Kinryo","金陵",var(--brand-serif)!important;
+}
+
+@media(max-width:767px){
+  .work-thumb-grid--editorial{gap:6px!important}
+  .work-thumb-grid--editorial .work-thumb{aspect-ratio:1/1!important}
+}
+
+/* === v27 / quiet horizontal desktop navigation === */
+:root{
+  --nav-sans:"Helvetica Neue","Helvetica","Arial","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+
+/* Desktop navigation: brand and destinations form one quiet left-aligned line.
+   Language remains a separate setting at the far right. */
+@media (min-width:761px){
+  .site-header{
+    height:66px;
+    padding:0 var(--gutter);
+    align-items:center;
+    justify-content:space-between;
+    pointer-events:none;
+  }
+  .site-header.is-hidden{transform:none}
+  .header-left{
+    display:flex;
+    align-items:baseline;
+    min-width:0;
+    pointer-events:auto;
+  }
+  .brand{
+    position:relative;
+    z-index:2;
+    flex:0 0 auto;
+    margin-right:clamp(46px,4.2vw,76px);
+    font-family:var(--brand-serif);
+    font-size:clamp(21px,1.65vw,27px);
+    line-height:1;
+    letter-spacing:.085em;
+    font-weight:400;
+    white-space:nowrap;
+  }
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:clamp(18px,1.65vw,29px);
+    pointer-events:auto;
+  }
+  .main-nav a{
+    font-family:var(--nav-sans);
+    font-size:11.5px;
+    line-height:1;
+    font-weight:300;
+    letter-spacing:.135em;
+    color:#6f6f6f;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:color .2s ease,opacity .2s ease;
+  }
+  .main-nav a:hover,.main-nav a:focus-visible{color:#111}
+  .main-nav a.is-current{color:#111}
+
+  .header-actions{
+    position:relative;
+    right:auto;
+    top:auto;
+    display:flex;
+    align-items:center;
+    gap:0;
+    pointer-events:auto;
+    color:#111;
+    text-shadow:none;
+  }
+  .lang-switch{
+    gap:5px;
+    font-family:var(--nav-sans);
+    font-size:11.5px;
+    line-height:1;
+    font-weight:300;
+    letter-spacing:.11em;
+  }
+  .lang-choice{
+    padding:9px 0;
+    color:#aaa;
+    font-weight:300;
+  }
+  .lang-choice.is-active{color:#111}
+  .lang-sep{color:#c7c7c7}
+  .menu-btn,.menu-panel{display:none!important}
+
+  /* Home: keep the same composition, but let the image field breathe farther right. */
+  .page-home .site-header{
+    height:66px;
+    padding:0 var(--gutter);
+    align-items:center;
+    background:transparent;
+    border-bottom:0;
+  }
+  .page-home .brand{
+    padding-left:0;
+    color:#111;
+    font-size:clamp(21px,1.65vw,27px);
+    letter-spacing:.085em;
+    line-height:1;
+    transform:none;
+  }
+  .page-home .header-actions{
+    position:relative;
+    right:auto;
+    top:auto;
+    color:#111;
+    text-shadow:none;
+  }
+  .page-home .hero-rail{transform:translateX(-140px)}
+}
+
+/* Mobile retains the compact menu; brand still serves as the TOP link. */
+@media (max-width:760px){
+  .header-left{display:block;pointer-events:auto}
+  .main-nav{display:none}
+  .menu-btn{display:block}
+  .menu-panel{display:block}
+  .menu-links a{
+    font-family:var(--nav-sans);
+    font-weight:300;
+    letter-spacing:.12em;
+  }
+  .lang-switch{
+    font-family:var(--nav-sans);
+    font-weight:300;
+  }
+}
+
+
+/* === v28 / language persistence + Mirrors in a Chamber + lower Chroniclers wave === */
+/* The wave is intentionally pushed well below the title field. Its uppermost lines may
+   approach the year, but the title remains fully legible. */
+.page-chroniclers .project-banner-bg{
+  object-position:center bottom!important;
+  transform:translateY(19%)!important;
+}
+@media(max-width:767px){
+  .page-chroniclers .project-banner-bg{transform:translateY(17%)!important}
+}
+
+.page-mirrors .mirrors-page{max-width:1280px;padding-bottom:110px}
+.page-mirrors .mirrors-title-block{margin:0 0 clamp(28px,3.4vw,50px);max-width:1000px}
+.page-mirrors .mirrors-title-block>div{position:relative;padding-right:70px}
+.page-mirrors .mirrors-kicker{display:block;margin:0 0 15px;font-family:var(--nav-sans);font-size:10.5px;letter-spacing:.145em;color:#8a8a8a;font-weight:400}
+.page-mirrors .mirrors-title-block h2{margin:0;font-family:var(--brand-serif);font-size:clamp(35px,4vw,58px);line-height:1.12;letter-spacing:.035em;font-weight:400;color:#111}
+.page-mirrors .mirrors-title-block .lang-en h2{font-family:var(--serif);font-size:clamp(34px,3.8vw,55px);letter-spacing:.005em}
+.page-mirrors .mirrors-title-block p{margin:12px 0 0;font-family:var(--serif);font-size:clamp(17px,1.55vw,23px);line-height:1.35;color:#777;letter-spacing:.015em}
+.page-mirrors .mirrors-title-block small{position:absolute;right:0;bottom:5px;font-family:var(--nav-sans);font-size:11px;letter-spacing:.12em;color:#999}
+.page-mirrors .mirrors-main-visual{margin:0}
+.page-mirrors .mirrors-main-visual .work-main-open{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.page-mirrors .mirrors-main-visual img{display:block;width:100%;height:auto}
+.page-mirrors .mirrors-main-visual figcaption{margin-top:8px;font-size:11.5px;line-height:1.55;color:#999}
+.page-mirrors .mirrors-thumb-section{margin-top:clamp(24px,2.5vw,34px)}
+.page-mirrors .mirrors-thumb-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.2vw,16px)}
+.page-mirrors .mirrors-thumb-grid .work-thumb{display:block;width:100%;aspect-ratio:1/1;padding:0;border:0;background:#f1f1ef;overflow:hidden;cursor:zoom-in}
+.page-mirrors .mirrors-thumb-grid .work-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;transition:opacity .2s ease}
+.page-mirrors .mirrors-thumb-grid .work-thumb:hover img{opacity:.86}
+.page-mirrors .mirrors-photo-credit{margin:12px 0 0;font-size:10.5px;line-height:1.5;color:#999}
+.page-mirrors .mirrors-text-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(60px,7vw,110px);margin-top:clamp(95px,10vw,150px);padding-top:30px;border-top:1px solid var(--line);align-items:start}
+.page-mirrors .mirrors-text-grid .work-info{border-top:0;padding-top:0}
+.page-mirrors .mirrors-text-grid .work-concept{padding-top:0}
+.page-mirrors .mirrors-text-grid .work-prose{font-size:15.5px;line-height:1.82;max-width:660px}
+
+@media(max-width:900px){
+  .page-mirrors .mirrors-text-grid{grid-template-columns:1fr;gap:56px;margin-top:86px}
+  .page-mirrors .mirrors-text-grid .work-info{max-width:760px}
+  .page-mirrors .mirrors-text-grid .work-concept{max-width:760px}
+}
+@media(max-width:767px){
+  .page-mirrors .mirrors-title-block{margin-bottom:25px}
+  .page-mirrors .mirrors-title-block>div{padding-right:0}
+  .page-mirrors .mirrors-title-block h2{font-size:clamp(29px,9vw,39px);letter-spacing:.02em}
+  .page-mirrors .mirrors-title-block .lang-en h2{font-size:clamp(28px,8.4vw,38px)}
+  .page-mirrors .mirrors-title-block p{font-size:16px;margin-top:9px}
+  .page-mirrors .mirrors-title-block small{position:static;display:block;margin-top:10px}
+  .page-mirrors .mirrors-thumb-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .page-mirrors .mirrors-main-visual figcaption{font-size:10.5px}
+  .page-mirrors .mirrors-photo-credit{font-size:10px}
+  .page-mirrors .mirrors-text-grid{margin-top:64px;padding-top:24px;gap:44px}
+}
+
+/* === v29 / Mirrors page realigned to the shared WORKS detail grammar === */
+.page-mirrors .mirrors-work-thumb-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.page-mirrors .mirrors-work-thumb-grid .work-thumb{
+  aspect-ratio:1/1;
+}
+.page-mirrors .mirrors-work-thumb-grid .work-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.page-mirrors .mirrors-photo-credit{
+  margin:11px 0 0;
+  font-size:10.5px;
+  line-height:1.5;
+  color:#999;
+}
+.page-mirrors .work-identity-card .lang-en .work-identity-title{
+  font-family:var(--serif);
+  font-size:clamp(23px,1.52vw,29px);
+  line-height:1.12;
+  letter-spacing:.01em;
+  -webkit-line-clamp:2;
+}
+.page-mirrors .work-identity-card .lang-ja .work-identity-title{
+  font-size:clamp(24px,1.62vw,31px);
+  line-height:1.15;
+  letter-spacing:.045em;
+}
+@media(max-width:767px){
+  .page-mirrors .mirrors-work-thumb-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:6px;
+  }
+  .page-mirrors .work-identity-card .lang-en .work-identity-title{
+    font-size:clamp(20px,5.4vw,26px);
+  }
+  .page-mirrors .work-identity-card .lang-ja .work-identity-title{
+    font-size:clamp(21px,5.7vw,27px);
+  }
+}
+
+
+/* === v34 / Garden of Consciousness-Only paired installation views === */
+/* Keep the WORKS detail-page grammar intact while showing the room as a two-view field.
+   The pair remains horizontal even on phones; the user explicitly prefers smaller images
+   over stacking them vertically for this work. */
+.page-garden-consciousness .garden-diptych-images{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  align-items:stretch;
+}
+.page-garden-consciousness .garden-diptych-item{
+  min-width:0;
+  overflow:hidden;
+  background:#f4f4f2;
+}
+.page-garden-consciousness .garden-diptych-item img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.page-garden-consciousness .garden-diptych figcaption{
+  margin-top:8px;
+}
+@media(max-width:767px){
+  .page-garden-consciousness .garden-diptych-images{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:6px;
+  }
+  .page-garden-consciousness .garden-diptych figcaption{
+    margin-top:6px;
+  }
+}
+
+
+/* === v35: ABOUT legal/footer alignment ===
+   Treat the disclaimer as a site-wide element, not part of the ABOUT text column. */
+.page-about > .site-footer{
+  border-top:1px solid var(--line);
+  margin-top:30px;
+}
+
+/* === v36 / Mirror to Mirror Mind to Mind === */
+.page-mirror-to-mirror .mirror-to-mirror-thumb-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.page-mirror-to-mirror .mirror-to-mirror-thumb-grid .work-thumb{
+  display:block;
+  width:100%;
+  aspect-ratio:1/1;
+  padding:0;
+  border:0;
+  background:#f1f1ef;
+  overflow:hidden;
+  cursor:zoom-in;
+}
+.page-mirror-to-mirror .mirror-to-mirror-thumb-grid .work-thumb img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:opacity .2s ease;
+}
+.page-mirror-to-mirror .mirror-to-mirror-thumb-grid .work-thumb:hover img{opacity:.86}
+.page-mirror-to-mirror .work-identity-card .work-identity-title{
+  font-size:clamp(21px,1.4vw,27px);
+  line-height:1.12;
+  letter-spacing:.005em;
+  -webkit-line-clamp:2;
+}
+@media(max-width:767px){
+  .page-mirror-to-mirror .mirror-to-mirror-thumb-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .page-mirror-to-mirror .work-identity-card .work-identity-title{font-size:clamp(19px,5vw,24px)}
+}
+
+/* === v37 / White Room White Mirror === */
+.page-white-room .white-room-thumb-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.page-white-room .white-room-thumb-grid .work-thumb{
+  display:block;
+  width:100%;
+  aspect-ratio:1/1;
+  padding:0;
+  border:0;
+  background:#f4f4f2;
+  overflow:hidden;
+  cursor:zoom-in;
+}
+.page-white-room .white-room-thumb-grid .work-thumb img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:opacity .2s ease;
+}
+.page-white-room .white-room-thumb-grid .work-thumb:hover img{opacity:.86}
+.page-white-room .work-identity-card .work-identity-title{
+  font-size:clamp(22px,1.48vw,28px);
+  line-height:1.12;
+  letter-spacing:.01em;
+  -webkit-line-clamp:2;
+  white-space:normal;
+}
+@media(max-width:767px){
+  .page-white-room .white-room-thumb-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .page-white-room .work-identity-card .work-identity-title{font-size:clamp(19px,5vw,24px)}
+}
+
+/* === v41 / Blood Wall Blood Mirror === */
+.page-blood-wall .blood-wall-thumb-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.page-blood-wall .blood-wall-thumb-grid .work-thumb{
+  display:block;
+  width:100%;
+  aspect-ratio:2/3;
+  padding:0;
+  border:0;
+  background:#f4f4f2;
+  overflow:hidden;
+  cursor:zoom-in;
+}
+.page-blood-wall .blood-wall-thumb-grid .work-thumb img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:opacity .2s ease;
+}
+.page-blood-wall .blood-wall-thumb-grid .work-thumb:hover img{opacity:.86}
+.page-blood-wall .work-identity-card .work-identity-title{
+  font-size:clamp(21px,1.4vw,27px);
+  line-height:1.12;
+  letter-spacing:.005em;
+  -webkit-line-clamp:2;
+  white-space:normal;
+}
+@media(max-width:767px){
+  .page-blood-wall .blood-wall-thumb-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .page-blood-wall .work-identity-card .work-identity-title{font-size:clamp(19px,5vw,24px)}
+}
+
+/* === v43 / Kuu === */
+.page-kuu .kuu-main-visual{max-width:720px}
+.page-kuu .work-identity-card .work-identity-title{letter-spacing:.10em}
+@media(max-width:1023px){.page-kuu .kuu-main-visual{max-width:720px}}
+@media(max-width:767px){.page-kuu .kuu-main-visual{max-width:100%}}
+
+/* === v44 / EUREKA sequential walkthrough === */
+.page-eureka .eureka-hero-grid{grid-template-columns:minmax(0,1.42fr) minmax(360px,1fr);align-items:start}
+.page-eureka .eureka-main-visual{max-width:100%}
+.page-eureka .eureka-walkthrough{margin-top:clamp(108px,10vw,160px);padding-top:30px;border-top:1px solid var(--line)}
+.page-eureka .eureka-step{margin:0 auto}
+.page-eureka .eureka-step + .eureka-step{margin-top:clamp(30px,3vw,46px)}
+.page-eureka .eureka-step.is-tight{margin-top:clamp(18px,1.8vw,28px)}
+.page-eureka .eureka-step.is-breath{margin-top:clamp(58px,5vw,84px)}
+.page-eureka .eureka-step.is-end{margin-top:clamp(74px,6vw,108px)}
+.page-eureka .eureka-step img{display:block;width:100%;height:auto}
+.page-eureka .eureka-step figcaption{margin-top:8px;font-size:11.5px;line-height:1.6;color:#999}
+.page-eureka .eureka-step-corridor{max-width:min(100%,520px)}
+.page-eureka .eureka-step-chamber{max-width:min(100%,980px)}
+.page-eureka .eureka-step-human{max-width:min(100%,420px)}
+.page-eureka .eureka-step-threshold{max-width:min(100%,560px)}
+.page-eureka .eureka-step-epilogue{max-width:min(100%,720px)}
+@media(max-width:1023px){
+  .page-eureka .eureka-hero-grid{grid-template-columns:1fr}
+  .page-eureka .eureka-main-visual{max-width:980px}
+}
+@media(max-width:767px){
+  .page-eureka .eureka-walkthrough{margin-top:72px;padding-top:24px}
+  .page-eureka .eureka-step + .eureka-step{margin-top:26px}
+  .page-eureka .eureka-step.is-tight{margin-top:14px}
+  .page-eureka .eureka-step.is-breath{margin-top:38px}
+  .page-eureka .eureka-step.is-end{margin-top:46px}
+  .page-eureka .eureka-step-corridor,.page-eureka .eureka-step-human,.page-eureka .eureka-step-threshold,.page-eureka .eureka-step-epilogue,.page-eureka .eureka-step-chamber{max-width:100%}
+}
+
+/* === v45 / EUREKA walkthrough: smaller scale + left alignment === */
+.page-eureka .eureka-step{margin-left:0;margin-right:0}
+.page-eureka .eureka-step-corridor{max-width:min(100%,420px)}
+.page-eureka .eureka-step-chamber{max-width:min(100%,760px)}
+.page-eureka .eureka-step-human{max-width:min(100%,340px)}
+.page-eureka .eureka-step-threshold{max-width:min(100%,460px)}
+.page-eureka .eureka-step-epilogue{max-width:min(100%,600px)}
+@media(max-width:767px){
+  .page-eureka .eureka-step-corridor,.page-eureka .eureka-step-human,.page-eureka .eureka-step-threshold,.page-eureka .eureka-step-epilogue,.page-eureka .eureka-step-chamber{max-width:88%}
+}
+
+/* === v46 / EUREKA: align second image with concept paragraph 2 === */
+@media(min-width:1024px){
+  .page-eureka .eureka-walkthrough{padding-top:0;border-top:0}
+}
+
+
+/* === v47 / Every Colour You Are === */
+.page-every-colour .work-main-open{display:block;width:100%}
+.page-every-colour .every-colour-main-visual img{display:block;width:100%;height:auto}
+.page-every-colour .every-colour-thumb-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.page-every-colour .work-thumb-figure{margin:0}
+.page-every-colour .work-thumb-figure figcaption{margin-top:8px;font-size:11.5px;line-height:1.6;color:#999}
+.page-every-colour .work-thumb{display:block;width:100%;border:0;background:none;padding:0;cursor:pointer}
+.page-every-colour .work-thumb img{display:block;width:100%;height:auto}
+@media (max-width:767px){
+  .page-every-colour .every-colour-thumb-grid{grid-template-columns:1fr;gap:20px}
+}
+
+
+/* === v48 / Kami === */
+.page-kami .kami-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.page-kami .kami-thumb-figure{margin:0}
+.page-kami .kami-thumb{display:block;width:100%;aspect-ratio:1/1;border:0;background:none;padding:0;cursor:pointer;overflow:hidden}
+.page-kami .kami-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.page-kami .kami-grid-section{margin:0}
+@media (max-width:767px){
+  .page-kami .kami-grid{gap:8px}
+}
+
+
+/* === v50 / Every Colour You Are thumbnail crop === */
+.page-every-colour .every-colour-thumb-grid .work-thumb{aspect-ratio:1.34/1;overflow:hidden}
+.page-every-colour .every-colour-thumb-grid .work-thumb img{width:100%;height:100%;object-fit:cover}
+.page-every-colour .every-colour-thumb-grid .work-thumb-figure:nth-child(2) img{object-position:center 36%}
+
+/* === v50 / final work-page adjustments === */
+.page-every-colour .every-colour-thumb-grid .work-thumb{aspect-ratio:1/1}
+.page-concentration .work-main-visual{max-width:540px}
+.page-concentration .work-thumb-grid{grid-template-columns:minmax(0,220px);max-width:220px}
+.page-concentration .work-thumb{aspect-ratio:1/1}
+.page-concentration .work-identity-card .work-identity-title{font-size:clamp(19px,1.55vw,29px);line-height:1.12;letter-spacing:.055em}
+.page-redline .work-main-visual{max-width:650px}
+@media(max-width:767px){
+  .page-concentration .work-main-visual,.page-redline .work-main-visual{max-width:100%}
+  .page-concentration .work-thumb-grid{grid-template-columns:minmax(0,180px);max-width:180px}
+  .page-concentration .work-identity-card .work-identity-title{font-size:clamp(19px,5.2vw,24px)}
+}
+
+
+/* === v51 / Redline original-image grid === */
+.page-redline .redline-grid-section{margin:0}
+.page-redline .redline-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.page-redline .redline-thumb{display:block;width:100%;aspect-ratio:1/1;border:0;background:none;padding:0;overflow:hidden;cursor:pointer}
+.page-redline .redline-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.page-redline .redline-thumb:nth-child(10) img,.page-redline .redline-thumb:nth-child(11) img{object-fit:cover}
+@media(max-width:767px){.page-redline .redline-grid{gap:8px}}
+
+/* === v55 / Ghosts secondary image: preserve original aspect ratio === */
+.page-ghosts .work-thumb-grid{
+  grid-template-columns:minmax(0,420px);
+  max-width:420px;
+}
+.page-ghosts .work-thumb{
+  aspect-ratio:auto;
+  background:transparent;
+  overflow:visible;
+}
+.page-ghosts .work-thumb img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+@media(max-width:767px){
+  .page-ghosts .work-thumb-grid{
+    grid-template-columns:minmax(0,100%);
+    max-width:100%;
+  }
+}
+
+
+/* === v56 / Timbre of Time === */
+.page-timbre-time .timbre-sequence{max-width:620px}
+.page-timbre-time .timbre-main{margin:0}
+.page-timbre-time .timbre-main img{display:block;width:100%;height:auto}
+.page-timbre-time .timbre-drip-column{display:grid;grid-template-columns:1fr;gap:20px;margin-top:18px;align-items:start;width:min(46%,280px)}
+.page-timbre-time .timbre-small{display:block;width:100%;border:0;background:none;padding:0;cursor:zoom-in}
+.page-timbre-time .timbre-small img{display:block;width:100%;height:auto}
+.page-timbre-time .timbre-corrosion{width:min(70%,420px);margin:14px 0 0}
+.page-timbre-time .timbre-corrosion img{display:block;width:100%;height:auto}
+.page-timbre-time .timbre-corrosion figcaption{margin-top:7px;font-size:11.5px;line-height:1.6;color:#999}
+@media(max-width:767px){
+  .page-timbre-time .timbre-sequence{max-width:100%}
+  .page-timbre-time .timbre-drip-column{gap:14px;margin-top:14px;width:min(60%,320px)}
+  .page-timbre-time .timbre-corrosion{width:min(82%,420px);margin-top:10px}
+}
+
+
+.page-midori-daichi .midori-sequence{max-width:660px}
+.page-midori-daichi .midori-main{margin:0}
+.page-midori-daichi .midori-main img{display:block;width:100%;height:auto}
+.page-midori-daichi .midori-detail-row{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:14px;align-items:start;margin-top:14px}
+.page-midori-daichi .midori-detail-image,.page-midori-daichi .midori-detail-note{margin:0}
+.page-midori-daichi .midori-detail-image img,.page-midori-daichi .midori-detail-note img{display:block;width:100%;height:auto}
+.page-midori-daichi .midori-detail-image figcaption,.page-midori-daichi .midori-detail-note figcaption{margin-top:7px;font-size:11.5px;line-height:1.6;color:#999}
+@media(max-width:1024px){
+  .page-midori-daichi .midori-sequence{max-width:100%}
+}
+@media(max-width:767px){
+  .page-midori-daichi .midori-detail-row{grid-template-columns:1fr;gap:10px;margin-top:10px}
+}
+
+
+/* === v59 / Mirror to Mirror captions === */
+.page-mirror-to-mirror .mirror-to-mirror-thumb-item{margin:0;min-width:0}
+.page-mirror-to-mirror .mirror-to-mirror-thumb-item figcaption{margin-top:7px;font-size:10.5px;line-height:1.45;color:#8e8e8a}
+
+
+
+/* === v70 / Garden of Consciousness-Only four-image layout === */
+.page-garden-consciousness .garden-support-section{
+  margin-top:24px;
+}
+.page-garden-consciousness .garden-support-grid{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  justify-content:flex-start;
+}
+.page-garden-consciousness .garden-support-item{
+  margin:0;
+  min-width:0;
+  flex:0 0 calc(((100% - 12px) / 2) * 0.7);
+}
+.page-garden-consciousness .garden-support-item img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.page-garden-consciousness .garden-support-item figcaption{
+  margin-top:8px;
+  font-size:11.5px;
+  line-height:1.6;
+  color:#999;
+}
+@media(max-width:767px){
+  .page-garden-consciousness .garden-diptych-images{
+    gap:8px;
+  }
+  .page-garden-consciousness .garden-support-section{
+    margin-top:18px;
+  }
+  .page-garden-consciousness .garden-support-grid{
+    gap:6px;
+  }
+  .page-garden-consciousness .garden-support-item{
+    flex-basis:calc(((100% - 8px) / 2) * 0.72);
+  }
+  .page-garden-consciousness .garden-support-item figcaption{
+    margin-top:6px;
+    font-size:10.5px;
+  }
+}
