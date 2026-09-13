@@ -121,23 +121,19 @@
     <div class="map-mobile-list" aria-label="Cliff Edge Project locations">
       <p>
         <span class="map-mobile-year">2014–2015</span>
-        <span class="map-mobile-name lang-en"><a href="project-tanna-memory.html">Memories of Tanna</a> / <a href="project-scars-peninsula.html">Scars of the Peninsula</a></span>
-        <span class="map-mobile-name lang-ja" lang="ja"><a href="project-tanna-memory.html">丹那の記憶</a> / <a href="project-scars-peninsula.html">半島の傷跡</a></span>
+        <span class="map-mobile-name"><a href="project-tanna-memory.html" data-map-en="Memories of Tanna" data-map-ja="丹那の記憶">Memories of Tanna</a> / <a href="project-scars-peninsula.html" data-map-en="Scars of the Peninsula" data-map-ja="半島の傷跡">Scars of the Peninsula</a></span>
       </p>
       <p>
         <span class="map-mobile-year">2018</span>
-        <span class="map-mobile-name lang-en"><a href="project-chroniclers-water.html">Chroniclers of Water</a></span>
-        <span class="map-mobile-name lang-ja" lang="ja"><a href="project-chroniclers-water.html">水のかたりべ</a></span>
+        <span class="map-mobile-name"><a href="project-chroniclers-water.html" data-map-en="Chroniclers of Water" data-map-ja="水のかたりべ">Chroniclers of Water</a></span>
       </p>
       <p>
         <span class="map-mobile-year">2021</span>
-        <span class="map-mobile-name lang-en"><a href="project-vibrant-mountains.html">The Vibrant Mountains and Rivers</a></span>
-        <span class="map-mobile-name lang-ja" lang="ja"><a href="project-vibrant-mountains.html">躍動する山河</a></span>
+        <span class="map-mobile-name"><a href="project-vibrant-mountains.html" data-map-en="The Vibrant Mountains and Rivers" data-map-ja="躍動する山河">The Vibrant Mountains and Rivers</a></span>
       </p>
       <p>
         <span class="map-mobile-year">2022–2023</span>
-        <span class="map-mobile-name lang-en"><a href="project-ubusuna-hydrology.html">Ubusuna Hydrology</a></span>
-        <span class="map-mobile-name lang-ja" lang="ja"><a href="project-ubusuna-hydrology.html">うぶすなの水文学</a></span>
+        <span class="map-mobile-name"><a href="project-ubusuna-hydrology.html" data-map-en="Ubusuna Hydrology" data-map-ja="うぶすなの水文学">Ubusuna Hydrology</a></span>
       </p>
     </div>
   </div>
@@ -179,6 +175,20 @@
   }
   new MutationObserver(alignEnglishMapLeaders).observe(document.body, {attributes:true, attributeFilter:['data-lang']});
   window.addEventListener('resize', alignEnglishMapLeaders);
+})();
+</script>
+<script>
+(function(){
+  function syncMobileMapLabels(){
+    var lang = document.body.dataset.lang === 'ja' ? 'ja' : 'en';
+    document.querySelectorAll('[data-map-en][data-map-ja]').forEach(function(el){
+      el.textContent = lang === 'ja' ? el.dataset.mapJa : el.dataset.mapEn;
+      if(lang === 'ja') el.setAttribute('lang','ja');
+      else el.removeAttribute('lang');
+    });
+  }
+  syncMobileMapLabels();
+  new MutationObserver(syncMobileMapLabels).observe(document.body,{attributes:true,attributeFilter:['data-lang']});
 })();
 </script>
 <script src="script.js"></script>
