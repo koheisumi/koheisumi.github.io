@@ -2302,3 +2302,142 @@ body.lightbox-open{overflow:hidden}
     font-size:10.5px;
   }
 }
+
+
+/* === v77 / final mobile layout guard for WORKS + PROJECTS ===
+   Keep desktop/tablet layouts untouched. This block must stay at the end of the file
+   so earlier desktop grid declarations cannot override the phone layout. */
+@media(max-width:767px){
+  /* WORKS detail pages: force the hero/content stack to one column on phones. */
+  .page-work-detail .work-detail-page{
+    padding:82px 16px 68px;
+    overflow-x:hidden;
+  }
+  .page-work-detail .work-hero-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:34px!important;
+    width:100%;
+  }
+  .page-work-detail .work-left,
+  .page-work-detail .work-side{
+    width:100%;
+    max-width:none!important;
+    min-width:0;
+  }
+  .page-work-detail .work-main-visual,
+  .page-work-detail .work-thumb-section,
+  .page-work-detail .work-identity-card,
+  .page-work-detail .work-info,
+  .page-work-detail .work-concept,
+  .page-work-detail .work-credits{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  .page-work-detail .work-identity-title{
+    white-space:normal!important;
+    max-width:100%;
+  }
+  .page-work-detail .work-info dl>div,
+  .page-work-detail .work-credits dl>div{
+    grid-template-columns:minmax(72px,88px) minmax(0,1fr)!important;
+    gap:12px!important;
+  }
+  .page-work-detail .work-info dd,
+  .page-work-detail .work-credits dd{
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
+
+  /* PROJECT detail pages: same single-column phone grammar. */
+  .page-ubusuna .project-detail-page,
+  .page-vibrant .project-detail-page,
+  .page-chroniclers .project-detail-page,
+  .page-tanna .project-detail-page,
+  .page-scars .project-detail-page{
+    padding:82px 16px 68px;
+    overflow-x:hidden;
+  }
+  .page-ubusuna .project-hero-grid,
+  .page-vibrant .project-hero-grid,
+  .page-chroniclers .project-hero-grid,
+  .page-tanna .project-hero-grid,
+  .page-scars .project-hero-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:34px!important;
+    width:100%;
+  }
+  .page-ubusuna .project-main-visual,
+  .page-vibrant .project-main-visual,
+  .page-chroniclers .project-main-visual,
+  .page-tanna .project-main-visual,
+  .page-scars .project-main-visual,
+  .page-ubusuna .project-side,
+  .page-vibrant .project-side,
+  .page-chroniclers .project-side,
+  .page-tanna .project-side,
+  .page-scars .project-side{
+    width:100%;
+    max-width:none!important;
+    min-width:0;
+  }
+  .page-project-detail .project-banner,
+  .page-project-detail .project-identities,
+  .page-project-detail .project-info,
+  .page-project-detail .project-role,
+  .page-project-detail .project-concept,
+  .page-project-detail .project-credits{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  .page-project-detail .project-banner-title{
+    white-space:normal!important;
+    max-width:100%;
+  }
+  .page-project-detail .project-info dl>div,
+  .page-project-detail .project-credits dl>div{
+    grid-template-columns:minmax(72px,88px) minmax(0,1fr)!important;
+    gap:12px!important;
+  }
+  .page-project-detail .project-info dd,
+  .page-project-detail .project-credits dd{
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
+
+  /* Cliff Edge Project overview / map page. */
+  .project-overview-shell{
+    display:grid;
+    grid-template-columns:minmax(0,1fr)!important;
+    padding:82px 16px 68px!important;
+    gap:36px!important;
+    overflow-x:hidden;
+  }
+  .project-overview-shell .overview-breadcrumb{
+    grid-column:1!important;
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  .project-overview-shell .cliff-map-panel,
+  .project-overview-shell .overview-copy,
+  .project-overview-shell .map-mobile-list{
+    width:100%;
+    max-width:none!important;
+    min-width:0;
+    box-sizing:border-box;
+  }
+  .project-overview-shell .cliff-map-stage{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    overflow:hidden;
+  }
+  .project-overview-shell .overview-copy .project-prose{
+    max-width:none;
+  }
+}
