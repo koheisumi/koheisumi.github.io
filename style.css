@@ -3266,3 +3266,120 @@ body.lightbox-open{overflow:hidden}
     margin-top:8px!important;
   }
 }
+
+
+/* === v85 / phone-only: EUREKA 4-column sequence + rebuilt Cliff Edge map ===
+   Desktop layouts and the v79 desktop leader-line spacing remain unchanged. */
+@media(max-width:767px){
+  /* EUREKA: 02–05 in row one, 06–09 in row two. Keep the full vertical
+     photographs uncropped. View 10 remains a larger, centered final thumb. */
+  .page-eureka .eureka-walkthrough{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:6px!important;
+    margin-bottom:8px!important;
+  }
+  .page-eureka .eureka-step button{
+    aspect-ratio:590 / 841!important;
+    background:#f3f3f1!important;
+  }
+  .page-eureka .eureka-step img{
+    object-fit:contain!important;
+  }
+  .page-eureka .eureka-step figcaption{
+    margin-top:3px!important;
+    font-size:7.5px!important;
+    line-height:1.25!important;
+  }
+  .page-eureka .eureka-step:last-of-type{
+    grid-column:1 / -1!important;
+    width:calc((100% - 8px) / 2)!important;
+    max-width:none!important;
+    justify-self:center!important;
+    margin-top:8px!important;
+  }
+  .page-eureka .eureka-step:last-of-type button{
+    aspect-ratio:1395 / 2048!important;
+  }
+  .page-eureka .work-info{
+    margin-top:26px!important;
+  }
+
+  /* Cliff Edge Project: do not squeeze the desktop SVG onto a phone.
+     Use a dedicated peninsula map with numbered locations and a matching
+     numbered legend below. This keeps the geographic image legible and
+     eliminates collisions between labels, leaders and the outline. */
+  .project-overview-shell .cliff-map-stage{
+    display:none!important;
+  }
+  .project-overview-shell .cliff-map-mobile-visual{
+    display:block!important;
+    width:100%!important;
+    margin:4px 0 22px!important;
+  }
+  .project-overview-shell .cliff-map-mobile-image-wrap{
+    position:relative!important;
+    width:84%!important;
+    max-width:320px!important;
+    margin:0 auto!important;
+  }
+  .project-overview-shell .cliff-map-mobile-image-wrap img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+  }
+  .project-overview-shell .cliff-map-mobile-marker{
+    position:absolute!important;
+    width:20px!important;
+    height:20px!important;
+    border-radius:50%!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    transform:translate(-50%,-50%)!important;
+    background:#4e8c95!important;
+    color:#fff!important;
+    font-family:var(--sans)!important;
+    font-size:10px!important;
+    line-height:1!important;
+    font-weight:500!important;
+    box-shadow:0 0 0 3px rgba(255,255,255,.92)!important;
+  }
+  .project-overview-shell .cliff-map-mobile-marker.marker-1{left:63.62%!important;top:11.35%!important}
+  .project-overview-shell .cliff-map-mobile-marker.marker-2{left:51.03%!important;top:20.71%!important}
+  .project-overview-shell .cliff-map-mobile-marker.marker-3{left:61.21%!important;top:33.25%!important}
+  .project-overview-shell .cliff-map-mobile-marker.marker-4{left:64.83%!important;top:43.01%!important}
+
+  .project-overview-shell .map-mobile-list{
+    counter-reset:cliff-location!important;
+    margin-top:0!important;
+    border-top:1px solid var(--line)!important;
+  }
+  .project-overview-shell .map-mobile-list p{
+    counter-increment:cliff-location!important;
+    position:relative!important;
+    min-height:50px!important;
+    padding:13px 0 13px 34px!important;
+  }
+  .project-overview-shell .map-mobile-list p::before{
+    content:counter(cliff-location)!important;
+    position:absolute!important;
+    left:0!important;
+    top:15px!important;
+    width:20px!important;
+    height:20px!important;
+    border-radius:50%!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    background:#4e8c95!important;
+    color:#fff!important;
+    font-family:var(--sans)!important;
+    font-size:10px!important;
+    line-height:1!important;
+    font-weight:500!important;
+  }
+}
+
+@media(min-width:768px){
+  .cliff-map-mobile-visual{display:none!important}
+}
