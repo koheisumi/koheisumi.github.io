@@ -3383,3 +3383,19 @@ body.lightbox-open{overflow:hidden}
 @media(min-width:768px){
   .cliff-map-mobile-visual{display:none!important}
 }
+
+/* === v86 / mobile Cliff Edge map language isolation === */
+@media(max-width:767px){
+  body[data-lang="en"] .project-overview-shell .map-mobile-list.lang-ja{
+    display:none!important;
+  }
+  body[data-lang="en"] .project-overview-shell .map-mobile-list.lang-en{
+    display:block!important;
+  }
+  body[data-lang="ja"] .project-overview-shell .map-mobile-list.lang-en{
+    display:none!important;
+  }
+  body[data-lang="ja"] .project-overview-shell .map-mobile-list.lang-ja{
+    display:block!important;
+  }
+}
