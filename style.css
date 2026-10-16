@@ -3492,3 +3492,15 @@ body.lightbox-open{overflow:hidden}
     display:block;
   }
 }
+
+
+/* Domestic Jealousy: keep Japanese work title on one line on desktop. */
+@media(min-width:768px){
+  .page-domestic .work-identity-card .lang-ja .work-identity-title{
+    font-size:clamp(23px,1.5vw,29px);
+    letter-spacing:.035em;
+    white-space:nowrap;
+    -webkit-line-clamp:unset;
+    overflow:visible;
+  }
+}
