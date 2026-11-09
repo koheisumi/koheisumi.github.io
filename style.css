@@ -3504,3 +3504,51 @@ body.lightbox-open{overflow:hidden}
     overflow:visible;
   }
 }
+
+
+/* === v83 / unified square thumbnails on WORK detail pages === */
+/* Thumbnail previews are square and cropped with cover.
+   Main/lead images and lightbox images retain their native aspect ratio. */
+.page-work-detail .work-thumb,
+.page-work-detail .redline-thumb,
+.page-work-detail .kami-thumb,
+.page-work-detail .timbre-small,
+.page-work-detail .mirror-series-item button,
+.page-work-detail .rds-item button,
+.page-garden-consciousness .garden-support-section button[data-lightbox-src],
+.page-midori-daichi .midori-detail-row button[data-lightbox-src]{
+  width:100%!important;
+  aspect-ratio:1 / 1!important;
+  overflow:hidden!important;
+  display:block!important;
+}
+
+.page-work-detail .work-thumb img,
+.page-work-detail .redline-thumb img,
+.page-work-detail .kami-thumb img,
+.page-work-detail .timbre-small img,
+.page-work-detail .mirror-series-item button img,
+.page-work-detail .rds-item button img,
+.page-garden-consciousness .garden-support-section button[data-lightbox-src] img,
+.page-midori-daichi .midori-detail-row button[data-lightbox-src] img{
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:1 / 1!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+
+/* Preserve full images in lead areas and the lightbox. */
+.page-work-detail .work-main-visual .work-main-open,
+.page-work-detail .garden-diptych .garden-diptych-item{
+  aspect-ratio:auto!important;
+  overflow:visible!important;
+}
+.page-work-detail .work-main-visual .work-main-open img,
+.page-work-detail .garden-diptych .garden-diptych-item img,
+.image-lightbox img{
+  width:100%;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+}
