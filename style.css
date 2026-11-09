@@ -3552,3 +3552,57 @@ body.lightbox-open{overflow:hidden}
   aspect-ratio:auto!important;
   object-fit:contain!important;
 }
+
+
+/* === v84 / force square cropped thumbnails on phone === */
+@media(max-width:767px){
+  /* Every supporting thumbnail is a true square crop. Lead/main images stay uncropped. */
+  .page-work-detail .work-thumb-section button.work-thumb[data-lightbox-src],
+  .page-garden-consciousness.page-work-detail .garden-support-section button[data-lightbox-src],
+  .page-midori-daichi.page-work-detail .midori-detail-row button[data-lightbox-src],
+  .page-timbre-time.page-work-detail .timbre-drip-column button[data-lightbox-src],
+  .page-timbre-time.page-work-detail .timbre-corrosion button[data-lightbox-src],
+  .page-rds.page-work-detail .rds-item:not(:first-of-type) button[data-lightbox-src],
+  .page-mirror-work-series.page-work-detail .mirror-series-item:not(:first-of-type) button[data-lightbox-src],
+  .page-kami.page-work-detail .kami-thumb-figure:not(:first-of-type) button[data-lightbox-src],
+  .page-redline.page-work-detail .redline-thumb:not(:first-of-type),
+  .page-eureka.page-work-detail .eureka-step button[data-lightbox-src]{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1 / 1!important;
+    overflow:hidden!important;
+    background:#f3f3f1!important;
+  }
+
+  .page-work-detail .work-thumb-section button.work-thumb[data-lightbox-src] img,
+  .page-garden-consciousness.page-work-detail .garden-support-section button[data-lightbox-src] img,
+  .page-midori-daichi.page-work-detail .midori-detail-row button[data-lightbox-src] img,
+  .page-timbre-time.page-work-detail .timbre-drip-column button[data-lightbox-src] img,
+  .page-timbre-time.page-work-detail .timbre-corrosion button[data-lightbox-src] img,
+  .page-rds.page-work-detail .rds-item:not(:first-of-type) button[data-lightbox-src] img,
+  .page-mirror-work-series.page-work-detail .mirror-series-item:not(:first-of-type) button[data-lightbox-src] img,
+  .page-kami.page-work-detail .kami-thumb-figure:not(:first-of-type) button[data-lightbox-src] img,
+  .page-redline.page-work-detail .redline-thumb:not(:first-of-type) img,
+  .page-eureka.page-work-detail .eureka-step button[data-lightbox-src] img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    aspect-ratio:1 / 1!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+
+  /* Domestic Jealousy: explicitly override the older editorial contain rules. */
+  .page-domestic.page-work-detail .work-thumb-section .work-thumb-grid--editorial > button.work-thumb[data-lightbox-src] img{
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    aspect-ratio:1 / 1!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+}
