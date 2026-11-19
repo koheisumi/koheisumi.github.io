@@ -3720,3 +3720,32 @@ body.lightbox-open{overflow:hidden}
     transform:translateY(1px)!important;
   }
 }
+
+
+/* === v90 / Restore language utility to top-right site-wide === */
+@media(min-width:761px){
+  /* Language switching is a site-wide utility, separate from primary navigation. */
+  .site-header{
+    justify-content:space-between!important;
+  }
+  .header-left{
+    flex:0 1 auto;
+  }
+  .header-actions,
+  .page-home .header-actions{
+    position:relative!important;
+    top:auto!important;
+    right:auto!important;
+    transform:none!important;
+    margin-left:auto!important;
+    margin-right:0!important;
+  }
+}
+
+/* On wide home layouts, reserve a clear white utility strip at the right.
+   At intermediate widths the protected white header band from v87 remains. */
+@media(min-width:1200px){
+  .page-home{
+    --home-hero-shift:clamp(105px, calc((100vw - 960px) * .32), 140px);
+  }
+}
