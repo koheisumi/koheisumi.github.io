@@ -3749,3 +3749,17 @@ body.lightbox-open{overflow:hidden}
     --home-hero-shift:clamp(105px, calc((100vw - 960px) * .32), 140px);
   }
 }
+
+
+/* === v91 / Lock desktop language switch to one viewport position === */
+@media(min-width:761px){
+  /* EN/JP is a fixed site utility: identical viewport position on every page. */
+  .site-header .header-actions,
+  .page-home .site-header .header-actions{
+    position:absolute!important;
+    right:var(--gutter)!important;
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    margin:0!important;
+  }
+}
