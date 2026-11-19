@@ -3653,3 +3653,32 @@ body.lightbox-open{overflow:hidden}
     --home-hero-current-w:min(68vw, var(--home-hero-w));
   }
 }
+
+
+/* === v87 / Header collision audit: robust home intermediate widths === */
+/* Wide desktop: language switch sits in the white field immediately before
+   the hero. Intermediate desktop/tablet: use the same protected header band
+   as internal pages so controls never sit directly on artwork. */
+@media(min-width:1200px){
+  .page-home .header-actions{
+    position:absolute!important;
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    right:calc(var(--home-hero-current-w) + var(--home-hero-shift) + 18px)!important;
+    margin-left:0!important;
+  }
+}
+@media(min-width:761px) and (max-width:1199px){
+  .page-home .site-header{
+    background:rgba(255,255,255,.94)!important;
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(0,0,0,.055)!important;
+  }
+  .page-home .header-actions{
+    position:relative!important;
+    top:auto!important;
+    right:auto!important;
+    transform:none!important;
+    margin-left:auto!important;
+  }
+}
