@@ -3710,3 +3710,13 @@ body.lightbox-open{overflow:hidden}
     margin-left:clamp(18px,1.5vw,26px)!important;
   }
 }
+
+
+/* === v89 / Optical baseline alignment for language switch === */
+@media(min-width:761px){
+  /* CONTACT and EN/JP use the same type size, but CONTACT is baseline-aligned
+     with the larger brand. Nudge the language control down optically. */
+  .header-actions{
+    transform:translateY(1px)!important;
+  }
+}
