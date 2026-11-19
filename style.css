@@ -3763,3 +3763,18 @@ body.lightbox-open{overflow:hidden}
     margin:0!important;
   }
 }
+
+
+/* === v92 / Stable desktop right edge across pages === */
+/* Reserve scrollbar space even on the one-screen home page so the right-side
+   language utility stays at the same visual x-position as scrollable pages. */
+@media(min-width:761px){
+  html{
+    scrollbar-gutter:stable;
+  }
+
+  /* Keep the home artwork clear of the now truly fixed EN/JP position. */
+  .page-home .hero-rail{
+    transform:translateX(calc(-1 * (var(--home-hero-shift) + 16px)))!important;
+  }
+}
