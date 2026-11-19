@@ -3633,3 +3633,23 @@ body.lightbox-open{overflow:hidden}
     width:min(68vw, var(--home-hero-w));
   }
 }
+
+
+/* === v86 / Home language switch stays off the hero image === */
+@media(min-width:761px){
+  .page-home{
+    --home-hero-current-w:var(--home-hero-w);
+  }
+  .page-home .header-actions{
+    position:absolute!important;
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    right:calc(var(--home-hero-current-w) + var(--home-hero-shift) + 18px)!important;
+    z-index:3;
+  }
+}
+@media(min-width:761px) and (max-width:1100px){
+  .page-home{
+    --home-hero-current-w:min(68vw, var(--home-hero-w));
+  }
+}
